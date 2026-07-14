@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Flame, Dumbbell, Zap, Heart, Clock, MapPin, Phon
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Pulse Studio — Fitness Demo | Nordweb",
+  title: "Pulse Studio — Fitness Demo | Hugweb",
   description: "Demo-Webseite für ein Premium-Fitnessstudio.",
 };
 
@@ -11,7 +11,7 @@ export default function FitnessDemo() {
   return (
     <>
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
-        Demo-Seite von <Link href="/" className="underline font-medium">Nordweb</Link>
+        Demo-Seite von <Link href="/" className="underline font-medium">Hugweb</Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
         </Link>
@@ -203,7 +203,7 @@ export default function FitnessDemo() {
 
         <footer className="border-t border-white/5 py-10 text-center text-sm text-white/40">
           © {new Date().getFullYear()} Pulse Studio Berlin · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-white">Nordweb</Link>
+          <Link href="/" className="underline hover:text-white">Hugweb</Link>
         </footer>
       </div>
     </>

@@ -25,7 +25,7 @@ export default function Nav() {
         <Link
           href="/"
           className="flex items-center gap-2.5 group"
-          aria-label="Nordweb Startseite"
+          aria-label="Hugweb Startseite"
         >
           <span className="relative inline-flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 shadow-md shadow-indigo-500/20 transition-transform group-hover:scale-105">
             <svg
@@ -38,10 +38,10 @@ export default function Nav() {
               strokeLinejoin="round"
               aria-hidden
             >
-              <path d="M5 19V5l14 14V5" />
+              <path d="M5 5V19 M19 5V19 M5 12H19" />
             </svg>
           </span>
-          <span className="text-lg font-semibold tracking-tight">Nordweb</span>
+          <span className="text-lg font-semibold tracking-tight">Hugweb</span>
         </Link>
         <div className="hidden md:flex items-center gap-7 text-sm">
           <a href="/#demos" className="hover:opacity-60 transition">

@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t border-black/5 mt-24">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-neutral-500">
         <div>
-          <div className="text-neutral-900 font-semibold">Nordweb</div>
+          <div className="text-neutral-900 font-semibold">Hugweb</div>
           <div>Moderne Webseiten. Klare Preise. Persönlicher Service.</div>
         </div>
         <div className="flex gap-6">
@@ -17,7 +17,7 @@ export default function Footer() {
             Datenschutz
           </a>
         </div>
-        <div>© {new Date().getFullYear()} Nordweb</div>
+        <div>© {new Date().getFullYear()} Hugweb</div>
       </div>
     </footer>
   );

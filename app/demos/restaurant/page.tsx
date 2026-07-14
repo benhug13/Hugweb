@@ -3,7 +3,7 @@ import { ArrowLeft, Clock, MapPin, Phone, Utensils } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Ostsee Stube — Restaurant Demo | Nordweb",
+  title: "Ostsee Stube — Restaurant Demo | Hugweb",
   description: "Demo-Webseite für ein modernes Restaurant.",
 };
 
@@ -12,7 +12,7 @@ export default function RestaurantDemo() {
     <>
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
         Demo-Seite von{" "}
-        <Link href="/" className="underline font-medium">Nordweb</Link>
+        <Link href="/" className="underline font-medium">Hugweb</Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
         </Link>
@@ -201,7 +201,7 @@ export default function RestaurantDemo() {
 
         <footer className="border-t border-stone-900/10 py-10 text-center text-sm text-stone-500">
           © {new Date().getFullYear()} Ostsee Stube · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-stone-900">Nordweb</Link>
+          <Link href="/" className="underline hover:text-stone-900">Hugweb</Link>
         </footer>
       </div>
     </>

@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Scale, Building2, Briefcase, Home, FileText, Use
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Hofmann Rechtsanwälte — Anwalt Demo | Nordweb",
+  title: "Hofmann Rechtsanwälte — Anwalt Demo | Hugweb",
   description: "Demo-Webseite für eine moderne Anwaltskanzlei.",
 };
 
@@ -11,7 +11,7 @@ export default function AnwaltDemo() {
   return (
     <>
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
-        Demo-Seite von <Link href="/" className="underline font-medium">Nordweb</Link>
+        Demo-Seite von <Link href="/" className="underline font-medium">Hugweb</Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
         </Link>
@@ -240,7 +240,7 @@ export default function AnwaltDemo() {
 
         <footer className="border-t border-white/5 py-10 text-center text-sm text-stone-500">
           © {new Date().getFullYear()} Hofmann Rechtsanwälte Berlin · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-stone-200">Nordweb</Link>
+          <Link href="/" className="underline hover:text-stone-200">Hugweb</Link>
         </footer>
       </div>
     </>

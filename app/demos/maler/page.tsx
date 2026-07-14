@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Brush, Home, Layers, Sparkles, Phone, MapPin, Cl
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Frischknecht Malerei — Maler Demo | Nordweb",
+  title: "Frischknecht Malerei — Maler Demo | Hugweb",
   description: "Demo-Webseite für einen modernen Maler­betrieb.",
 };
 
@@ -11,7 +11,7 @@ export default function MalerDemo() {
   return (
     <>
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
-        Demo-Seite von <Link href="/" className="underline font-medium">Nordweb</Link>
+        Demo-Seite von <Link href="/" className="underline font-medium">Hugweb</Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
         </Link>
@@ -230,7 +230,7 @@ export default function MalerDemo() {
 
         <footer className="border-t border-stone-200 py-10 text-center text-sm text-stone-500">
           © {new Date().getFullYear()} Frischknecht Malerei St. Gallen · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-stone-900">Nordweb</Link>
+          <Link href="/" className="underline hover:text-stone-900">Hugweb</Link>
         </footer>
       </div>
     </>

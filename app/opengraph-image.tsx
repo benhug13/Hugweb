@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Nordweb — Moderne Webseiten für KMU";
+export const alt = "Hugweb — Moderne Webseiten für KMU";
 
 export default async function OpengraphImage() {
   return new ImageResponse(
@@ -37,7 +37,7 @@ export default async function OpengraphImage() {
           >
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path
-                d="M5 19V5l14 14V5"
+                d="M5 5V19 M19 5V19 M5 12H19"
                 stroke="#ffffff"
                 strokeWidth="2.6"
                 strokeLinecap="round"
@@ -46,7 +46,7 @@ export default async function OpengraphImage() {
             </svg>
           </div>
           <div style={{ fontSize: 36, fontWeight: 600, letterSpacing: "-0.02em" }}>
-            Nordweb
+            Hugweb
           </div>
         </div>
 
@@ -85,7 +85,7 @@ export default async function OpengraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Festpreis ab 1.490 CHF · Online in 14 Tagen · Kein Baukasten.
+            Festpreis ab 99 CHF · Online in 14 Tagen · Kein Baukasten.
           </div>
         </div>
 
@@ -98,7 +98,7 @@ export default async function OpengraphImage() {
             color: "rgba(255,255,255,0.5)",
           }}
         >
-          <div style={{ display: "flex" }}>nordweb-drab.vercel.app</div>
+          <div style={{ display: "flex" }}>hugweb.cloud9.ch</div>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <div
               style={{

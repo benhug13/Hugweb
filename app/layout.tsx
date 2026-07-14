@@ -13,24 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nordweb-drab.vercel.app"),
-  title: "Nordweb — Moderne Webseiten für Ihr Unternehmen",
+  metadataBase: new URL("https://hugweb.cloud9.ch"),
+  title: "Hugweb — Moderne Webseiten für Ihr Unternehmen",
   description:
-    "Moderne, schnelle Webseiten für Schweizer KMU — Restaurants, Handwerker, Coiffeure und mehr. Festpreis ab 1.490 CHF. Online in 14 Tagen.",
+    "Moderne, schnelle Webseiten für Schweizer KMU — Restaurants, Handwerker, Coiffeure und mehr. Festpreis ab 99 CHF. Online in 14 Tagen.",
   openGraph: {
-    title: "Nordweb — Webseiten, die verkaufen",
+    title: "Hugweb — Webseiten, die verkaufen",
     description:
-      "Festpreis ab 1.490 CHF · Online in 14 Tagen · Kein Baukasten, kein Abo-Zwang.",
-    url: "https://nordweb-drab.vercel.app",
-    siteName: "Nordweb",
+      "Festpreis ab 99 CHF · Online in 14 Tagen · Kein Baukasten, kein Abo-Zwang.",
+    url: "https://hugweb.cloud9.ch",
+    siteName: "Hugweb",
     locale: "de_CH",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nordweb — Webseiten, die verkaufen",
+    title: "Hugweb — Webseiten, die verkaufen",
     description:
-      "Festpreis ab 1.490 CHF · Online in 14 Tagen · Kein Baukasten.",
+      "Festpreis ab 99 CHF · Online in 14 Tagen · Kein Baukasten.",
   },
 };
 

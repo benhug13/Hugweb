@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 
 export const metadata = {
-  title: "Impressum | Nordweb",
-  description: "Impressum und rechtliche Angaben von Nordweb.",
+  title: "Impressum | Hugweb",
+  description: "Impressum und rechtliche Angaben von Hugweb.",
 };
 
 export default function Impressum() {

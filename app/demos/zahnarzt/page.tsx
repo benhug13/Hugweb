@@ -3,7 +3,7 @@ import { ArrowLeft, Sparkles, Clock, MapPin, Phone, Star, ShieldCheck, HeartPuls
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Klarweiss Zahnmedizin — Zahnarzt Demo | Nordweb",
+  title: "Klarweiss Zahnmedizin — Zahnarzt Demo | Hugweb",
   description: "Demo-Webseite für eine moderne Zahnarztpraxis.",
 };
 
@@ -11,7 +11,7 @@ export default function ZahnarztDemo() {
   return (
     <>
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
-        Demo-Seite von <Link href="/" className="underline font-medium">Nordweb</Link>
+        Demo-Seite von <Link href="/" className="underline font-medium">Hugweb</Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
         </Link>
@@ -220,7 +220,7 @@ export default function ZahnarztDemo() {
 
         <footer className="border-t border-slate-100 py-10 text-center text-sm text-slate-500">
           © {new Date().getFullYear()} Klarweiss Zahnmedizin München · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-slate-900">Nordweb</Link>
+          <Link href="/" className="underline hover:text-slate-900">Hugweb</Link>
         </footer>
       </div>
     </>

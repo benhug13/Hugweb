@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 
 export const metadata = {
-  title: "Datenschutzerklärung | Nordweb",
-  description: "Datenschutzerklärung von Nordweb gemäss DSG.",
+  title: "Datenschutzerklärung | Hugweb",
+  description: "Datenschutzerklärung von Hugweb gemäss DSG.",
 };
 
 export default function Datenschutz() {
@@ -14,7 +14,7 @@ export default function Datenschutz() {
       <main className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <div className="text-sm font-medium text-neutral-500 uppercase tracking-wider">Rechtliches</div>
         <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">Datenschutzerklärung</h1>
-        <p className="mt-4 text-neutral-600">Nordweb nimmt Ihre Privatsphäre ernst. Diese Erklärung beschreibt knapp und ehrlich, welche Daten wir erheben, warum und wie Sie Ihre Rechte ausüben können.</p>
+        <p className="mt-4 text-neutral-600">Hugweb nimmt Ihre Privatsphäre ernst. Diese Erklärung beschreibt knapp und ehrlich, welche Daten wir erheben, warum und wie Sie Ihre Rechte ausüben können.</p>
 
         <div className="mt-12 space-y-12 text-neutral-700 leading-relaxed">
           <section>

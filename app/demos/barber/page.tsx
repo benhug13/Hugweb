@@ -3,7 +3,7 @@ import { ArrowLeft, Scissors, Clock, MapPin, Phone, Star } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
-  title: "Nordcuts — Barbershop Demo | Nordweb",
+  title: "Nordcuts — Barbershop Demo | Hugweb",
   description: "Demo-Webseite für einen modernen Barbershop.",
 };
 
@@ -13,7 +13,7 @@ export default function BarberDemo() {
       <div className="bg-black text-white text-xs py-2 text-center sticky top-0 z-50">
         Demo-Seite von{" "}
         <Link href="/" className="underline font-medium">
-          Nordweb
+          Hugweb
         </Link>
         <Link href="/#demos" className="ml-4 inline-flex items-center gap-1 opacity-80 hover:opacity-100">
           <ArrowLeft className="h-3 w-3" /> Zurück
@@ -208,7 +208,7 @@ export default function BarberDemo() {
 
         <footer className="border-t border-white/10 py-10 text-center text-sm text-white/40">
           © {new Date().getFullYear()} Nordcuts Hamburg · Demo-Seite von{" "}
-          <Link href="/" className="underline hover:text-white">Nordweb</Link>
+          <Link href="/" className="underline hover:text-white">Hugweb</Link>
         </footer>
       </div>
     </>
