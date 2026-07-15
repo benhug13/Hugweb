@@ -1,0 +1,118 @@
+name: Seiten-Check
+
+# Prueft taeglich alle Live-Seiten und schickt Ben eine Mail:
+#   alles ok  -> "alle Seiten laufen"
+#   Problem   -> "X Seite(n) down" + der Job schlaegt fehl (GitHub mailt dann zusaetzlich)
+#
+# NEUEN KUNDEN HINZUFUEGEN: unten bei SEITEN eine Zeile "Name|URL" ergaenzen. Sonst nichts.
+#
+# Benoetigte GitHub-Secrets (Settings -> Secrets and variables -> Actions):
+#   RESEND_API_KEY  = API-Key von resend.com
+#   MAIL_TO         = Bens E-Mail-Adresse
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # taeglich 06:00 UTC = 08:00 CH (Sommerzeit)
+  workflow_dispatch: # Knopf zum manuellen Testen
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Seiten pruefen und Mail schicken
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: |
+          set -uo pipefail
+
+          # Zahlen immer mit Punkt als Dezimaltrenner - sonst wirft printf "%.2f"
+          # unter einem Komma-Locale (z.B. de_CH) einen Fehler.
+          export LC_ALL=C
+
+          SEITEN=(
+            "Hugweb Hauptseite|https://hugweb.0d908c4.deploio.app"
+            "highdefinition Demo|https://hugweb.0d908c4.deploio.app/demos/highdefinition"
+            "Hugweb (Vercel-Zweitweg)|https://nordweb-drab.vercel.app"
+          )
+
+          # Einmal pruefen: gibt "<code> <sekunden>" zurueck
+          pruefe() {
+            curl -s -o /dev/null -w "%{http_code} %{time_total}" --max-time 20 "$1" || echo "000 0"
+          }
+
+          ZEILEN=""
+          PROBLEME=0
+
+          for eintrag in "${SEITEN[@]}"; do
+            NAME="${eintrag%%|*}"
+            URL="${eintrag##*|}"
+
+            ANTWORT=$(pruefe "$URL")
+            CODE="${ANTWORT%% *}"
+            ZEIT="${ANTWORT##* }"
+
+            # Ein einzelner Aussetzer ist kein Ausfall -> nach 15s nochmal,
+            # sonst schlagen wir bei jedem Netz-Schluckauf falschen Alarm.
+            if [ "$CODE" != "200" ]; then
+              echo "::warning::$NAME antwortete $CODE - zweiter Versuch in 15s"
+              sleep 15
+              ANTWORT=$(pruefe "$URL")
+              CODE="${ANTWORT%% *}"
+              ZEIT="${ANTWORT##* }"
+            fi
+
+            SEK=$(printf "%.2f" "$ZEIT")
+
+            if [ "$CODE" = "200" ]; then
+              echo "OK      $NAME ($CODE, ${SEK}s)"
+              ZEILEN="${ZEILEN}<tr><td>&#9989;</td><td><a href=\"${URL}\">${NAME}</a></td><td align=\"right\">${CODE}</td><td align=\"right\">${SEK}s</td></tr>"
+            else
+              echo "PROBLEM $NAME ($CODE)"
+              PROBLEME=$((PROBLEME + 1))
+              ZEILEN="${ZEILEN}<tr style=\"background:#fee\"><td>&#10060;</td><td><a href=\"${URL}\">${NAME}</a></td><td align=\"right\"><b>${CODE}</b></td><td align=\"right\">${SEK}s</td></tr>"
+            fi
+          done
+
+          DATUM=$(date +"%d.%m.%Y")
+          ANZAHL=${#SEITEN[@]}
+
+          if [ "$PROBLEME" -eq 0 ]; then
+            BETREFF="✅ Hugweb – alle ${ANZAHL} Seiten laufen (${DATUM})"
+            KOPF="<p>Alles grün. Nächster Check: morgen früh.</p>"
+          else
+            BETREFF="❌ Hugweb – ${PROBLEME} Seite(n) down (${DATUM})"
+            KOPF="<p><b>${PROBLEME} von ${ANZAHL} Seiten antworten nicht.</b> Code 000 = gar keine Antwort (Seite tot oder Timeout).</p>"
+          fi
+
+          HTML="<div style=\"font-family:system-ui,sans-serif\"><h2>${BETREFF}</h2>${KOPF}
+          <table cellpadding=\"6\" style=\"border-collapse:collapse\">${ZEILEN}</table>
+          <p style=\"color:#666;font-size:13px\">Automatischer Check aus GitHub Actions.<br>
+          Neue Seite eintragen: <code>.github/workflows/seiten-check.yml</code></p></div>"
+
+          if [ -z "${RESEND_API_KEY:-}" ] || [ -z "${MAIL_TO:-}" ]; then
+            echo "::warning::RESEND_API_KEY oder MAIL_TO fehlt als Secret - keine Mail verschickt."
+          else
+            NUTZLAST=$(jq -n \
+              --arg to "$MAIL_TO" \
+              --arg subject "$BETREFF" \
+              --arg html "$HTML" \
+              '{from: "Hugweb Waechter <onboarding@resend.dev>", to: [$to], subject: $subject, html: $html}')
+
+            ANTWORT=$(curl -s -w "\n%{http_code}" -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer ${RESEND_API_KEY}" \
+              -H "Content-Type: application/json" \
+              -d "$NUTZLAST")
+
+            MAIL_CODE=$(echo "$ANTWORT" | tail -n1)
+            if [ "$MAIL_CODE" = "200" ]; then
+              echo "Mail verschickt an $MAIL_TO"
+            else
+              echo "::error::Resend antwortete $MAIL_CODE: $(echo "$ANTWORT" | head -n-1)"
+              exit 1
+            fi
+          fi
+
+          # Bei Problemen absichtlich rot -> GitHub schickt zusaetzlich seine eigene Fehler-Mail.
+          # Zweites Netz, falls Resend mal ausfaellt.
+          [ "$PROBLEME" -eq 0 ] || exit 1
