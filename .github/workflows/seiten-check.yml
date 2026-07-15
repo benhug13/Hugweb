@@ -4,7 +4,11 @@ name: Seiten-Check
 #   alles ok  -> "alle Seiten laufen"
 #   Problem   -> "X Seite(n) down" + der Job schlaegt fehl (GitHub mailt dann zusaetzlich)
 #
-# NEUEN KUNDEN HINZUFUEGEN: unten bei SEITEN eine Zeile "Name|URL" ergaenzen. Sonst nichts.
+# DEMOS WERDEN AUTOMATISCH GEFUNDEN: jeder Ordner app/demos/<name>/page.tsx wird
+# geprueft. Eine neue Demo ist ab dem naechsten Push automatisch dabei - nichts eintragen.
+#
+# NUR fuer Seiten AUSSERHALB dieses Repos (eigene Kunden-Domains, andere Hostings)
+# unten bei EXTRA_SEITEN eine Zeile "Name|URL" ergaenzen.
 #
 # Benoetigte GitHub-Secrets (Settings -> Secrets and variables -> Actions):
 #   RESEND_API_KEY  = API-Key von resend.com
@@ -19,6 +23,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      # Noetig, damit das Skript die Demo-Ordner sehen kann
+      - uses: actions/checkout@v4
+
       - name: Seiten pruefen und Mail schicken
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -30,11 +37,31 @@ jobs:
           # unter einem Komma-Locale (z.B. de_CH) einen Fehler.
           export LC_ALL=C
 
-          SEITEN=(
-            "Hugweb Hauptseite|https://hugweb.0d908c4.deploio.app"
-            "highdefinition Demo|https://hugweb.0d908c4.deploio.app/demos/highdefinition"
+          # Ohne Secrets waere der Job gruen, aber es kaeme nie eine Mail - genau der
+          # blinde Fleck, den dieser Check verhindern soll. Also lieber laut scheitern.
+          if [ -z "${RESEND_API_KEY:-}" ] || [ -z "${MAIL_TO:-}" ]; then
+            echo "::error::RESEND_API_KEY oder MAIL_TO fehlt als Secret. Ohne die beiden kann keine Mail verschickt werden."
+            exit 1
+          fi
+
+          HOST="https://hugweb.0d908c4.deploio.app"
+
+          SEITEN=("Hugweb Hauptseite|${HOST}")
+
+          # Demos automatisch aus dem Repo einsammeln
+          for datei in app/demos/*/page.tsx; do
+            [ -e "$datei" ] || continue
+            name=$(basename "$(dirname "$datei")")
+            SEITEN+=("Demo: ${name}|${HOST}/demos/${name}")
+          done
+
+          # Seiten ausserhalb dieses Repos - hier von Hand ergaenzen
+          EXTRA_SEITEN=(
             "Hugweb (Vercel-Zweitweg)|https://nordweb-drab.vercel.app"
           )
+          SEITEN+=("${EXTRA_SEITEN[@]}")
+
+          echo "Pruefe ${#SEITEN[@]} Seiten..."
 
           # Einmal pruefen: gibt "<code> <sekunden>" zurueck
           pruefe() {
@@ -88,29 +115,26 @@ jobs:
           HTML="<div style=\"font-family:system-ui,sans-serif\"><h2>${BETREFF}</h2>${KOPF}
           <table cellpadding=\"6\" style=\"border-collapse:collapse\">${ZEILEN}</table>
           <p style=\"color:#666;font-size:13px\">Automatischer Check aus GitHub Actions.<br>
-          Neue Seite eintragen: <code>.github/workflows/seiten-check.yml</code></p></div>"
+          Demos werden automatisch erkannt. Externe Seiten eintragen:
+          <code>.github/workflows/seiten-check.yml</code></p></div>"
 
-          if [ -z "${RESEND_API_KEY:-}" ] || [ -z "${MAIL_TO:-}" ]; then
-            echo "::warning::RESEND_API_KEY oder MAIL_TO fehlt als Secret - keine Mail verschickt."
+          NUTZLAST=$(jq -n \
+            --arg to "$MAIL_TO" \
+            --arg subject "$BETREFF" \
+            --arg html "$HTML" \
+            '{from: "Hugweb Waechter <onboarding@resend.dev>", to: [$to], subject: $subject, html: $html}')
+
+          ANTWORT=$(curl -s -w "\n%{http_code}" -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${RESEND_API_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "$NUTZLAST")
+
+          MAIL_CODE=$(echo "$ANTWORT" | tail -n1)
+          if [ "$MAIL_CODE" = "200" ]; then
+            echo "Mail verschickt an $MAIL_TO"
           else
-            NUTZLAST=$(jq -n \
-              --arg to "$MAIL_TO" \
-              --arg subject "$BETREFF" \
-              --arg html "$HTML" \
-              '{from: "Hugweb Waechter <onboarding@resend.dev>", to: [$to], subject: $subject, html: $html}')
-
-            ANTWORT=$(curl -s -w "\n%{http_code}" -X POST https://api.resend.com/emails \
-              -H "Authorization: Bearer ${RESEND_API_KEY}" \
-              -H "Content-Type: application/json" \
-              -d "$NUTZLAST")
-
-            MAIL_CODE=$(echo "$ANTWORT" | tail -n1)
-            if [ "$MAIL_CODE" = "200" ]; then
-              echo "Mail verschickt an $MAIL_TO"
-            else
-              echo "::error::Resend antwortete $MAIL_CODE: $(echo "$ANTWORT" | head -n-1)"
-              exit 1
-            fi
+            echo "::error::Resend antwortete $MAIL_CODE: $(echo "$ANTWORT" | sed '$d')"
+            exit 1
           fi
 
           # Bei Problemen absichtlich rot -> GitHub schickt zusaetzlich seine eigene Fehler-Mail.
