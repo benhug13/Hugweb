@@ -176,10 +176,10 @@ export default function PfundsteinDemo() {
 
         {/* Firma — Text 1:1 */}
         <section id="firma" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-            <Reveal>
-              <div className="relative overflow-hidden rounded-3xl border border-black/10">
-                <img src={pf("haus.jpg")} alt="Referenzobjekt von Malergeschäft Pfundstein" className="h-full w-full object-cover" />
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-stretch">
+            <Reveal className="h-full">
+              <div className="relative h-full min-h-[340px] overflow-hidden rounded-3xl border border-black/10">
+                <img src={pf("haus.jpg")} alt="Referenzobjekt von Malergeschäft Pfundstein" className="absolute inset-0 h-full w-full object-cover" />
               </div>
             </Reveal>
             <Reveal delay={0.1}>
