@@ -7,8 +7,8 @@ name: Seiten-Check
 # DEMOS WERDEN AUTOMATISCH GEFUNDEN: jeder Ordner app/demos/<name>/page.tsx wird
 # geprueft. Eine neue Demo ist ab dem naechsten Push automatisch dabei - nichts eintragen.
 #
-# NUR fuer Seiten AUSSERHALB dieses Repos (eigene Kunden-Domains, andere Hostings)
-# unten bei EXTRA_SEITEN eine Zeile "Name|URL" ergaenzen.
+# KUNDEN-HOSTINGS (eigene Domain, eigener Server) gehoeren in ../seiten-extern.txt
+# - eine Zeile "Name|URL". Diese Datei hier muss dafuer nicht angefasst werden.
 #
 # Benoetigte GitHub-Secrets (Settings -> Secrets and variables -> Actions):
 #   RESEND_API_KEY  = API-Key von resend.com
@@ -55,11 +55,14 @@ jobs:
             SEITEN+=("Demo: ${name}|${HOST}/demos/${name}")
           done
 
-          # Seiten ausserhalb dieses Repos - hier von Hand ergaenzen
-          EXTRA_SEITEN=(
-            "Hugweb (Vercel-Zweitweg)|https://nordweb-drab.vercel.app"
-          )
-          SEITEN+=("${EXTRA_SEITEN[@]}")
+          # Kunden-Hostings und andere externe Seiten stehen in seiten-extern.txt
+          # (eine Zeile "Name|URL"). Kommentare (#) und Leerzeilen werden ignoriert.
+          if [ -f seiten-extern.txt ]; then
+            while IFS= read -r zeile; do
+              case "$zeile" in ''|'#'*) continue ;; esac
+              SEITEN+=("$zeile")
+            done < seiten-extern.txt
+          fi
 
           echo "Pruefe ${#SEITEN[@]} Seiten..."
 

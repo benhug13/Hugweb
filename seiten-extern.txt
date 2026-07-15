@@ -1,0 +1,15 @@
+# Seiten, die NICHT in diesem Repo liegen — Kunden-Hostings, eigene Domains, andere Server.
+# Der taegliche Seiten-Check (.github/workflows/seiten-check.yml) prueft sie mit.
+#
+# Die Demos (/demos/...) muessen hier NICHT stehen — die findet der Check von selbst.
+#
+# EINE ZEILE PRO SEITE, Format:
+#   Name der Seite|https://die-adresse.ch
+#
+# Zeilen mit # am Anfang sind Notizen und werden ignoriert. Leere Zeilen auch.
+# Nach dem Aendern: committen + "git push origin main". Fertig.
+
+Hugweb (Vercel-Zweitweg)|https://nordweb-drab.vercel.app
+
+# Beispiel fuer einen echten Kunden — Raute entfernen, sobald die Seite live ist:
+# Malergeschaeft Pfundstein|https://pfundstein.ch
