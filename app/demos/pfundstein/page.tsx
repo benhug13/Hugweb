@@ -188,7 +188,11 @@ export default function PfundsteinDemo() {
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                   Malerarbeiten in der Region Kanton Zug.
                 </h2>
-                <p className="mt-6 text-neutral-600 leading-relaxed">
+                <p className="mt-6 text-lg text-neutral-800 leading-relaxed">
+                  Die Firma Pfundstein führt Malerarbeiten in der Region Kanton
+                  Zug aus. Das Geschäft hat seinen Sitz in Steinhausen.
+                </p>
+                <p className="mt-4 text-neutral-600 leading-relaxed">
                   Unser Familienunternehmen wurde 1968 gegründet. Seit über 50
                   Jahren führt die Firma Pfundstein Malerarbeiten in und
                   ausserhalb Steinhausens aus. Seit 2003 leitet Rainer
