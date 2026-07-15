@@ -179,7 +179,7 @@ export default function PfundsteinDemo() {
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <Reveal>
               <div className="relative overflow-hidden rounded-3xl border border-black/10">
-                <img src={pf("IMG_7523.jpg")} alt="Arbeit von Malergeschäft Pfundstein" className="h-full w-full object-cover" />
+                <img src={pf("haus.jpg")} alt="Referenzobjekt von Malergeschäft Pfundstein" className="h-full w-full object-cover" />
               </div>
             </Reveal>
             <Reveal delay={0.1}>
