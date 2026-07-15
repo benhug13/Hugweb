@@ -13,9 +13,7 @@ import {
   Layers,
   Ruler,
   Phone,
-  Mail,
   MapPin,
-  Check,
 } from "lucide-react";
 import { Archivo, Inter } from "next/font/google";
 import Reveal from "@/components/Reveal";
@@ -40,40 +38,35 @@ export const metadata = {
     "Entwurf einer modernen Website für das Malergeschäft Pfundstein in Steinhausen: Fassaden, Innenrenovationen, Naturholz, Restauration und mehr — seit 1968.",
 };
 
-// Echte Bilder von der Pfundstein-Website (lokal gespiegelt) — der Kunde
-// erkennt seine eigenen Arbeiten sofort wieder.
+// Echte Bilder von der Pfundstein-Website (lokal gespiegelt) — Texte und Bilder
+// 1:1 wie im Original.
 const pf = (name: string) => `/pfundstein/${name}`;
 
-const leistungen = [
-  { icon: Home, title: "Fassadenrenovation", text: "Wetterfester Schutz und ein frischer Auftritt für Ihr Haus." },
-  { icon: TreePine, title: "Naturholzrenovation", text: "Fenster, Läden und Holzfassaden fachgerecht aufgefrischt." },
-  { icon: Landmark, title: "Restauration", text: "Altbau und Denkmal sorgfältig in Stand gesetzt." },
-  { icon: Building2, title: "Neubauten", text: "Sauberer Innen- und Aussenanstrich für den Erstbezug." },
-  { icon: Sparkles, title: "Dekorative Arbeiten", text: "Lasuren, Spachteltechniken und individuelle Effekte." },
-  { icon: PaintRoller, title: "Innenrenovationen", text: "Wände und Decken, so übergeben, wie man sie gern bezieht." },
-  { icon: SprayCan, title: "Spritzarbeiten", text: "Grosse Flächen gleichmässig und effizient beschichtet." },
-  { icon: Droplets, title: "Wasserhochdruck-Reinigung", text: "Fassaden und Beläge gründlich von Schmutz und Moos befreit." },
-  { icon: Layers, title: "Tapezieren", text: "Vom Vlies bis zur Designtapete — faltenfrei angebracht." },
-  { icon: Ruler, title: "Profilierungen", text: "Stuck und Profile ergänzt, ausgebessert und betont." },
+// Spezialgebiete — exakt die 10 Begriffe von ihrer Seite, schlichte Icon-Reihe.
+const spezialgebiete = [
+  { icon: Home, title: "Fassadenrenovation" },
+  { icon: TreePine, title: "Naturholzrenovation" },
+  { icon: Landmark, title: "Restauration" },
+  { icon: Building2, title: "Neubauten" },
+  { icon: Sparkles, title: "Dekorative Arbeiten" },
+  { icon: PaintRoller, title: "Innenrenovationen" },
+  { icon: SprayCan, title: "Spritzarbeiten" },
+  { icon: Droplets, title: "Wasserhochdruck-Reinigungsarbeiten" },
+  { icon: Layers, title: "Tapezieren" },
+  { icon: Ruler, title: "Profilierungen" },
 ];
 
 const referenzen = [
-  { img: pf("IMG_7557.jpg"), span: "md:col-span-7" },
-  { img: pf("DSC_0221.jpg"), span: "md:col-span-5" },
-  { img: pf("IMG_7528.jpg"), span: "md:col-span-5" },
-  { img: pf("IMG_7562.jpg"), span: "md:col-span-7" },
-  { img: pf("PB083732.jpg"), span: "md:col-span-12" },
-];
-
-const werte = [
-  { title: "Handwerk seit 1968", text: "Über 50 Jahre Erfahrung, heute in zweiter Generation geführt von einem eidg. dipl. Malermeister." },
-  { title: "Saubere Ausführung", text: "Wir arbeiten strukturiert und hinterlassen Räume so, wie man sie gern übernimmt — pünktlich und ohne böse Überraschungen." },
-  { title: "Persönliche Beratung", text: "Vom Farbton bis zur Fläche besprechen Sie alles direkt mit dem Meister. Kurze Wege, klare Auskunft." },
+  { img: pf("DSC_0233.jpg"), span: "md:col-span-7" },
+  { img: pf("IMG_7523.jpg"), span: "md:col-span-5" },
+  { img: pf("IMG_7557.jpg"), span: "md:col-span-5" },
+  { img: pf("DSC_0221.jpg"), span: "md:col-span-7" },
+  { img: pf("IMG_7528.jpg"), span: "md:col-span-6" },
+  { img: pf("IMG_7562.jpg"), span: "md:col-span-6" },
 ];
 
 const nav = [
   { label: "Firma", href: "#firma" },
-  { label: "Leistungen", href: "#leistungen" },
   { label: "Referenzen", href: "#referenzen" },
   { label: "Kontakt", href: "#kontakt" },
 ];
@@ -120,32 +113,33 @@ export default function PfundsteinDemo() {
           </div>
         </header>
 
-        {/* Hero — echtes Foto, heller Handwerks-Look */}
+        {/* Hero — echtes Referenzbild (Riegelhaus im Gerüst), Text 1:1 */}
         <section className="relative isolate overflow-hidden">
-          <img src={pf("DSC_0233.jpg")} alt="Referenzobjekt Malergeschäft Pfundstein" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 via-neutral-950/55 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 to-transparent" />
+          <img src={pf("P13-07-09_15.45.jpg")} alt="Fassadenrenovation an einem Riegelhaus — Malergeschäft Pfundstein" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/88 via-neutral-950/60 to-neutral-950/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/75 to-transparent" />
 
-          <div className="relative mx-auto flex min-h-[82vh] w-full max-w-6xl items-center px-6 py-24">
-            <div className="max-w-xl text-white">
+          <div className="relative mx-auto flex min-h-[80vh] w-full max-w-6xl items-center px-6 py-24">
+            <div className="max-w-2xl text-white">
               <Reveal>
-                <BrushStrokes className="h-12 w-auto" />
+                <BrushStrokes className="h-11 w-auto" />
               </Reveal>
               <Reveal delay={0.05}>
                 <div className="mt-6 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                  Malergeschäft · Steinhausen · seit 1968
+                  Malergeschäft Pfundstein · Steinhausen · seit 1968
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="mt-4 font-[family-name:var(--font-display)] text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95]">
-                  Farbe, die <span className="text-cyan-400">bleibt.</span>
+                <h1 className="mt-4 font-[family-name:var(--font-display)] text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.02]">
+                  Malerarbeiten in der{" "}
+                  <span className="text-cyan-400">Region Kanton Zug.</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.2}>
-                <p className="mt-6 max-w-md text-lg text-white/80 leading-relaxed">
-                  Seit über 50 Jahren renovieren, streichen und gestalten wir in
-                  und um Steinhausen — sauber, termingerecht und mit dem Auge
-                  fürs Detail einer zweiten Generation.
+                <p className="mt-6 max-w-xl text-lg text-white/80 leading-relaxed">
+                  Die Firma Pfundstein führt Malerarbeiten in der Region Kanton
+                  Zug aus. Das Geschäft hat seinen Sitz in Steinhausen — ein
+                  Familienunternehmen seit 1968, in zweiter Generation.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -163,7 +157,7 @@ export default function PfundsteinDemo() {
           </div>
         </section>
 
-        {/* Trust-Streifen */}
+        {/* Trust-Streifen — reine Fakten aus ihrem Text */}
         <section className="border-b border-black/10 bg-neutral-50">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10">
             {[
@@ -180,7 +174,7 @@ export default function PfundsteinDemo() {
           </div>
         </section>
 
-        {/* Firma */}
+        {/* Firma — Text 1:1 */}
         <section id="firma" className="py-24 md:py-32">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
             <Reveal>
@@ -191,61 +185,47 @@ export default function PfundsteinDemo() {
             <Reveal delay={0.1}>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">Die Firma</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Ein Familienbetrieb mit Handschrift.
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight leading-snug">
+                  Die Firma Pfundstein führt Malerarbeiten in der Region Kanton
+                  Zug aus. Das Geschäft hat seinen Sitz in Steinhausen.
                 </h2>
                 <p className="mt-6 text-neutral-600 leading-relaxed">
-                  Unser Familienunternehmen wurde 1968 gegründet und führt seither
-                  Malerarbeiten in und ausserhalb von Steinhausen aus. Seit 2003
-                  leitet Rainer Pfundstein, eidg. dipl. Malermeister, den Betrieb
-                  in zweiter Generation.
+                  Unser Familienunternehmen wurde 1968 gegründet. Seit über 50
+                  Jahren führt die Firma Pfundstein Malerarbeiten in und
+                  ausserhalb Steinhausens aus. Seit 2003 leitet Rainer
+                  Pfundstein, eidg. dipl. Malermeister, die Einzelunternehmung in
+                  zweiter Generation. Stetige Veränderungen in der Wirtschaft und
+                  der Gesellschaft, sowie der technologische Fortschritt prägen
+                  unser Geschäftsleben. Sie zwingen uns fortlaufend entsprechende
+                  Anpassungen vorzunehmen und durch innovative Ideen einen Schritt
+                  vorauszugehen. Während dieser Zeit konnten wir trotz der Hochs
+                  und Tiefs unseren Erfolgskurs stets beibehalten. Sie, geschätzte
+                  Kundschaft, haben mit Ihrer Treue massgeblich zu unserem Erfolg
+                  beigetragen. Das gibt uns Ansporn, die nächsten Jahre mit
+                  demselben Elan in Angriff zu nehmen.
                 </p>
-                <p className="mt-4 text-neutral-600 leading-relaxed">
-                  Über all die Jahre haben wir unseren Erfolgskurs gehalten — dank
-                  Kundschaft, die uns die Treue hält. Diesen Ansporn nehmen wir mit
-                  in die nächsten Projekte.
+                <p className="mt-6 font-[family-name:var(--font-display)] text-lg font-semibold">
+                  Ihr Rainer Pfundstein
                 </p>
-                <ul className="mt-8 space-y-3">
-                  {[
-                    "Persönlich geführt vom Meister",
-                    "Region Kanton Zug",
-                    "Über 50 Jahre Erfahrung",
-                  ].map((f) => (
-                    <li key={f} className="flex items-start gap-3">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-cyan-600" />
-                      <span className="text-neutral-800">{f}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </Reveal>
           </div>
         </section>
 
-        {/* Leistungen */}
+        {/* Spezialgebiete — schlichte Icon-Reihe wie im Original */}
         <section id="leistungen" className="py-24 md:py-32 border-t border-black/10 bg-neutral-50">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-5xl mx-auto px-6">
             <Reveal>
-              <div className="max-w-2xl">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">Leistungen</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Unsere Spezialgebiete.
-                </h2>
-                <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-                  Von der Fassade bis zur feinen Dekorarbeit — alles aus einer Hand.
-                </p>
-              </div>
+              <h2 className="text-center font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
+                Unsere Spezialgebiete sind:
+              </h2>
             </Reveal>
-
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {leistungen.map((l, i) => (
-                <Reveal key={l.title} delay={(i % 3) * 0.05}>
-                  <div className="group h-full rounded-2xl border border-black/10 bg-white p-7 shadow-sm transition hover:border-cyan-300 hover:shadow-md">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 transition group-hover:bg-cyan-600 group-hover:text-white">
-                      <l.icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="mt-5 text-lg font-semibold">{l.title}</h3>
-                    <p className="mt-2 text-sm text-neutral-600 leading-relaxed">{l.text}</p>
+            <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-6 gap-y-14">
+              {spezialgebiete.map((s, i) => (
+                <Reveal key={s.title} delay={(i % 5) * 0.04}>
+                  <div className="group flex flex-col items-center text-center">
+                    <s.icon className="h-10 w-10 text-neutral-600 transition group-hover:text-cyan-600" strokeWidth={1.5} />
+                    <div className="mt-4 text-sm font-medium text-neutral-700">{s.title}</div>
                   </div>
                 </Reveal>
               ))}
@@ -253,7 +233,7 @@ export default function PfundsteinDemo() {
           </div>
         </section>
 
-        {/* Referenzen */}
+        {/* Referenzen — ihre echten Fotos */}
         <section id="referenzen" className="py-24 md:py-32 border-t border-black/10">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal>
@@ -261,7 +241,7 @@ export default function PfundsteinDemo() {
                 <div className="max-w-2xl">
                   <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">Referenzen</div>
                   <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                    Ausgewählte Arbeiten.
+                    Ausgeführte Arbeiten.
                   </h2>
                 </div>
                 <a href="#kontakt" className="text-sm font-semibold text-cyan-700 hover:text-cyan-800 transition">
@@ -283,61 +263,33 @@ export default function PfundsteinDemo() {
           </div>
         </section>
 
-        {/* Werte */}
-        <section className="py-24 md:py-32 border-t border-black/10 bg-neutral-900 text-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <div className="flex items-center gap-4">
-                <BrushStrokes className="h-9 w-auto" />
-                <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Sauber. Termintreu. Ehrlich.
-                </h2>
-              </div>
-            </Reveal>
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4">
-              {werte.map((w, i) => (
-                <Reveal key={w.title} delay={i * 0.06}>
-                  <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-8">
-                    <h3 className="text-lg font-semibold text-cyan-300">{w.title}</h3>
-                    <p className="mt-3 text-white/70 leading-relaxed">{w.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Kontakt */}
-        <section id="kontakt" className="py-24 md:py-32 border-t border-black/10">
+        {/* Kontakt — Angaben 1:1 */}
+        <section id="kontakt" className="py-24 md:py-32 border-t border-black/10 bg-neutral-50">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">Kontakt</div>
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Reden wir über Ihr Projekt.
+                  Kontaktieren Sie uns.
                 </h2>
                 <p className="mt-6 text-neutral-600 leading-relaxed">
-                  Ob Fassade, Wohnung oder ein einzelner Raum — schreiben Sie uns
-                  kurz, was ansteht. Sie erhalten eine unverbindliche Offerte.
+                  Schreiben Sie uns kurz, was ansteht — Sie erhalten eine
+                  unverbindliche Offerte.
                 </p>
                 <div className="mt-10 space-y-5">
                   <div className="flex items-start gap-4">
                     <MapPin className="mt-0.5 h-5 w-5 text-cyan-600" />
-                    <span className="text-neutral-800">Bannstrasse 40a<br />6312 Steinhausen</span>
+                    <span className="text-neutral-800">Malergeschäft Pfundstein<br />Bannstrasse 40a, CH-6312 Steinhausen</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="h-5 w-5 text-cyan-600" />
-                    <span className="text-neutral-800">041 741 32 21 · 079 633 25 76</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Mail className="h-5 w-5 text-cyan-600" />
-                    <span className="text-neutral-800">info@pfundstein.ch</span>
+                    <span className="text-neutral-800">Telefon 041 741 32 21 · Mobile 079 633 25 76</span>
                   </div>
                 </div>
               </div>
             </Reveal>
             <Reveal delay={0.15}>
-              <form className="rounded-3xl border border-black/10 bg-neutral-50 p-8 space-y-4 shadow-sm">
+              <form className="rounded-3xl border border-black/10 bg-white p-8 space-y-4 shadow-sm">
                 <div>
                   <label className="mb-2 block text-sm text-neutral-600">Name</label>
                   <input className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 text-neutral-900 placeholder-neutral-400 transition focus:border-cyan-500 focus:outline-none" />
@@ -359,7 +311,7 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-black/10 bg-neutral-50">
+        <footer className="border-t border-black/10 bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
               <div className="col-span-2 md:col-span-1">
@@ -369,10 +321,10 @@ export default function PfundsteinDemo() {
                 </p>
               </div>
               <div>
-                <div className="text-sm font-semibold">Leistungen</div>
+                <div className="text-sm font-semibold">Spezialgebiete</div>
                 <ul className="mt-4 space-y-2 text-sm text-neutral-500">
-                  {leistungen.slice(0, 5).map((l) => (
-                    <li key={l.title}><a href="#leistungen" className="hover:text-neutral-900 transition">{l.title}</a></li>
+                  {spezialgebiete.slice(0, 5).map((s) => (
+                    <li key={s.title}><a href="#leistungen" className="hover:text-neutral-900 transition">{s.title}</a></li>
                   ))}
                 </ul>
               </div>
@@ -387,7 +339,7 @@ export default function PfundsteinDemo() {
               <div>
                 <div className="text-sm font-semibold">Kontakt</div>
                 <ul className="mt-4 space-y-2 text-sm text-neutral-500">
-                  <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-cyan-600" /> Bannstrasse 40a, 6312 Steinhausen</li>
+                  <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-cyan-600" /> Bannstrasse 40a, CH-6312 Steinhausen</li>
                   <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-cyan-600" /> 041 741 32 21</li>
                 </ul>
               </div>
