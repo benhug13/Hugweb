@@ -143,27 +143,24 @@ const infoLinks = [
   { icon: Wrench, label: "Reparaturen & Garantie" },
 ];
 
-// Moderner Wordmark im echten Markenfarbschema (Rot) — knuepft ans Original
-// (rotes "HIGH" + Chrom) an, aber sauber und flach statt 3D-Verlauf.
-// "invert" = helle Variante fuer dunkle Flaechen (Hero/Footer).
-function Logo({
-  className = "",
-  invert = false,
-}: {
-  className?: string;
-  invert?: boolean;
-}) {
+// Logo "Konzept B" (nach Bens Mockup): zweifarbiges HD-Monogramm — silbern/chrom
+// "H" + rotes "D", ineinander verschraenkt — neben der Wortmarke "HIGH DEFINITION".
+// Fuer dunkle Flaechen (Header/Footer) gebaut.
+function Logo({ className = "" }: { className?: string }) {
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-red-600 font-[family-name:var(--font-mono)] text-[13px] font-semibold leading-none text-white">
-        HD
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      {/* HD-Monogramm */}
+      <span className="flex items-baseline font-[family-name:var(--font-display)] text-[34px] font-extrabold leading-none tracking-tighter">
+        <span className="bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text text-transparent [text-shadow:0_1px_0_rgba(255,255,255,0.15)]">
+          H
+        </span>
+        <span className="-ml-[7px] text-red-600">D</span>
       </span>
-      <span
-        className={`font-[family-name:var(--font-display)] text-lg font-extrabold tracking-tight leading-none ${
-          invert ? "text-white" : "text-neutral-900"
-        }`}
-      >
-        high<span className="text-red-600">definition</span>
+      {/* Wortmarke */}
+      <span className="font-[family-name:var(--font-display)] text-[15px] font-extrabold uppercase leading-[0.92] tracking-tight text-white">
+        High
+        <br />
+        Definition
       </span>
     </span>
   );
@@ -182,26 +179,26 @@ export default function HighDefinitionDemo() {
       </div>
 
       <div className={`${display.variable} ${mono.variable} bg-white text-neutral-900`}>
-        {/* Navigation */}
-        <header className="sticky top-0 z-40 border-b border-black/10 bg-white/85 backdrop-blur">
+        {/* Navigation — dunkel, damit das echte Logo nativ sitzt */}
+        <header className="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <Logo />
-            <nav className="hidden lg:flex items-center gap-6 text-sm text-neutral-600">
+            <nav className="hidden lg:flex items-center gap-6 text-sm text-white/70">
               {nav.map((n) => (
-                <a key={n.label} href={n.href} className="hover:text-neutral-900 transition">
+                <a key={n.label} href={n.href} className="hover:text-white transition">
                   {n.label}
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-4 text-neutral-600">
+            <div className="flex items-center gap-4 text-white/70">
               <span className="hidden sm:inline-flex items-center gap-1 text-xs">
                 <Globe className="h-4 w-4" /> CHF · DE
               </span>
               <Search className="h-5 w-5" />
-              <a href="#konto" className="hover:text-neutral-900 transition" aria-label="Konto">
+              <a href="#konto" className="hover:text-white transition" aria-label="Konto">
                 <User className="h-5 w-5" />
               </a>
-              <a href="#shop" className="hover:text-neutral-900 transition" aria-label="Warenkorb">
+              <a href="#shop" className="hover:text-white transition" aria-label="Warenkorb">
                 <ShoppingCart className="h-5 w-5" />
               </a>
             </div>
@@ -209,8 +206,8 @@ export default function HighDefinitionDemo() {
         </header>
 
         {/* Umzugs-Hinweis */}
-        <div className="border-b border-black/10 bg-neutral-100 py-2 text-center text-sm text-neutral-600">
-          <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-red-600 align-middle" />
+        <div className="border-b border-white/10 bg-neutral-900 py-2 text-center text-sm text-white/60">
+          <span className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-red-500 align-middle" />
           Wir sind umgezogen und richten uns ein — der Webshop läuft normal weiter.
         </div>
 
@@ -576,35 +573,35 @@ export default function HighDefinitionDemo() {
           </div>
         </section>
 
-        <footer id="konto" className="border-t border-black/10 bg-neutral-100">
+        <footer id="konto" className="border-t border-white/10 bg-neutral-950 text-white/60">
           <div className="max-w-6xl mx-auto px-6 py-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
               {/* Marke + Kontakt */}
               <div className="col-span-2 md:col-span-1">
                 <Logo />
-                <p className="mt-4 text-sm text-neutral-500 leading-relaxed">
+                <p className="mt-4 text-sm text-white/50 leading-relaxed">
                   Bild, Ton & Informationstechnologie seit 25 Jahren in Uster.
                 </p>
-                <div className="mt-5 space-y-2 text-sm text-neutral-600">
+                <div className="mt-5 space-y-2 text-sm text-white/70">
                   <div className="flex items-start gap-2">
-                    <MapPin className="mt-0.5 h-4 w-4 text-red-600" /> Zürichstrasse 21, 8610 Uster
+                    <MapPin className="mt-0.5 h-4 w-4 text-red-500" /> Zürichstrasse 21, 8610 Uster
                   </div>
                   <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 text-red-600" /> +41 43 544 08 08
+                    <Phone className="h-4 w-4 text-red-500" /> +41 43 544 08 08
                   </div>
                   <div className="flex items-start gap-2">
-                    <Clock className="mt-0.5 h-4 w-4 text-red-600" /> Mo–Fr 10–12 & 14–18.30, Sa 12–16
+                    <Clock className="mt-0.5 h-4 w-4 text-red-500" /> Mo–Fr 10–12 & 14–18.30, Sa 12–16
                   </div>
                 </div>
               </div>
 
               {/* Sortiment */}
               <div>
-                <div className="text-sm font-semibold">Sortiment</div>
-                <ul className="mt-4 space-y-2 text-sm text-neutral-500">
+                <div className="text-sm font-semibold text-white">Sortiment</div>
+                <ul className="mt-4 space-y-2 text-sm text-white/50">
                   {kategorien.map((k) => (
                     <li key={k.title}>
-                      <a href="#sortiment" className="hover:text-neutral-900 transition">{k.title}</a>
+                      <a href="#sortiment" className="hover:text-white transition">{k.title}</a>
                     </li>
                   ))}
                 </ul>
@@ -612,24 +609,24 @@ export default function HighDefinitionDemo() {
 
               {/* Service */}
               <div>
-                <div className="text-sm font-semibold">Service</div>
-                <ul className="mt-4 space-y-2 text-sm text-neutral-500">
-                  <li><a href="#dienstleistungen" className="hover:text-neutral-900 transition">Dienstleistungen</a></li>
-                  <li><a href="#codefree" className="hover:text-neutral-900 transition">Codefree</a></li>
-                  <li><a href="#abverkauf" className="hover:text-neutral-900 transition">Abverkauf & Demo-Ware</a></li>
-                  <li><a href="#konto" className="hover:text-neutral-900 transition">Login / Registrieren</a></li>
-                  <li><a href="#kontakt" className="hover:text-neutral-900 transition">Kontakt</a></li>
+                <div className="text-sm font-semibold text-white">Service</div>
+                <ul className="mt-4 space-y-2 text-sm text-white/50">
+                  <li><a href="#dienstleistungen" className="hover:text-white transition">Dienstleistungen</a></li>
+                  <li><a href="#codefree" className="hover:text-white transition">Codefree</a></li>
+                  <li><a href="#abverkauf" className="hover:text-white transition">Abverkauf & Demo-Ware</a></li>
+                  <li><a href="#konto" className="hover:text-white transition">Login / Registrieren</a></li>
+                  <li><a href="#kontakt" className="hover:text-white transition">Kontakt</a></li>
                 </ul>
               </div>
 
               {/* Informationen / Rechtliches */}
               <div>
-                <div className="text-sm font-semibold">Informationen</div>
-                <ul className="mt-4 space-y-2 text-sm text-neutral-500">
+                <div className="text-sm font-semibold text-white">Informationen</div>
+                <ul className="mt-4 space-y-2 text-sm text-white/50">
                   {infoLinks.map((l) => (
                     <li key={l.label}>
-                      <a href="#" className="inline-flex items-center gap-2 hover:text-neutral-900 transition">
-                        <l.icon className="h-3.5 w-3.5 text-neutral-400" /> {l.label}
+                      <a href="#" className="inline-flex items-center gap-2 hover:text-white transition">
+                        <l.icon className="h-3.5 w-3.5 text-white/40" /> {l.label}
                       </a>
                     </li>
                   ))}
@@ -637,13 +634,13 @@ export default function HighDefinitionDemo() {
               </div>
             </div>
 
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-black/10 pt-8 text-sm text-neutral-500">
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/50">
               <span>
                 © {new Date().getFullYear()} highdefinition · F. Steinfels Hard- & Software · Uster
               </span>
               <span>
                 Entwurf von{" "}
-                <Link href="/" className="underline hover:text-neutral-900">Hugweb</Link>
+                <Link href="/" className="underline hover:text-white">Hugweb</Link>
               </span>
             </div>
           </div>
