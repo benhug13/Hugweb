@@ -738,7 +738,7 @@ export default function Home() {
             {[
               {
                 name: "Starter",
-                price: "99",
+                price: "198",
                 oldPrice: "396",
                 desc: "Einseitige Visitenkarten-Webseite",
                 features: [
@@ -751,7 +751,7 @@ export default function Home() {
               },
               {
                 name: "Business",
-                price: "149",
+                price: "298",
                 oldPrice: "596",
                 desc: "Die beliebteste Option",
                 highlight: true,
@@ -764,7 +764,7 @@ export default function Home() {
               },
               {
                 name: "Premium",
-                price: "199",
+                price: "398",
                 oldPrice: "796",
                 desc: "Individuelle Sonderlösung",
                 features: [
@@ -789,7 +789,7 @@ export default function Home() {
                       {p.oldPrice} CHF
                     </span>
                     <span className="rounded-full bg-emerald-500 text-white text-xs font-semibold px-2 py-0.5">
-                      −75%
+                      −50%
                     </span>
                   </div>
                   <div className="mt-1 flex items-baseline gap-1">
