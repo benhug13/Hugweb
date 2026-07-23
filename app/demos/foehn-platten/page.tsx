@@ -76,7 +76,7 @@ export default function FoehnPlattenDemo() {
         <section className="relative isolate overflow-hidden bg-neutral-950">
           <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 78% 22%, rgba(217,119,6,0.5), transparent 55%)" }} />
           <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
-          <div className="relative mx-auto flex min-h-[78vh] w-full max-w-6xl items-center px-6 py-24">
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 py-24">
             <div className="max-w-2xl text-white">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400/90">FÖHN PLATTEN AG · Brunnen SZ · seit über 50 Jahren</div>

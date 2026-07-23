@@ -75,7 +75,7 @@ export default function WinkelbuelGarageDemo() {
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-neutral-950">
           <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, rgba(37,99,235,0.55), transparent 55%)" }} />
-          <div className="relative mx-auto flex min-h-[78vh] w-full max-w-6xl items-center px-6 py-24">
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 py-24">
             <div className="max-w-2xl text-white">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-300/90">Winkelbüel Garage AG · Cham ZG</div>

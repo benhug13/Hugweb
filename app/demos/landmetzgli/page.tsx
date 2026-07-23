@@ -66,7 +66,7 @@ export default function LandmetzgliDemo() {
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-rose-950">
           <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 78% 25%, rgba(159,18,57,0.7), transparent 55%)" }} />
-          <div className="relative mx-auto flex min-h-[74vh] w-full max-w-6xl items-center px-6 py-24">
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 py-24">
             <div className="max-w-2xl text-white">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-rose-200/90">Land-Metzgli · Lostorf SO</div>

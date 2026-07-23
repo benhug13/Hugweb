@@ -65,7 +65,7 @@ export default function LandmetzgereiWattenwilDemo() {
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-emerald-950">
           <div className="absolute inset-0 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 80% 25%, rgba(6,95,70,0.75), transparent 55%)" }} />
-          <div className="relative mx-auto flex min-h-[74vh] w-full max-w-6xl items-center px-6 py-24">
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl items-center px-6 py-24">
             <div className="max-w-2xl text-white">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200/90">Landmetzgerei Wattenwil · BE</div>
