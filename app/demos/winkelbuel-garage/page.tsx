@@ -30,12 +30,13 @@ export const metadata = {
 
 const ACCENT = "#3b82f6";
 const LOGO = "https://wb-garage.ch/storage/app/media/logo_1.png";
-// Echte Bilder von wb-garage.ch (400x400 → nur in Kacheln, nicht als Hero)
-const IMG_WB1 = "https://wb-garage.ch/storage/app/media/1.jpg";
-const IMG_WB2 = "https://wb-garage.ch/storage/app/media/2.jpg";
-const IMG_WB3 = "https://wb-garage.ch/storage/app/media/3.jpg";
-// Platzhalter fürs Hero (Werkstatt) — im finalen Projekt durch eigenes Foto ersetzen
+// ACHTUNG: wb-garage.ch/storage/app/media/1–3.jpg sind PERSONEN-Porträts (Team, 400x400)
+// → bewusst NICHT verwendet. Fremde Personenfotos gehören nicht in einen Entwurf.
+// Alle Bilder hier sind Platzhalter, im finalen Projekt durch eigene Fotos ersetzen.
 const IMG_HERO = "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=2000&q=80&auto=format&fit=crop";
+const IMG_1 = "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80&auto=format&fit=crop";
+const IMG_2 = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1400&q=80&auto=format&fit=crop";
+const IMG_3 = "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=1400&q=80&auto=format&fit=crop";
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -57,9 +58,9 @@ const leistungen = [
 ];
 
 const galerie = [
-  { img: IMG_WB1, label: "Occasionen", ort: "Über 200 Fahrzeuge ab Lager", span: "md:col-span-7", h: "h-[24rem]" },
-  { img: IMG_WB2, label: "Werkstatt", ort: "Alle Marken, ein Ansprechpartner", span: "md:col-span-5", h: "h-[24rem]" },
-  { img: IMG_WB3, label: "Service", ort: "MFK · Reifen · Klima", span: "md:col-span-5", h: "h-72" },
+  { img: IMG_1, label: "Occasionen", ort: "Über 200 Fahrzeuge ab Lager", span: "md:col-span-7", h: "h-[24rem]" },
+  { img: IMG_2, label: "Werkstatt", ort: "Alle Marken, ein Ansprechpartner", span: "md:col-span-5", h: "h-[24rem]" },
+  { img: IMG_3, label: "Service", ort: "MFK · Reifen · Klima", span: "md:col-span-5", h: "h-72" },
   { img: IMG_HERO, label: "E-Mobilität", ort: "AVILOO Batterie-Tests", span: "md:col-span-7", h: "h-72" },
 ];
 
@@ -205,7 +206,7 @@ export default function WinkelbuelGarageDemo() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-4 text-xs text-white/35">Teils Beispielbilder — im finalen Projekt durch Ihre eigenen Fotos ersetzbar.</p>
+            <p className="mt-4 text-xs text-white/35">Beispielbilder — im finalen Projekt durch Ihre eigenen Fotos ersetzbar.</p>
           </div>
         </section>
 
@@ -221,10 +222,10 @@ export default function WinkelbuelGarageDemo() {
                   Vom Ölwechsel bis zur MFK, vom Reifenwechsel bis zum Batterie-Check am E-Auto: Wir übernehmen den ganzen Unterhalt — unabhängig von der Marke.
                 </p>
                 <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
-                  <img src={IMG_WB2} alt="Werkstatt" className="h-[42vh] min-h-72 lg:h-[48vh] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+                  <img src={IMG_2} alt="Werkstatt" className="h-[42vh] min-h-72 lg:h-[48vh] w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
-                <div className="mt-6 flex items-center gap-3 text-sm text-white/45">
-                  <span className="h-px w-10" style={{ background: ACCENT }} />
+                <div className="mt-6 text-sm text-white/45">
+                  <span className="mb-3 block h-px w-10" style={{ background: ACCENT }} />
                   Acht Leistungen — ein Ansprechpartner.
                 </div>
               </div>

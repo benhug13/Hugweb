@@ -235,8 +235,8 @@ export default function LandmetzgliDemo() {
                 <div className="overflow-hidden rounded-2xl border border-white/10">
                   <img src={IMG_4} alt="Aus der Metzgerei" className="h-[52vh] min-h-80 w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
-                <div className="mt-6 flex items-center gap-3 text-sm text-white/45">
-                  <span className="h-px w-10" style={{ background: ACCENT }} />
+                <div className="mt-6 text-sm text-white/45">
+                  <span className="mb-3 block h-px w-10" style={{ background: ACCENT }} />
                   Handarbeit statt Fliessband.
                 </div>
               </div>

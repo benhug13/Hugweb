@@ -225,8 +225,8 @@ export default function FoehnPlattenDemo() {
                 <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
                   <img src={IMG_KERAMIK} alt="Feinsteinzeug-Arbeit" className="h-[42vh] min-h-72 lg:h-[48vh] w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
-                <div className="mt-6 flex items-center gap-3 text-sm text-white/45">
-                  <span className="h-px w-10" style={{ background: GOLD }} />
+                <div className="mt-6 text-sm text-white/45">
+                  <span className="mb-3 block h-px w-10" style={{ background: GOLD }} />
                   Acht Leistungen — alles aus einer Hand.
                 </div>
               </div>
