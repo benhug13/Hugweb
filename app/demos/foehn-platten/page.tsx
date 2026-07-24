@@ -213,14 +213,18 @@ export default function FoehnPlattenDemo() {
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
           <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
             <Reveal>
-              <div className="md:sticky md:top-10">
+              <div className="md:sticky md:top-24">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Leistungen</div>
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles rund um die Platte.</h2>
                 <p className="mt-6 text-white/60 leading-relaxed">
                   Von der einzelnen Fliese bis zur XXL-Grossfläche: Wir übernehmen jedes Plattenprojekt — drinnen wie draussen, in Keramik, Naturstein oder Mosaik.
                 </p>
                 <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
-                  <img src={IMG_KERAMIK} alt="Feinsteinzeug-Arbeit" className="h-64 w-full object-cover" />
+                  <img src={IMG_KERAMIK} alt="Feinsteinzeug-Arbeit" className="h-[42vh] min-h-72 lg:h-[48vh] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+                </div>
+                <div className="mt-6 flex items-center gap-3 text-sm text-white/45">
+                  <span className="h-px w-10" style={{ background: GOLD }} />
+                  Acht Leistungen — alles aus einer Hand.
                 </div>
               </div>
             </Reveal>
