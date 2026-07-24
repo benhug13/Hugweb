@@ -208,7 +208,7 @@ export default function FoehnPlattenDemo() {
             <div className="flex flex-1 flex-col justify-center">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: GOLD }}>
-                  Brunnen SZ · seit über 50 Jahren · schweizweit im Einsatz
+                  Brunnen SZ · seit über 50 Jahren
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
