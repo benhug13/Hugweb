@@ -29,13 +29,21 @@ export const metadata = {
 };
 
 const GOLD = "#c9a76b";
-const LOGO = "https://www.foehnplatten.ch/wp/wp-content/uploads/2020/07/01-Logo_Foehn_trsp354.png";
-// Echte Fotos von foehnplatten.ch + Platzhalter (Stock) für die Galerie — im
-// finalen Projekt durch eigene Referenzfotos ersetzbar.
+// Echte Fotos von foehnplatten.ch + Platzhalter (Stock) — im finalen Projekt
+// durch eigene Referenzfotos ersetzbar.
 const IMG_NATURSTEIN = "https://www.foehnplatten.ch/wp/wp-content/uploads/2020/07/Beitrag_Naturstein.png";
 const IMG_KERAMIK = "https://www.foehnplatten.ch/wp/wp-content/uploads/2020/07/Beitrag_FStZ.png";
 const IMG_STOCK1 = "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1400&q=80&auto=format&fit=crop";
 const IMG_STOCK2 = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80&auto=format&fit=crop";
+
+// Wortmarke statt invertiertem Logo-PNG (das wurde auf dunkel unscharf/undeutlich).
+function Wordmark({ className = "" }: { className?: string }) {
+  return (
+    <span className={`font-[family-name:var(--font-display)] font-semibold tracking-tight text-white ${className}`}>
+      FÖHN <span style={{ color: GOLD }}>PLATTEN</span>
+    </span>
+  );
+}
 
 const leistungen = [
   { icon: Layers, title: "Plattenbeläge", desc: "Boden & Wand, sauber verlegt." },
@@ -82,8 +90,8 @@ export default function FoehnPlattenDemo() {
       <div className={`${display.variable} ${body.variable} font-[family-name:var(--font-body)] bg-[#0e0d0b] text-neutral-200`}>
         {/* Header — transparent über Hero */}
         <header className="absolute inset-x-0 top-8 z-40">
-          <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-            <img src={LOGO} alt="FÖHN PLATTEN AG" className="h-9 w-auto brightness-0 invert" />
+          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+            <Wordmark className="text-xl" />
             <nav className="hidden lg:flex items-center gap-9 text-sm font-medium text-white/75">
               {nav.map((n) => (
                 <a key={n.label} href={n.href} className="hover:text-white transition">{n.label}</a>
@@ -95,30 +103,32 @@ export default function FoehnPlattenDemo() {
           </div>
         </header>
 
-        {/* Hero — cinematic Bild */}
+        {/* Hero — cinematic, Inhalt im unteren Drittel (kein Abschneiden) */}
         <section className="relative isolate min-h-screen overflow-hidden">
           <img src={IMG_NATURSTEIN} alt="Naturstein-Plattenarbeit" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-[#0e0d0b]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
-          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 pt-28 pb-44">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-black/55 to-black/40" />
+          {/* animierter Gold-Glow */}
+          <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
+
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-end px-6 pt-32 pb-52">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: GOLD }}>
                 Brunnen SZ · seit über 50 Jahren
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-6 max-w-3xl font-[family-name:var(--font-display)] text-6xl md:text-8xl font-semibold leading-[0.98] tracking-tight text-white">
+              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-display)] text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight text-white">
                 Plattenarbeiten,<br />die <span style={{ color: GOLD }} className="italic">bleiben.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-8 max-w-xl text-lg text-white/70 leading-relaxed">
+              <p className="mt-7 max-w-xl text-lg text-white/70 leading-relaxed">
                 Ihr kompetenter Partner für Plattenarbeiten — von der ersten Beratung bis zum letzten Fugenschnitt. Boden, Wand, Naturstein und Grossformat, in der gesamten Schweiz.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <a href="#kontakt" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-black transition" style={{ backgroundColor: GOLD }}>
+              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                <a href="#kontakt" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: GOLD }}>
                   Projekt anfragen <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
                 </a>
                 <a href="#referenzen" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
@@ -139,7 +149,7 @@ export default function FoehnPlattenDemo() {
                     { k: "CH-weit", v: "im Einsatz" },
                     { k: "Lehrbetrieb", v: "mit Nachwuchs" },
                   ].map((s) => (
-                    <div key={s.v} className="px-6 py-7 text-center">
+                    <div key={s.v} className="px-6 py-6 text-center">
                       <div className="font-[family-name:var(--font-display)] text-3xl font-semibold" style={{ color: GOLD }}>{s.k}</div>
                       <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{s.v}</div>
                     </div>
@@ -150,10 +160,10 @@ export default function FoehnPlattenDemo() {
           </div>
         </section>
 
-        <div className="h-24" />
+        <div className="h-28" />
 
         {/* Intro */}
-        <section className="py-24 md:py-32">
+        <section className="py-24 md:py-28">
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Die Firma</div>
@@ -199,20 +209,36 @@ export default function FoehnPlattenDemo() {
           </div>
         </section>
 
-        {/* Leistungen — dunkel */}
-        <section id="leistungen" className="py-24 md:py-32 border-y border-white/10 bg-[#080706]">
-          <div className="max-w-6xl mx-auto px-6">
+        {/* Leistungen — 2-Spalten (Bild + dichte Liste), nicht leer */}
+        <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#080706] overflow-hidden">
+          <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
+          <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
             <Reveal>
-              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Leistungen</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles rund um die Platte.</h2>
+              <div className="md:sticky md:top-10">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Leistungen</div>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles rund um die Platte.</h2>
+                <p className="mt-6 text-white/60 leading-relaxed">
+                  Von der einzelnen Fliese bis zur XXL-Grossfläche: Wir übernehmen jedes Plattenprojekt — drinnen wie draussen, in Keramik, Naturstein oder Mosaik.
+                </p>
+                <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
+                  <img src={IMG_KERAMIK} alt="Feinsteinzeug-Arbeit" className="h-64 w-full object-cover" />
+                </div>
+              </div>
             </Reveal>
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="divide-y divide-white/10">
               {leistungen.map((s, i) => (
                 <Reveal key={s.title} delay={(i % 4) * 0.05}>
-                  <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:bg-white/[0.06]">
-                    <s.icon className="h-9 w-9" strokeWidth={1.5} style={{ color: GOLD }} />
-                    <div className="mt-5 font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
-                    <p className="mt-2 text-sm text-white/55 leading-relaxed">{s.desc}</p>
+                  <div className="group flex items-start gap-5 py-5">
+                    <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
+                      <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: GOLD }} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
+                        <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
+                      </div>
+                      <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -269,7 +295,7 @@ export default function FoehnPlattenDemo() {
         {/* Footer */}
         <footer className="border-t border-white/10 bg-[#0e0d0b]">
           <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <img src={LOGO} alt="FÖHN PLATTEN AG" className="h-10 w-auto brightness-0 invert" />
+            <Wordmark className="text-lg" />
             <span className="text-sm text-white/40">© {new Date().getFullYear()} FÖHN PLATTEN AG · Brunnen</span>
             <span className="text-sm text-white/40">Entwurf von <Link href="/" className="underline hover:text-white">Hugweb</Link></span>
           </div>
