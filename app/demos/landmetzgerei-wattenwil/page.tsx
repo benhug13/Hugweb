@@ -3,10 +3,10 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  Beef,
-  Ham,
-  UtensilsCrossed,
   Tractor,
+  Siren,
+  ClipboardList,
+  Package,
   Phone,
   MapPin,
   Mail,
@@ -18,19 +18,15 @@ const display = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "70
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
 export const metadata = {
-  title: "Landmetzgerei Wattenwil — Frischfleisch aus der Region | Entwurf von Hugweb",
+  title: "Landmetzgerei Wattenwil — Lohn- & Notschlachtung | Entwurf von Hugweb",
   description:
-    "Entwurf einer modernen Website für die Landmetzgerei Wattenwil: Frischfleisch aus der Region, hausgemachte Wurstwaren, Lohnschlachtung und Partyservice.",
+    "Entwurf einer modernen Website für die Landmetzgerei Wattenwil: Metzgerhandwerk aus Wattenwil, Lohnschlachtung und Notschlachtung durch drei qualifizierte Metzger.",
 };
 
 const ACCENT = "#c8a45c";
-// Auf landmetzgerei.ch gibt es ausser dem Logo keine Fotos → Platzhalter.
-// Im finalen Projekt durch eigene Bilder ersetzen.
-const IMG_HERO = "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=2000&q=80&auto=format&fit=crop";
-const IMG_1 = "https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=80&auto=format&fit=crop";
-const IMG_2 = "https://images.unsplash.com/photo-1516876437184-593fda40c7ce?w=1400&q=80&auto=format&fit=crop";
-const IMG_3 = "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=1400&q=80&auto=format&fit=crop";
-const IMG_4 = "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1400&q=80&auto=format&fit=crop";
+// Auf landmetzgerei.ch gibt es KEINE Fotos (nur das Logo) → bewusst ohne Bilder gebaut,
+// rein grafisch/typografisch statt mit unpassenden Stock-Bildern.
+// Alle Texte stammen 1:1 von landmetzgerei.ch.
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -40,29 +36,17 @@ function Wordmark({ className = "" }: { className?: string }) {
   );
 }
 
-const leistungen = [
-  { icon: Beef, title: "Frischfleisch aus der Region", desc: "Kurze Wege, volle Frische — Sie wissen, wo es herkommt." },
-  { icon: Ham, title: "Hausgemachte Wurstwaren", desc: "Nach traditionellen Rezepten, in eigener Produktion." },
-  { icon: Tractor, title: "Lohn- & ausserplanmässige Schlachtung", desc: "Fachgerecht und regional abgewickelt." },
-  { icon: UtensilsCrossed, title: "Partyservice", desc: "Feine Platten für Familienfeste und Anlässe." },
-];
-
-const galerie = [
-  { img: IMG_1, label: "Frischfleisch", ort: "aus der Nachbarschaft", span: "md:col-span-7", h: "h-[26rem]" },
-  { img: IMG_2, label: "Wurstwaren", ort: "hausgemacht", span: "md:col-span-5", h: "h-[26rem]" },
-  { img: IMG_4, label: "Region", ort: "kurze Wege", span: "md:col-span-5", h: "h-80" },
-  { img: IMG_3, label: "Partyservice", ort: "Platten für jeden Anlass", span: "md:col-span-7", h: "h-80" },
-];
+const tiere = ["Kalb", "Kaninchen", "Kuh", "Lamm", "Rind", "Schaf", "Schwein"];
 
 const prozess = [
-  { n: "01", t: "Anfragen", d: "Schreiben oder rufen Sie uns an — mit Wunsch und Termin." },
-  { n: "02", t: "Beraten", d: "Wir sagen ehrlich, was passt und was es kostet." },
-  { n: "03", t: "Herrichten", d: "Frisch zugeschnitten, gewurstet oder als fertige Platte." },
-  { n: "04", t: "Abholen", d: "Zur vereinbarten Zeit bei uns in Wattenwil bereit." },
+  { n: "01", t: "Verarbeitungsliste ausfüllen", d: "Sie sagen uns, wie das Tier zerlegt und verpackt werden soll." },
+  { n: "02", t: "Termin abmachen", d: "Wir stimmen den Schlachttermin persönlich mit Ihnen ab." },
+  { n: "03", t: "Schlachtung", d: "Fachgerecht durchgeführt — von drei qualifizierten Metzgern." },
+  { n: "04", t: "Zerlegen & Verpacken", d: "Nach Ihren Wünschen zerlegt, verpackt und bereitgestellt." },
 ];
 
 const nav = [
-  { label: "Metzgerei", href: "#firma" },
+  { label: "Über uns", href: "#firma" },
   { label: "Angebot", href: "#leistungen" },
   { label: "Ablauf", href: "#ablauf" },
   { label: "Kontakt", href: "#kontakt" },
@@ -94,28 +78,28 @@ export default function LandmetzgereiWattenwilDemo() {
           </div>
         </header>
 
-        {/* Hero */}
+        {/* Hero — ohne Foto (Kundenseite hat keine): Farbverlauf, Textur, Glow, grosse Type */}
         <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden">
-          <img src={IMG_HERO} alt="Region" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f0c] via-black/60 to-black/45" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-[#0b0f0c] via-[#0b0f0c]/85 to-transparent" />
-          <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-25 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(120% 80% at 20% 0%, #15201a 0%, #0b0f0c 55%, #070a08 100%)" }} />
+          <div className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(115deg, #fff 0 1px, transparent 1px 22px)" }} />
+          <div className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full opacity-25 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
+          <div className="pointer-events-none absolute -left-52 bottom-0 h-[30rem] w-[30rem] rounded-full opacity-15 blur-3xl animate-pulse [animation-duration:9s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 70%)` }} />
 
           <div className="relative mx-auto flex min-h-[calc(100svh-2rem)] w-full max-w-6xl flex-col px-6 pt-24 pb-6">
             <div className="flex flex-1 flex-col justify-center">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: ACCENT }}>
-                  Wattenwil BE · Landmetzgerei
+                  Wattenwil BE · Metzgerhandwerk
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
                 <h1 className="mt-4 max-w-3xl font-[family-name:var(--font-display)] text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-white">
-                  Fleisch aus<br />der <span style={{ color: ACCENT }} className="italic">Region.</span>
+                  Fleischgenuss<br />ohne <span style={{ color: ACCENT }} className="italic">Kompromisse.</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
-                  Frisch, ehrlich und aus der Nachbarschaft: hausgemachte Wurstwaren, feines Frischfleisch und ein Partyservice, auf den man sich verlassen kann.
+                  Lohn- und Notschlachtung aus einer Hand — durchgeführt von drei jungen, hoch qualifizierten Metzgern, mit grosser Sorgfalt und Fachkenntnis.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -123,8 +107,8 @@ export default function LandmetzgereiWattenwilDemo() {
                   <a href="#kontakt" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>
                     Kontakt aufnehmen <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
                   </a>
-                  <a href="#leistungen" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
-                    Unser Angebot
+                  <a href="tel:0783109076" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
+                    <Siren className="h-4 w-4" /> Notfall: 078 310 90 76
                   </a>
                 </div>
               </Reveal>
@@ -134,10 +118,10 @@ export default function LandmetzgereiWattenwilDemo() {
               <div className="mt-10 rounded-2xl border border-white/10 bg-[#121712]/90 backdrop-blur shadow-2xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
                   {[
-                    { k: "Regional", v: "kurze Wege" },
-                    { k: "Hausgemacht", v: "eigene Wurstwaren" },
-                    { k: "Lohnschlachtung", v: "fachgerecht" },
-                    { k: "Partyservice", v: "für jeden Anlass" },
+                    { k: "3", v: "qualifizierte Metzger" },
+                    { k: "Lohnschlachtung", v: "eigene Haltung & Jagd" },
+                    { k: "24 h", v: "erreichbar im Notfall" },
+                    { k: "Tradition", v: "Handwerk aus Wattenwil" },
                   ].map((s) => (
                     <div key={s.v} className="px-5 py-4 md:py-5 text-center">
                       <div className="font-[family-name:var(--font-display)] text-lg md:text-xl font-semibold" style={{ color: ACCENT }}>{s.k}</div>
@@ -150,91 +134,83 @@ export default function LandmetzgereiWattenwilDemo() {
           </div>
         </section>
 
-        {/* Firma */}
+        {/* Über uns */}
         <section id="firma" className="pt-20 md:pt-24 pb-24 md:pb-28">
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
-              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
+              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Über uns</div>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold leading-tight text-white">
-                Handwerk, das nach Region schmeckt.
+                Metzgerhandwerk aus Wattenwil.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5">
               <p className="text-lg text-white/60 leading-relaxed">
-                Die Landmetzgerei Wattenwil steht für kurze Wege und ehrliches Handwerk. Vom Frischfleisch über hausgemachte Wurstwaren bis zur Lohnschlachtung — bei uns wissen Sie, wo Ihr Fleisch herkommt.
+                Wir setzen eine lange Tradition des Fleischerhandwerks in Wattenwil fort und bieten unseren Kunden erstklassige Produkte und Dienstleistungen. Besonders auszeichnen uns die Lohn- und Notschlachtungen — durchgeführt von drei jungen, hoch qualifizierten Metzgern.
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* Galerie */}
-        <section id="galerie" className="py-16 md:py-24">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <div className="flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Einblick</div>
-                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Aus der Nachbarschaft</h2>
-                </div>
-                <a href="#kontakt" className="text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>Anfrage stellen →</a>
-              </div>
-            </Reveal>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-4">
-              {galerie.map((r, i) => (
-                <Reveal key={r.label} delay={(i % 2) * 0.08} className={r.span}>
-                  <div className={`group relative ${r.h} overflow-hidden rounded-2xl border border-white/10`}>
-                    <img src={r.img} alt={r.label} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <div className="font-[family-name:var(--font-display)] text-xl font-semibold text-white">{r.label}</div>
-                      <div className="text-sm text-white/60">{r.ort}</div>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-4 text-xs text-white/35">Beispielbilder — im finalen Projekt durch Ihre eigenen Fotos ersetzbar.</p>
-          </div>
-        </section>
-
-        {/* Angebot — Liste links, grosses Bild rechts (sticky) */}
+        {/* Angebot — die zwei echten Leistungen, gross ausgespielt */}
         <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070a08] overflow-hidden">
           <div className="pointer-events-none absolute -right-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="relative max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Angebot</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles aus einer Hand.</h2>
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Das Beste für Sie</div>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Unser Angebot</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
-                <p className="text-white/60 leading-relaxed">Ob Sonntagsbraten, Wurst für die Tiefkühltruhe oder eine Platte fürs Fest — sagen Sie uns, was Sie brauchen.</p>
+                <p className="text-white/60 leading-relaxed">
+                  Unser Handwerk erlangt immer mehr Seltenheitswert. Für uns steht zu jeder Zeit das Wohlergehen der Tiere an oberster Stelle.
+                </p>
               </Reveal>
             </div>
-            {/* Bild + Liste exakt gleich hoch — Bild waechst mit der Liste mit */}
-            <div className="mt-14 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-            <div className="divide-y divide-white/10">
-              {leistungen.map((s, i) => (
-                <Reveal key={s.title} delay={(i % 4) * 0.05}>
-                  <div className="group flex items-start gap-5 py-5">
-                    <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
-                      <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
-                        <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
-                      </div>
-                      <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
-                    </div>
+
+            <div className="mt-14 grid md:grid-cols-2 gap-6 items-stretch">
+              <Reveal className="h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-white/20">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
+                    <Tractor className="h-6 w-6" strokeWidth={1.6} style={{ color: ACCENT }} />
                   </div>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal delay={0.1} className="h-full">
-              <div className="h-full min-h-[22rem] overflow-hidden rounded-2xl border border-white/10">
-                <img src={IMG_2} alt="Hausgemachte Wurstwaren" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
-              </div>
-            </Reveal>
+                  <h3 className="mt-6 font-[family-name:var(--font-display)] text-2xl font-semibold text-white">Lohnschlachtung</h3>
+                  <p className="mt-4 text-white/60 leading-relaxed">
+                    Wir schlachten in Ihrem Auftrag Tiere aus eigener Haltung oder Jagd. Die Tiere werden anschliessend nach Ihren Wünschen zerlegt und verpackt.
+                  </p>
+                  <div className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Verarbeitungsliste für</div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {tiere.map((t) => (
+                      <span key={t} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">{t}</span>
+                    ))}
+                  </div>
+                  <div className="mt-auto pt-8">
+                    <a href="#kontakt" className="inline-flex items-center gap-2 text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>
+                      Verarbeitungsliste anfordern <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.1} className="h-full">
+                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-white/20">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
+                    <Siren className="h-6 w-6" strokeWidth={1.6} style={{ color: ACCENT }} />
+                  </div>
+                  <h3 className="mt-6 font-[family-name:var(--font-display)] text-2xl font-semibold text-white">Notschlachtung</h3>
+                  <p className="mt-4 text-white/60 leading-relaxed">
+                    In dringenden Fällen unterstützen wir Sie gerne am Hof. Für uns steht zu jeder Zeit das Wohlergehen der Tiere an oberster Stelle.
+                  </p>
+                  <div className="mt-8 rounded-xl border border-white/10 bg-black/30 p-5">
+                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Rund um die Uhr erreichbar</div>
+                    <a href="tel:0783109076" className="mt-2 block font-[family-name:var(--font-display)] text-2xl font-semibold text-white transition hover:opacity-80">
+                      078 310 90 76
+                    </a>
+                  </div>
+                  <div className="mt-auto pt-8 text-sm text-white/45">
+                    Unser Handwerk erlangt immer mehr Seltenheitswert — wir sind da, wenn es zählt.
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -244,7 +220,7 @@ export default function LandmetzgereiWattenwilDemo() {
           <div className="max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Ablauf</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">So läuft eine Bestellung.</h2>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">So läuft eine Lohnschlachtung.</h2>
             </Reveal>
             <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-8">
               {prozess.map((p, i) => (
@@ -263,22 +239,31 @@ export default function LandmetzgereiWattenwilDemo() {
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
-                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Kontakt</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Wir sind für Sie da.</h2>
-                <p className="mt-6 text-white/60 leading-relaxed">Fragen zu Bestellungen, Partyservice oder Lohnschlachtung? Schreiben Sie uns.</p>
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Haben Sie Fragen?</div>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Kontakt</h2>
+                <p className="mt-6 text-white/60 leading-relaxed">
+                  Fragen zu Lohn- und Notschlachtungen beantworten wir Ihnen am liebsten telefonisch, aber auch per E-Mail oder Kontaktformular.
+                </p>
                 <div className="mt-10 space-y-5 text-white/80">
-                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Landmetzgerei Wattenwil<br />Blumensteinstrasse 35b, 3665 Wattenwil</span></div>
+                  <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><span>Metzgerei: <a href="tel:0783118065" className="hover:underline">078 311 80 65</a></span></div>
+                  <div className="flex items-center gap-4"><Siren className="h-5 w-5" style={{ color: ACCENT }} /><span>Notfall (24 h): <a href="tel:0783109076" className="hover:underline">078 310 90 76</a></span></div>
                   <div className="flex items-center gap-4"><Mail className="h-5 w-5" style={{ color: ACCENT }} /><span>info@landmetzgerei.ch</span></div>
-                  <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><span>Telefonische Bestellung willkommen</span></div>
+                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Landmetzgerei Wattenwil<br />Blumensteinstrasse 35b, 3665 Wattenwil</span></div>
+                  <div className="flex items-start gap-4"><ClipboardList className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Verarbeitungsliste für Kalb, Kaninchen, Kuh, Lamm, Rind, Schaf und Schwein</span></div>
+                  <div className="flex items-start gap-4"><Package className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Zerlegt und verpackt nach Ihren Wünschen</span></div>
                 </div>
               </div>
             </Reveal>
             <Reveal delay={0.15}>
               <form className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 space-y-4">
-                <div><label className="mb-2 block text-sm text-white/50">Name</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
-                <div><label className="mb-2 block text-sm text-white/50">E-Mail oder Telefon</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
-                <div><label className="mb-2 block text-sm text-white/50">Ihre Anfrage</label><textarea rows={4} className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
-                <button type="button" className="w-full rounded-full px-6 py-3 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>Anfrage senden</button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div><label className="mb-2 block text-sm text-white/50">Vorname</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
+                  <div><label className="mb-2 block text-sm text-white/50">Nachname</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
+                </div>
+                <div><label className="mb-2 block text-sm text-white/50">E-Mailadresse</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
+                <div><label className="mb-2 block text-sm text-white/50">Telefonnummer</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
+                <div><label className="mb-2 block text-sm text-white/50">Nachricht</label><textarea rows={4} className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#c8a45c] focus:outline-none" /></div>
+                <button type="button" className="w-full rounded-full px-6 py-3 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>Senden</button>
               </form>
             </Reveal>
           </div>

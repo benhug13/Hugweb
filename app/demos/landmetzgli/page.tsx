@@ -33,6 +33,7 @@ const IMG_2 = `${CDN}/20260619_095012-1920w.jpg`;
 const IMG_3 = `${CDN}/20260619_095051-1920w.jpg`;
 const IMG_4 = `${CDN}/20260619_095126-1920w.jpg`;
 const IMG_5 = `${CDN}/20260619_095147-1920w.jpg`;
+const IMG_6 = `${CDN}/20260619_095112-1920w.jpg`;
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -43,24 +44,26 @@ function Wordmark({ className = "" }: { className?: string }) {
 }
 
 const leistungen = [
-  { icon: Beef, title: "Frischfleisch vom Land", desc: "Schweizer Qualität aus der Region — kurze Wege, volle Frische." },
-  { icon: Flame, title: "Grilladen", desc: "Spiesse, Würste und Marinaden, fixfertig für den Grill." },
-  { icon: Sparkles, title: "Hausmacher-Spezialitäten", desc: "Nach eigenen Rezepten hergestellt, in echter Handarbeit." },
-  { icon: UtensilsCrossed, title: "Partyservice & Catering", desc: "Vom Apéro bis zum Fest — wir richten es her." },
+  { icon: Beef, title: "Schweizer Fleisch", desc: "Praktisch sämtliches Fleisch stammt aus Schweizer Produktion — insbesondere das Rindfleisch sucht seinesgleichen." },
+  { icon: Sparkles, title: "Eigene Wursterei", desc: "Würste und Eigenproduktionen aus unserer eigenen Wursterei." },
+  { icon: Flame, title: "Saisonale Grillplatten", desc: "Schön angerichtete Grillplatten bis zum Landmetzgli-Chinoise." },
+  { icon: UtensilsCrossed, title: "Party-Service", desc: "Ein feines Menü vom gelernten Koch — zum selber Schöpfen, für Ihren Anlass." },
 ];
 
 const galerie = [
-  { img: IMG_1, label: "Frischfleisch", ort: "täglich frisch in der Theke", span: "md:col-span-5", h: "h-[26rem]" },
-  { img: IMG_2, label: "Hausmacher", ort: "nach eigenen Rezepten", span: "md:col-span-7", h: "h-[26rem]" },
-  { img: IMG_3, label: "Grilladen", ort: "Spiesse & Würste", span: "md:col-span-7", h: "h-80" },
-  { img: IMG_5, label: "Im Laden", ort: "Lostorf SO", span: "md:col-span-5", h: "h-80" },
+  { img: IMG_1, label: "Frischfleisch", ort: "Schweizer Qualität", span: "md:col-span-5", h: "h-[26rem]" },
+  { img: IMG_2, label: "Aus der Wursterei", ort: "Eigenproduktion", span: "md:col-span-7", h: "h-[26rem]" },
+  { img: IMG_3, label: "Im Selbstbedienungsladen", ort: "Di–So 10–19 Uhr", span: "md:col-span-7", h: "h-80" },
+  { img: IMG_4, label: "Spezialitäten", ort: "auch Nicht-Alltägliches", span: "md:col-span-5", h: "h-80" },
+  { img: IMG_5, label: "Bei uns in Lostorf", ort: "im grossen Bauernhaus", span: "md:col-span-6", h: "h-72" },
+  { img: IMG_6, label: "Party-Service", ort: "Platten & Menüs", span: "md:col-span-6", h: "h-72" },
 ];
 
 const prozess = [
-  { n: "01", t: "Anrufen oder schreiben", d: "Sagen Sie uns, was Sie brauchen — und für wann." },
-  { n: "02", t: "Wir richten her", d: "Frisch zugeschnitten, mariniert oder als fertige Platte." },
-  { n: "03", t: "Abholen", d: "Zur vereinbarten Zeit bei uns in Lostorf bereit." },
-  { n: "04", t: "Geniessen", d: "Ob Grillabend oder Fest — Sie müssen nur noch auftischen." },
+  { n: "01", t: "Vorbestellen", d: "Rufen Sie uns an — so steht bereit, was Sie wünschen." },
+  { n: "02", t: "Wir richten her", d: "Frisch zugeschnitten, als Grillplatte oder als feines Menü." },
+  { n: "03", t: "Abholen", d: "Di–So von 10 bis 19 Uhr im Selbstbedienungsladen in Lostorf." },
+  { n: "04", t: "Geniessen", d: "Sie müssen nur noch auftischen." },
 ];
 
 const nav = [
@@ -117,7 +120,7 @@ export default function LandmetzgliDemo() {
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
-                  Frisches Fleisch, hausgemachte Spezialitäten und ein Partyservice, der jedes Fest rettet — aus einer kleinen Metzgerei mit viel Handarbeit.
+                  Feinstes Schweizer Fleisch, Würste aus eigener Wursterei und ein Party-Service mit feinem Menü — seit 30 Jahren aus dem Solothurner Lostorf.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -136,10 +139,10 @@ export default function LandmetzgliDemo() {
               <div className="mt-10 rounded-2xl border border-white/10 bg-[#1a1210]/90 backdrop-blur shadow-2xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
                   {[
-                    { k: "Vom Land", v: "regionale Qualität" },
-                    { k: "Hausmacher", v: "eigene Rezepte" },
-                    { k: "Partyservice", v: "für jeden Anlass" },
-                    { k: "Di–So", v: "10:00–19:00" },
+                    { k: "30 Jahre", v: "Metzgerei Christen" },
+                    { k: "Di–So", v: "Selbstbedienung 10–19 Uhr" },
+                    { k: "Eigene", v: "Wursterei" },
+                    { k: "Party-Service", v: "Menü vom Koch" },
                   ].map((s) => (
                     <div key={s.v} className="px-5 py-4 md:py-5 text-center">
                       <div className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-semibold" style={{ color: ACCENT }}>{s.k}</div>
@@ -158,13 +161,35 @@ export default function LandmetzgliDemo() {
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold leading-tight text-white">
-                Eine Dorfmetzgerei, wie man sie kaum noch findet.
+                Das Beste vom Land — seit 30 Jahren.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5">
               <p className="text-lg text-white/60 leading-relaxed">
-                Beim Land-Metzgli in Lostorf kommt Qualität vom Land direkt zu Ihnen — ehrlich, regional und ohne Schnickschnack. In der Hauptsaison frisch im Laden, das ganze Jahr über auf Bestellung.
+                Angefangen hat alles vor 30 Jahren im Keller eines kleinen Bauernhauses. Stets frisch und von hoher Qualität gewannen Fleisch und Würste immer mehr an Bekanntheit — weit über die Kantonsgrenzen hinaus. Heute führen Marianne und Ueli Christen ihre Metzgerei in einem schönen grossen Bauernhaus.
               </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Selbstbedienungsladen — echter Hinweis von landmetzgli.ch */}
+        <section className="border-y border-white/10 bg-[#0a0706] py-14">
+          <div className="max-w-5xl mx-auto px-6">
+            <Reveal>
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Neu im Laden</div>
+                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl md:text-3xl font-semibold text-white">
+                    Unser Laden ist ein Selbstbedienungsladen.
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-white/60 leading-relaxed">
+                    Bedienen Sie sich von Dienstag bis Sonntag, 10.00–19.00 Uhr, ganz einfach selbst — oder kaufen Sie weiterhin auf Vorbestellung bei uns ein. Wir freuen uns auf Ihren Besuch.
+                  </p>
+                </div>
+                <a href="#kontakt" className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>
+                  Vorbestellen <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </Reveal>
           </div>
         </section>
@@ -195,7 +220,7 @@ export default function LandmetzgliDemo() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-4 text-xs text-white/35">Ihre eigenen Fotos — jederzeit austauschbar.</p>
+            <p className="mt-4 text-xs text-white/35">Alle Bilder stammen von Ihrer eigenen Website — jederzeit austauschbar.</p>
           </div>
         </section>
 
@@ -209,7 +234,7 @@ export default function LandmetzgliDemo() {
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles aus einer Hand.</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
-                <p className="text-white/60 leading-relaxed">Vom Sonntagsbraten bis zum Grillfest für dreissig Leute — sagen Sie uns, was Sie brauchen, und wir richten es her.</p>
+                <p className="text-white/60 leading-relaxed">Beim Fleisch geht nichts über Schweizer Qualität. Daneben stehen auch nicht alltägliche Spezialitäten wie Känguru- oder Zebrafleisch im Angebot.</p>
               </Reveal>
             </div>
             {/* Bild + Liste exakt gleich hoch — Bild waechst mit der Liste mit */}
@@ -246,7 +271,7 @@ export default function LandmetzgliDemo() {
           <div className="max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Bestellen</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">In vier Schritten zum Fest.</h2>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">So bestellen Sie bei uns.</h2>
             </Reveal>
             <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-8">
               {prozess.map((p, i) => (
@@ -267,12 +292,12 @@ export default function LandmetzgliDemo() {
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Kontakt</div>
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Bestellen & vorbeikommen.</h2>
-                <p className="mt-6 text-white/60 leading-relaxed">Schreiben oder rufen Sie uns an — gerne nehmen wir Ihre Bestellung entgegen.</p>
+                <p className="mt-6 text-white/60 leading-relaxed">Gerne nehmen wir Ihre Aufträge auf Vorbestellung entgegen. Bestellungen per E-Mail sind für Donnerstag, Freitag und Samstag möglich, sonst nach Anfrage.</p>
                 <div className="mt-10 space-y-5 text-white/80">
-                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Land-Metzgli<br />Neue Badstrasse 1, 4654 Lostorf</span></div>
+                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Landmetzgli Christen GmbH<br />Neue Badstrasse 1, 4654 Lostorf/SO</span></div>
                   <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><span>062 298 17 52</span></div>
                   <div className="flex items-center gap-4"><Mail className="h-5 w-5" style={{ color: ACCENT }} /><span>landmetzgli@gmail.com</span></div>
-                  <div className="flex items-start gap-4"><Clock className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Di–So 10:00–19:00 (Hauptsaison)<br />übrige Monate auf telefonische Bestellung</span></div>
+                  <div className="flex items-start gap-4"><Clock className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Selbstbedienungsladen: Di–So 10:00–19:00<br />Telefonisch auf Bestellung: Di–Sa · Fax 062 298 36 15</span></div>
                 </div>
               </div>
             </Reveal>

@@ -11,10 +11,14 @@ import {
   Snowflake,
   ShieldCheck,
   CreditCard,
+  Sparkles,
+  Gauge,
+  Truck,
   Phone,
   MapPin,
   Clock,
   Mail,
+  MessageCircle,
 } from "lucide-react";
 import { Archivo, Inter } from "next/font/google";
 import Reveal from "@/components/Reveal";
@@ -23,20 +27,20 @@ const display = Archivo({ subsets: ["latin"], weight: ["600", "700", "800"], var
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
 export const metadata = {
-  title: "Winkelbüel Garage AG — Occasionen & Werkstatt, Cham ZG | Entwurf von Hugweb",
+  title: "Winkelbüel Garage AG — Wir leben Autos. Occasionen & Werkstatt, Cham ZG | Entwurf von Hugweb",
   description:
-    "Entwurf einer modernen Website für die Winkelbüel Garage AG in Cham: über 200 Occasionen, markenunabhängige Werkstatt, MFK, Service und E-Auto-Batterietests.",
+    "Entwurf einer modernen Website für die Winkelbüel Garage AG in Cham: über 200 Occasionen ab Lager, markenunabhängige Werkstatt, MFK, AVILOO Batterie-Test und Eintausch.",
 };
 
 const ACCENT = "#3b82f6";
+// Alle Bilder & Texte stammen von wb-garage.ch. Die Seite hat ausser dem Logo
+// nur drei Fotos — das sind die Team-Porträts, darum werden sie auch als Team gezeigt.
 const LOGO = "https://wb-garage.ch/storage/app/media/logo_1.png";
-// ACHTUNG: wb-garage.ch/storage/app/media/1–3.jpg sind PERSONEN-Porträts (Team, 400x400)
-// → bewusst NICHT verwendet. Fremde Personenfotos gehören nicht in einen Entwurf.
-// Alle Bilder hier sind Platzhalter, im finalen Projekt durch eigene Fotos ersetzen.
-const IMG_HERO = "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=2000&q=80&auto=format&fit=crop";
-const IMG_1 = "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80&auto=format&fit=crop";
-const IMG_2 = "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1400&q=80&auto=format&fit=crop";
-const IMG_3 = "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=1400&q=80&auto=format&fit=crop";
+const TEAM = [
+  { img: "https://wb-garage.ch/storage/app/media/1.jpg", name: "Marco Stöckli", rolle: "Inhaber" },
+  { img: "https://wb-garage.ch/storage/app/media/2.jpg", name: "Bettina Eberhardt", rolle: "Verkauf" },
+  { img: "https://wb-garage.ch/storage/app/media/3.jpg", name: "Kelvin Krummenacher", rolle: "Verkauf" },
+];
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -46,35 +50,41 @@ function Wordmark({ className = "" }: { className?: string }) {
   );
 }
 
-const leistungen = [
-  { icon: Car, title: "Occasionen-Verkauf", desc: "Über 200 Fahrzeuge ab Lager." },
-  { icon: Wrench, title: "Markenunabhängige Werkstatt", desc: "Service & Reparaturen aller Marken." },
-  { icon: BatteryCharging, title: "AVILOO Batterie-Test", desc: "HV-Batterie-Check für E- & Hybrid-Autos." },
-  { icon: ClipboardCheck, title: "MFK-Vorbereitung", desc: "Wir bringen Ihr Auto sicher durch." },
-  { icon: Disc3, title: "Reifenservice", desc: "Wechsel, Einlagerung, Verkauf." },
-  { icon: Snowflake, title: "Klimaservice", desc: "Prüfen, füllen, warten." },
-  { icon: ShieldCheck, title: "Ankauf & Eintausch", desc: "Fairer Preis für Ihr aktuelles Auto." },
-  { icon: CreditCard, title: "Leasing & Finanzierung", desc: "Passende Lösung zum Wunschauto." },
+// „Unsere Serviceleistungen im Überblick" — Inhalte von wb-garage.ch
+const angebot = [
+  { icon: Car, title: "Grosse Auswahl an Occasionen", desc: "Zu fairen Preisen — vom Kleinwagen bis zum Lieferwagen." },
+  { icon: ClipboardCheck, title: "Frisch ab MFK und Service", desc: "Jedes Fahrzeug wird geprüft bereitgestellt." },
+  { icon: Wrench, title: "Markenunabhängige Werkstatt", desc: "Service und Reparaturen für jede Marke." },
+  { icon: BatteryCharging, title: "AVILOO Batterie-Test", desc: "SOH-Test Ihrer HV-Batterie inkl. Zertifikat — CHF 79.–" },
+  { icon: ShieldCheck, title: "Eintausch & Fahrzeugankauf", desc: "Faire Angebote — auch aus der Ferne." },
+  { icon: ShieldCheck, title: "Garantie auf Wunsch", desc: "Über Quality1 oder NSA." },
+  { icon: Truck, title: "Schweizweite Lieferung", desc: "Zu Top-Konditionen bis vor Ihre Tür." },
+  { icon: CreditCard, title: "Leasing & Finanzierung", desc: "Über die Cembra Money Bank." },
 ];
 
-const galerie = [
-  { img: IMG_1, label: "Occasionen", ort: "Über 200 Fahrzeuge ab Lager", span: "md:col-span-7", h: "h-[24rem]" },
-  { img: IMG_2, label: "Werkstatt", ort: "Alle Marken, ein Ansprechpartner", span: "md:col-span-5", h: "h-[24rem]" },
-  { img: IMG_3, label: "Service", ort: "MFK · Reifen · Klima", span: "md:col-span-5", h: "h-72" },
-  { img: IMG_HERO, label: "E-Mobilität", ort: "AVILOO Batterie-Tests", span: "md:col-span-7", h: "h-72" },
+// „Ihr Fahrzeug" — Werkstattleistungen von wb-garage.ch
+const werkstatt = [
+  { icon: Wrench, t: "Servicearbeiten, Reparaturen, Garantieanfragen" },
+  { icon: Gauge, t: "Fahrzeugdiagnose" },
+  { icon: ClipboardCheck, t: "Bereitstellung / Durchführung der MFK" },
+  { icon: Disc3, t: "Lenkgeometrie" },
+  { icon: Snowflake, t: "Klimaservice" },
+  { icon: ShieldCheck, t: "Abwicklung Schadenfall" },
+  { icon: Sparkles, t: "Fahrzeugaufbereitung (Polieren, Lackpflege, Reinigung)" },
+  { icon: Car, t: "Tuning / Anbauteile (z. B. Anhängerkupplung)" },
+  { icon: Disc3, t: "Reifenservice / Reifenlager / Felgen" },
+  { icon: ShieldCheck, t: "Steinschlagreparatur und Scheibentausch" },
+  { icon: Gauge, t: "Überprüfung Diesel-Partikelfilter (Messung vor Ort)" },
+  { icon: BatteryCharging, t: "SOH-Test inkl. Zertifikat Ihrer HV-Batterie" },
 ];
 
-const prozess = [
-  { n: "01", t: "Anfrage", d: "Sie sagen uns, was ansteht — Kauf, Service oder MFK." },
-  { n: "02", t: "Termin & Offerte", d: "Wir melden uns rasch mit Termin und transparentem Preis." },
-  { n: "03", t: "Werkstatt", d: "Fachgerechte Arbeit vom eingespielten Team." },
-  { n: "04", t: "Übergabe", d: "Sauberes Auto, alles erklärt — Sie fahren beruhigt weiter." },
-];
+const partner = ["AGVS Partner", "AXA Partner", "Quality1", "NSA", "Cembra Money Bank", "AVILOO"];
 
 const nav = [
-  { label: "Occasionen", href: "#occasionen" },
-  { label: "Werkstatt", href: "#leistungen" },
-  { label: "Ablauf", href: "#ablauf" },
+  { label: "Fahrzeuge", href: "#fahrzeuge" },
+  { label: "Angebot", href: "#angebot" },
+  { label: "Werkstatt", href: "#werkstatt" },
+  { label: "Team", href: "#team" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
@@ -93,7 +103,7 @@ export default function WinkelbuelGarageDemo() {
         <header className="absolute inset-x-0 top-8 z-40">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <img src={LOGO} alt="Winkelbüel Garage AG" className="h-9 w-auto brightness-0 invert" />
-            <nav className="hidden lg:flex items-center gap-9 text-sm font-medium text-white/75">
+            <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/75">
               {nav.map((n) => (
                 <a key={n.label} href={n.href} className="hover:text-white transition">{n.label}</a>
               ))}
@@ -104,18 +114,19 @@ export default function WinkelbuelGarageDemo() {
           </div>
         </header>
 
-        {/* Hero — Höhe = Fenster minus Entwurf-Balken, Stat-Leiste im Hero-Fuss */}
+        {/* Hero — ohne Foto: wb-garage.ch hat ausser den Team-Porträts keine Bilder.
+            Darum grafisch (Verlauf, Raster, Glow) statt mit unpassendem Stock-Bild. */}
         <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden">
-          <img src={IMG_HERO} alt="Werkstatt" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c10] via-black/60 to-black/45" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-[#0a0c10] via-[#0a0c10]/85 to-transparent" />
-          <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(120% 85% at 78% 10%, #16233c 0%, #0a0c10 55%, #070910 100%)" }} />
+          <div className="pointer-events-none absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
+          <div className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
+          <div className="pointer-events-none absolute -left-52 bottom-0 h-[30rem] w-[30rem] rounded-full opacity-15 blur-3xl animate-pulse [animation-duration:9s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 70%)` }} />
 
           <div className="relative mx-auto flex min-h-[calc(100svh-2rem)] w-full max-w-6xl flex-col px-6 pt-24 pb-6">
             <div className="flex flex-1 flex-col justify-center">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: ACCENT }}>
-                  Cham ZG · markenunabhängig
+                  Cham ZG · einer der grössten Occasion-Händler der Schweiz
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
@@ -125,15 +136,15 @@ export default function WinkelbuelGarageDemo() {
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
-                  Über 200 Occasionen ab Lager und eine Werkstatt, die alles rund ums Fahrzeug übernimmt — persönlich, ehrlich und für jede Marke.
+                  Autos sind nicht nur ein Mittel zum Zweck, Autos sind Emotionen. Dafür stehen wir — und legen alles daran, Sie zufrieden mobil zu halten.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
                 <div className="mt-7 flex flex-col sm:flex-row gap-4">
-                  <a href="#occasionen" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>
-                    Occasionen ansehen <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
+                  <a href="#fahrzeuge" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>
+                    Das passende Auto finden <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
                   </a>
-                  <a href="#leistungen" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
+                  <a href="#werkstatt" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 font-semibold text-white hover:bg-white/10 transition">
                     Werkstatt & Service
                   </a>
                 </div>
@@ -146,8 +157,8 @@ export default function WinkelbuelGarageDemo() {
                   {[
                     { k: "200+", v: "Occasionen ab Lager" },
                     { k: "Alle", v: "Marken-Service" },
+                    { k: "6", v: "Arbeitsplätze" },
                     { k: "AGVS", v: "& AXA Partner" },
-                    { k: "E-Auto", v: "Batterie-Tests" },
                   ].map((s) => (
                     <div key={s.v} className="px-5 py-4 md:py-5 text-center">
                       <div className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold" style={{ color: ACCENT }}>{s.k}</div>
@@ -160,80 +171,53 @@ export default function WinkelbuelGarageDemo() {
           </div>
         </section>
 
-        {/* Occasionen */}
-        <section id="occasionen" className="pt-20 md:pt-24 pb-24 md:pb-28">
+        {/* Fahrzeuge */}
+        <section id="fahrzeuge" className="pt-20 md:pt-24 pb-24 md:pb-28">
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
-              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Occasionen</div>
+              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Fahrzeuge</div>
               <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold leading-tight text-white">
-                Über 200 geprüfte Fahrzeuge — für jedes Budget.
+                Das passende Auto für jedermann.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5">
               <p className="text-lg text-white/60 leading-relaxed">
-                Vom günstigen Alltagsauto bis zum Familienwagen: In unserem Lager finden Sie eine grosse Auswahl. Kommen Sie vorbei oder fragen Sie direkt nach Ihrem Wunschfahrzeug.
+                Dank einem ständigen Lagerbestand von über 200 Occasionen bieten wir für jeden Anspruch und jedes Budget das passende Fahrzeug. Nichts gefunden? Unsere Vorlaufliste und unser länderübergreifendes Netzwerk lassen Ihnen bestimmt ein Angebot zukommen.
               </p>
               <a href="#kontakt" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>
                 Wunschauto anfragen <ArrowRight className="h-4 w-4" />
               </a>
             </Reveal>
           </div>
-        </section>
-
-        {/* Galerie */}
-        <section id="galerie" className="py-16 md:py-24">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="mt-10 max-w-5xl mx-auto px-6">
             <Reveal>
-              <div className="flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Einblick</div>
-                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Bei uns in Cham</h2>
-                </div>
-                <a href="#kontakt" className="text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>Termin vereinbaren →</a>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-white/60">
+                <span className="font-semibold text-white">Wichtig:</span> Bitte vereinbaren Sie zwingend einen Termin — nicht alle Fahrzeuge sind vor Ort gelagert.
+                Terminvereinbarung unter <a href="tel:+41417902323" className="underline hover:text-white">041 790 23 23</a> oder <span className="text-white">verkauf@wb-garage.ch</span>.
               </div>
             </Reveal>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-4">
-              {galerie.map((r, i) => (
-                <Reveal key={r.label} delay={(i % 2) * 0.08} className={r.span}>
-                  <div className={`group relative ${r.h} overflow-hidden rounded-2xl border border-white/10`}>
-                    <img src={r.img} alt={r.label} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <div className="font-[family-name:var(--font-display)] text-xl font-bold text-white">{r.label}</div>
-                      <div className="text-sm text-white/60">{r.ort}</div>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-4 text-xs text-white/35">Beispielbilder — im finalen Projekt durch Ihre eigenen Fotos ersetzbar.</p>
           </div>
         </section>
 
-        {/* Leistungen */}
-        <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070910] overflow-hidden">
+        {/* Angebot */}
+        <section id="angebot" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070910] overflow-hidden">
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="relative max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Werkstatt &amp; Service</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles rund ums Auto.</h2>
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Service</div>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Unsere Leistungen im Überblick</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
-                <p className="text-white/60 leading-relaxed">Vom Ölwechsel bis zur MFK, vom Reifenwechsel bis zum Batterie-Check am E-Auto: Wir übernehmen den ganzen Unterhalt — unabhängig von der Marke.</p>
+                <p className="text-white/60 leading-relaxed">
+                  Vom Occasionskauf über die Finanzierung bis zum Service: Bei uns bekommen Sie alles aus einer Hand — persönlich und markenunabhängig.
+                </p>
               </Reveal>
             </div>
-            {/* Bild + Liste exakt gleich hoch — Bild waechst mit der Liste mit */}
-            <div className="mt-14 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-            <Reveal className="h-full">
-              <div className="h-full min-h-[22rem] overflow-hidden rounded-2xl border border-white/10">
-                <img src={IMG_2} alt="Werkstatt" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
-              </div>
-            </Reveal>
-            <div className="divide-y divide-white/10">
-              {leistungen.map((s, i) => (
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16">
+              {angebot.map((s, i) => (
                 <Reveal key={s.title} delay={(i % 4) * 0.05}>
-                  <div className="group flex items-start gap-5 py-5">
+                  <div className="group flex items-start gap-5 border-t border-white/10 py-6">
                     <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
                       <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
                     </div>
@@ -248,23 +232,85 @@ export default function WinkelbuelGarageDemo() {
                 </Reveal>
               ))}
             </div>
-            </div>
           </div>
         </section>
 
-        {/* Ablauf */}
-        <section id="ablauf" className="py-24 md:py-32">
+        {/* Werkstatt */}
+        <section id="werkstatt" className="py-24 md:py-32">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-12 gap-8 items-end">
+              <Reveal className="md:col-span-7">
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Ihr Fahrzeug</div>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Rundum-Service zu fairen Ansätzen.</h2>
+              </Reveal>
+              <Reveal delay={0.1} className="md:col-span-5">
+                <p className="text-white/60 leading-relaxed">
+                  Dank moderner Einrichtung und geschultem Fachpersonal bieten wir Service zu fairen Stundenansätzen. Unsere Mitarbeiter arbeiten mit neuester Diagnose-Ausrüstung und wickeln dank sechs Arbeitsplätzen Ihre Aufträge effizient ab. Zudem profitieren Sie von Vorteilspreisen dank freiem Ersatzteileinkauf.
+                </p>
+              </Reveal>
+            </div>
+            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {werkstatt.map((w, i) => (
+                <Reveal key={w.t} delay={(i % 3) * 0.05}>
+                  <div className="group flex h-full items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-white/20 hover:bg-white/[0.04]">
+                    <w.icon className="mt-0.5 h-5 w-5 shrink-0" strokeWidth={1.6} style={{ color: ACCENT }} />
+                    <span className="text-sm text-white/75 leading-relaxed">{w.t}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.1}>
+              <div className="mt-12 flex flex-wrap items-center gap-3">
+                {partner.map((p) => (
+                  <span key={p} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs uppercase tracking-wider text-white/50">{p}</span>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* E-Mobilität — AVILOO */}
+        <section className="border-y border-white/10 bg-[#070910] py-20">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-center">
+            <Reveal className="md:col-span-7">
+              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>E-Mobilität</div>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Voll geladen. Volle Reichweite?</h2>
+              <p className="mt-5 text-white/60 leading-relaxed">
+                Wie fit ist die HV-Batterie von Ihrem E-Auto oder Plug-in-Hybrid? Jetzt testen und absichern — inklusive Zertifikat.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1} className="md:col-span-5">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
+                <BatteryCharging className="mx-auto h-8 w-8" strokeWidth={1.5} style={{ color: ACCENT }} />
+                <div className="mt-4 font-[family-name:var(--font-display)] text-4xl font-extrabold text-white">CHF 79.–</div>
+                <div className="mt-1 text-sm text-white/50">AVILOO Batterie-Test inkl. Zertifikat</div>
+                <a href="#kontakt" className="mt-6 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>
+                  Test buchen <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Team — die einzigen echten Fotos der Kundenseite */}
+        <section id="team" className="py-24 md:py-32">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal>
-              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Ablauf</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">So einfach geht&apos;s.</h2>
+              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Team</div>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Ihre Ansprechpersonen</h2>
             </Reveal>
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-8">
-              {prozess.map((p, i) => (
-                <Reveal key={p.n} delay={i * 0.06}>
-                  <div className="font-[family-name:var(--font-display)] text-5xl font-extrabold" style={{ color: ACCENT }}>{p.n}</div>
-                  <div className="mt-4 font-[family-name:var(--font-display)] text-xl font-semibold text-white">{p.t}</div>
-                  <p className="mt-2 text-sm text-white/55 leading-relaxed">{p.d}</p>
+            <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {TEAM.map((t, i) => (
+                <Reveal key={t.name} delay={i * 0.08}>
+                  <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
+                    <div className="aspect-square overflow-hidden">
+                      <img src={t.img} alt={t.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                    </div>
+                    <div className="p-6">
+                      <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{t.name}</div>
+                      <div className="mt-1 text-sm" style={{ color: ACCENT }}>{t.rolle}</div>
+                    </div>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -277,13 +323,17 @@ export default function WinkelbuelGarageDemo() {
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Kontakt</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Fahren Sie bei uns vorbei.</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Besuchen Sie uns.</h2>
                 <p className="mt-6 text-white/60 leading-relaxed">Ob Kauf, Service oder MFK — schreiben Sie uns kurz, wir melden uns rasch zurück.</p>
                 <div className="mt-10 space-y-5 text-white/80">
-                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Winkelbüel Garage AG<br />Sinserstrasse 400, 6330 Cham</span></div>
-                  <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><span>+41 41 790 23 23</span></div>
-                  <div className="flex items-center gap-4"><Mail className="h-5 w-5" style={{ color: ACCENT }} /><span>info@wb-garage.ch</span></div>
-                  <div className="flex items-start gap-4"><Clock className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Verkauf: Mo–Fr 8–18:30 · Sa 9–15<br />Werkstatt: Mo–Fr 7:30–17:30</span></div>
+                  <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Winkelbüel Garage AG<br />Sinserstrasse 400, 6330 Cham<br /><span className="text-sm text-white/45">Für die Navigation: Sinserstrasse 400, 6332 Hagendorn</span></span></div>
+                  <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><a href="tel:+41417902323" className="hover:underline">+41 41 790 23 23</a></div>
+                  <div className="flex items-center gap-4"><MessageCircle className="h-5 w-5" style={{ color: ACCENT }} /><span>WhatsApp 076 745 09 89</span></div>
+                  <div className="flex items-center gap-4"><Mail className="h-5 w-5" style={{ color: ACCENT }} /><span>info@wb-garage.ch · verkauf@wb-garage.ch</span></div>
+                  <div className="flex items-start gap-4"><Clock className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>
+                    <span className="font-semibold text-white">Verkauf:</span> Mo–Fr 08.00–12.00 / 13.30–18.30 · Sa 09.00–15.00<br />
+                    <span className="font-semibold text-white">Werkstatt:</span> Mo–Fr 07.30–12.00 / 13.30–17.30 · Sa/So geschlossen
+                  </span></div>
                 </div>
               </div>
             </Reveal>
@@ -302,7 +352,7 @@ export default function WinkelbuelGarageDemo() {
         <footer className="border-t border-white/10 bg-[#0a0c10]">
           <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <Wordmark className="text-lg" />
-            <span className="text-sm text-white/40">© {new Date().getFullYear()} Winkelbüel Garage AG · Cham</span>
+            <span className="text-sm text-white/40">© {new Date().getFullYear()} Winkelbüel Garage AG · Sinserstrasse 400, 6330 Cham</span>
             <span className="text-sm text-white/40">Entwurf von <Link href="/" className="underline hover:text-white">Hugweb</Link></span>
           </div>
         </footer>
