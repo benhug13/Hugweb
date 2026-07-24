@@ -110,14 +110,14 @@ export default function FoehnPlattenDemo() {
           {/* animierter Gold-Glow */}
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
 
-          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-end px-6 pt-32 pb-52">
+          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 pt-28 pb-28">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: GOLD }}>
                 Brunnen SZ · seit über 50 Jahren
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-display)] text-5xl md:text-7xl font-semibold leading-[1.02] tracking-tight text-white">
+              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-display)] text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight text-white">
                 Plattenarbeiten,<br />die <span style={{ color: GOLD }} className="italic">bleiben.</span>
               </h1>
             </Reveal>
@@ -138,29 +138,28 @@ export default function FoehnPlattenDemo() {
             </Reveal>
           </div>
 
-          {/* Schwebende Stat-Leiste */}
-          <div className="absolute inset-x-0 bottom-0 z-10">
-            <div className="mx-auto max-w-6xl px-6">
-              <div className="translate-y-1/2 rounded-2xl border border-white/10 bg-[#16130f]/95 backdrop-blur shadow-2xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
-                  {[
-                    { k: "50+", v: "Jahre Erfahrung" },
-                    { k: "~65", v: "Mitarbeitende" },
-                    { k: "CH-weit", v: "im Einsatz" },
-                    { k: "Lehrbetrieb", v: "mit Nachwuchs" },
-                  ].map((s) => (
-                    <div key={s.v} className="px-6 py-6 text-center">
-                      <div className="font-[family-name:var(--font-display)] text-3xl font-semibold" style={{ color: GOLD }}>{s.k}</div>
-                      <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{s.v}</div>
-                    </div>
-                  ))}
-                </div>
+        </section>
+
+        {/* Stat-Leiste — über den Hero-Rand gezogen */}
+        <div className="relative z-10 -mt-14 md:-mt-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="rounded-2xl border border-white/10 bg-[#16130f]/95 backdrop-blur shadow-2xl">
+              <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
+                {[
+                  { k: "50+", v: "Jahre Erfahrung" },
+                  { k: "~65", v: "Mitarbeitende" },
+                  { k: "CH-weit", v: "im Einsatz" },
+                  { k: "Lehrbetrieb", v: "mit Nachwuchs" },
+                ].map((s) => (
+                  <div key={s.v} className="px-6 py-6 text-center">
+                    <div className="font-[family-name:var(--font-display)] text-3xl font-semibold" style={{ color: GOLD }}>{s.k}</div>
+                    <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{s.v}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </section>
-
-        <div className="h-28" />
+        </div>
 
         {/* Intro */}
         <section className="py-24 md:py-28">
