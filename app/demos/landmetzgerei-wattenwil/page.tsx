@@ -200,41 +200,42 @@ export default function LandmetzgereiWattenwilDemo() {
         {/* Angebot — Liste links, grosses Bild rechts (sticky) */}
         <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070a08] overflow-hidden">
           <div className="pointer-events-none absolute -right-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
-          <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div>
-              <Reveal>
+          <div className="relative max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-12 gap-8 items-end">
+              <Reveal className="md:col-span-7">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Angebot</div>
                 <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles aus einer Hand.</h2>
-                <p className="mt-6 text-white/60 leading-relaxed">
-                  Ob Sonntagsbraten, Wurst für die Tiefkühltruhe oder eine Platte fürs Fest — sagen Sie uns, was Sie brauchen.
-                </p>
               </Reveal>
-              <div className="mt-8 divide-y divide-white/10">
-                {leistungen.map((s, i) => (
-                  <Reveal key={s.title} delay={i * 0.06}>
-                    <div className="group flex items-start gap-5 py-6">
-                      <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
-                        <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
-                          <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
-                        </div>
-                        <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+              <Reveal delay={0.1} className="md:col-span-5">
+                <p className="text-white/60 leading-relaxed">Ob Sonntagsbraten, Wurst für die Tiefkühltruhe oder eine Platte fürs Fest — sagen Sie uns, was Sie brauchen.</p>
+              </Reveal>
             </div>
-            <Reveal delay={0.1}>
-              <div className="md:sticky md:top-24">
-                <div className="overflow-hidden rounded-2xl border border-white/10">
-                  <img src={IMG_2} alt="Hausgemachte Wurstwaren" className="h-[52vh] min-h-80 w-full object-cover transition duration-700 hover:scale-[1.03]" />
-                </div>
+            {/* Bild + Liste exakt gleich hoch — Bild waechst mit der Liste mit */}
+            <div className="mt-14 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            <div className="divide-y divide-white/10">
+              {leistungen.map((s, i) => (
+                <Reveal key={s.title} delay={(i % 4) * 0.05}>
+                  <div className="group flex items-start gap-5 py-5">
+                    <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
+                      <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
+                        <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
+                      </div>
+                      <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.1} className="h-full">
+              <div className="h-full min-h-[22rem] overflow-hidden rounded-2xl border border-white/10">
+                <img src={IMG_2} alt="Hausgemachte Wurstwaren" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
               </div>
             </Reveal>
+            </div>
           </div>
         </section>
 
