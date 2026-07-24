@@ -233,10 +233,6 @@ export default function LandmetzgereiWattenwilDemo() {
                 <div className="overflow-hidden rounded-2xl border border-white/10">
                   <img src={IMG_2} alt="Hausgemachte Wurstwaren" className="h-[52vh] min-h-80 w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
-                <div className="mt-6 text-sm text-white/45">
-                  <span className="mb-3 block h-px w-10" style={{ background: ACCENT }} />
-                  Handwerk statt Industrie.
-                </div>
               </div>
             </Reveal>
           </div>

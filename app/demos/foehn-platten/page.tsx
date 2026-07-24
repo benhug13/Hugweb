@@ -225,14 +225,26 @@ export default function FoehnPlattenDemo() {
                 <div className="mt-8 overflow-hidden rounded-2xl border border-white/10">
                   <img src={IMG_KERAMIK} alt="Feinsteinzeug-Arbeit" className="h-[42vh] min-h-72 lg:h-[48vh] w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
-                <div className="mt-6 text-sm text-white/45">
-                  <span className="mb-3 block h-px w-10" style={{ background: GOLD }} />
-                  Acht Leistungen — alles aus einer Hand.
+                <div className="mt-8 border-t border-white/10">
+                  {(() => { const s = leistungen[leistungen.length - 1]; return (
+                    <div className="group flex items-start gap-5 py-5">
+                      <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
+                        <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: GOLD }} />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
+                          <span className="text-xs tabular-nums text-white/30">0{leistungen.length}</span>
+                        </div>
+                        <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
+                      </div>
+                    </div>
+                  ); })()}
                 </div>
               </div>
             </Reveal>
             <div className="divide-y divide-white/10">
-              {leistungen.map((s, i) => (
+              {leistungen.slice(0, -1).map((s, i) => (
                 <Reveal key={s.title} delay={(i % 4) * 0.05}>
                   <div className="group flex items-start gap-5 py-5">
                     <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
