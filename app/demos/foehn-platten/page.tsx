@@ -103,8 +103,9 @@ export default function FoehnPlattenDemo() {
           </div>
         </header>
 
-        {/* Hero — cinematic, Inhalt im unteren Drittel (kein Abschneiden) */}
-        <section className="relative isolate min-h-screen overflow-hidden">
+        {/* Hero — cinematic; Höhe = Fenster MINUS Entwurf-Balken, Stat-Leiste liegt IM Hero-Fuss
+            → alles passt auf einen Screen, nichts wird unten abgeschnitten */}
+        <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden">
           <img src={IMG_NATURSTEIN} alt="Naturstein-Plattenarbeit" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-black/55 to-black/40" />
           {/* weicher Auslauf nach unten — kein harter Bildschnitt */}
@@ -112,24 +113,25 @@ export default function FoehnPlattenDemo() {
           {/* animierter Gold-Glow */}
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
 
-          <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 pt-28 pb-28">
+          <div className="relative mx-auto flex min-h-[calc(100svh-2rem)] w-full max-w-6xl flex-col px-6 pt-24 pb-6">
+            <div className="flex flex-1 flex-col justify-center">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: GOLD }}>
                 Brunnen SZ · seit über 50 Jahren
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-display)] text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight text-white">
+              <h1 className="mt-4 max-w-3xl font-[family-name:var(--font-display)] text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-white">
                 Plattenarbeiten,<br />die <span style={{ color: GOLD }} className="italic">bleiben.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-7 max-w-xl text-lg text-white/70 leading-relaxed">
+              <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
                 Ihr kompetenter Partner für Plattenarbeiten — von der ersten Beratung bis zum letzten Fugenschnitt. Boden, Wand, Naturstein und Grossformat, in der gesamten Schweiz.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
-              <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <div className="mt-7 flex flex-col sm:flex-row gap-4">
                 <a href="#kontakt" className="group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: GOLD }}>
                   Projekt anfragen <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
                 </a>
@@ -138,33 +140,32 @@ export default function FoehnPlattenDemo() {
                 </a>
               </div>
             </Reveal>
+            </div>
+
+            {/* Stat-Leiste — im Hero-Fuss, damit sie nie unter die Bildschirmkante rutscht */}
+            <Reveal delay={0.4}>
+              <div className="mt-10 rounded-2xl border border-white/10 bg-[#16130f]/90 backdrop-blur shadow-2xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
+                  {[
+                    { k: "50+", v: "Jahre Erfahrung" },
+                    { k: "~65", v: "Mitarbeitende" },
+                    { k: "CH-weit", v: "im Einsatz" },
+                    { k: "Lehrbetrieb", v: "mit Nachwuchs" },
+                  ].map((s) => (
+                    <div key={s.v} className="px-5 py-4 md:py-5 text-center">
+                      <div className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-semibold" style={{ color: GOLD }}>{s.k}</div>
+                      <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">{s.v}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
 
         </section>
 
-        {/* Stat-Leiste — über den Hero-Rand gezogen */}
-        <div className="relative z-10 -mt-14 md:-mt-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="rounded-2xl border border-white/10 bg-[#16130f]/95 backdrop-blur shadow-2xl">
-              <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
-                {[
-                  { k: "50+", v: "Jahre Erfahrung" },
-                  { k: "~65", v: "Mitarbeitende" },
-                  { k: "CH-weit", v: "im Einsatz" },
-                  { k: "Lehrbetrieb", v: "mit Nachwuchs" },
-                ].map((s) => (
-                  <div key={s.v} className="px-6 py-6 text-center">
-                    <div className="font-[family-name:var(--font-display)] text-3xl font-semibold" style={{ color: GOLD }}>{s.k}</div>
-                    <div className="mt-1 text-xs uppercase tracking-wider text-white/50">{s.v}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Intro */}
-        <section className="pt-16 md:pt-20 pb-24 md:pb-28">
+        <section className="pt-20 md:pt-24 pb-24 md:pb-28">
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Die Firma</div>
