@@ -107,6 +107,8 @@ export default function FoehnPlattenDemo() {
         <section className="relative isolate min-h-screen overflow-hidden">
           <img src={IMG_NATURSTEIN} alt="Naturstein-Plattenarbeit" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d0b] via-black/55 to-black/40" />
+          {/* weicher Auslauf nach unten — kein harter Bildschnitt */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-[#0e0d0b] via-[#0e0d0b]/85 to-transparent" />
           {/* animierter Gold-Glow */}
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 65%)` }} />
 
@@ -162,7 +164,7 @@ export default function FoehnPlattenDemo() {
         </div>
 
         {/* Intro */}
-        <section className="py-24 md:py-28">
+        <section className="pt-16 md:pt-20 pb-24 md:pb-28">
           <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: GOLD }}>Die Firma</div>
