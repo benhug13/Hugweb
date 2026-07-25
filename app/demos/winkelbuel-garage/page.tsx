@@ -172,7 +172,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Fahrzeuge */}
-        <section id="fahrzeuge" className="flex min-h-[calc(100svh-2rem)] items-center py-14 md: md:">
+        <section id="fahrzeuge" className="py-16 md:py-20 md: md:">
           <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Fahrzeuge</div>
@@ -200,7 +200,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Angebot */}
-        <section id="angebot" className="flex min-h-[calc(100svh-2rem)] items-center py-14 relative border-y border-white/10 bg-[#070910] overflow-hidden">
+        <section id="angebot" className="py-16 md:py-20 relative border-y border-white/10 bg-[#070910] overflow-hidden">
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="relative w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
@@ -236,7 +236,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Werkstatt */}
-        <section id="werkstatt" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="werkstatt" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
@@ -270,7 +270,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* E-Mobilität — AVILOO */}
-        <section className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-y border-white/10 bg-[#070910]">
+        <section className="py-16 md:py-20 border-y border-white/10 bg-[#070910]">
           <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>E-Mobilität</div>
@@ -293,7 +293,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Team — die einzigen echten Fotos der Kundenseite */}
-        <section id="team" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="team" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Team</div>
@@ -318,7 +318,7 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-t border-white/10 bg-[#070910]">
+        <section id="kontakt" className="py-16 md:py-20 border-t border-white/10 bg-[#070910]">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>

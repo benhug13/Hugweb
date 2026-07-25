@@ -94,7 +94,7 @@ export default function AnwaltDemo() {
           </div>
         </section>
 
-        <section id="rechtsgebiete" className="flex min-h-[calc(100svh-7rem)] items-center py-14">
+        <section id="rechtsgebiete" className="py-16 md:py-20">
           <div className="w-full max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-7">
@@ -131,7 +131,7 @@ export default function AnwaltDemo() {
           </div>
         </section>
 
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5 bg-white/[0.02]">
+        <section className="py-16 md:py-20 border-t border-white/5 bg-white/[0.02]">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Arbeitsweise</div>
@@ -155,7 +155,7 @@ export default function AnwaltDemo() {
           </div>
         </section>
 
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14">
+        <section className="py-16 md:py-20">
           <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="font-serif text-3xl md:text-5xl leading-[1.2] tracking-tight">
@@ -168,7 +168,7 @@ export default function AnwaltDemo() {
           </div>
         </section>
 
-        <section id="team" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5">
+        <section id="team" className="py-16 md:py-20 border-t border-white/5">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Partner</div>
@@ -198,7 +198,7 @@ export default function AnwaltDemo() {
           </div>
         </section>
 
-        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5 bg-white/[0.02]">
+        <section id="kontakt" className="py-16 md:py-20 border-t border-white/5 bg-white/[0.02]">
           <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>

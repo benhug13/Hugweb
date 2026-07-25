@@ -19,7 +19,7 @@ export default function ZahnarztDemo() {
 
       <div className="bg-white text-slate-900">
         {/* Hero */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 relative overflow-hidden">
+        <section className="py-16 md:py-20 relative overflow-hidden">
           <div
             className="absolute inset-0"
             style={{
@@ -74,7 +74,7 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Vertrauen */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100 bg-slate-50">
+        <section className="py-16 md:py-20 border-t border-slate-100 bg-slate-50">
           <div className="w-full max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -97,7 +97,7 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Leistungen */}
-        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+        <section id="leistungen" className="py-16 md:py-20 border-t border-slate-100">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -132,7 +132,7 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Praxis-Galerie */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+        <section className="py-16 md:py-20 border-t border-slate-100">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -166,7 +166,7 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Bewertungen */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100 bg-slate-50">
+        <section className="py-16 md:py-20 border-t border-slate-100 bg-slate-50">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">
@@ -193,7 +193,7 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Termin */}
-        <section id="termin" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+        <section id="termin" className="py-16 md:py-20 border-t border-slate-100">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Termin vereinbaren.</h2>

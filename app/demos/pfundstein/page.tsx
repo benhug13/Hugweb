@@ -175,7 +175,7 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Firma — Text 1:1 */}
-        <section id="firma" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md:">
+        <section id="firma" className="py-16 md:py-20 md:">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-stretch">
             <Reveal className="h-full">
               <div className="relative h-full min-h-[340px] overflow-hidden rounded-3xl border border-black/10">
@@ -216,7 +216,7 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Spezialgebiete — schlichte Icon-Reihe wie im Original */}
-        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10 bg-neutral-50">
+        <section id="leistungen" className="py-16 md:py-20 md: border-t border-black/10 bg-neutral-50">
           <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <h2 className="text-center font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
@@ -237,7 +237,7 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Referenzen — ihre echten Fotos */}
-        <section id="referenzen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10">
+        <section id="referenzen" className="py-16 md:py-20 md: border-t border-black/10">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
@@ -267,7 +267,7 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Kontakt — Angaben 1:1 */}
-        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10 bg-neutral-50">
+        <section id="kontakt" className="py-16 md:py-20 md: border-t border-black/10 bg-neutral-50">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>

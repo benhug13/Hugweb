@@ -147,7 +147,7 @@ export default function GarageImWinkelDemo() {
         </section>
 
         {/* Garage */}
-        <section id="garage" className="flex min-h-[calc(100svh-2rem)] items-center py-14 md: md:">
+        <section id="garage" className="py-16 md:py-20 md: md:">
           <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Garage</div>
@@ -177,7 +177,7 @@ export default function GarageImWinkelDemo() {
         </section>
 
         {/* Services */}
-        <section id="services" className="flex min-h-[calc(100svh-2rem)] items-center py-14 relative border-y border-white/10 bg-[#070707] overflow-hidden">
+        <section id="services" className="py-16 md:py-20 relative border-y border-white/10 bg-[#070707] overflow-hidden">
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="relative w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
@@ -221,7 +221,7 @@ export default function GarageImWinkelDemo() {
         </section>
 
         {/* Galerie */}
-        <section id="galerie" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="galerie" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
@@ -247,7 +247,7 @@ export default function GarageImWinkelDemo() {
         </section>
 
         {/* Fahrzeugverkauf */}
-        <section id="verkauf" className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-y border-white/10 bg-[#070707]">
+        <section id="verkauf" className="py-16 md:py-20 border-y border-white/10 bg-[#070707]">
           <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Fahrzeugverkauf</div>
@@ -273,7 +273,7 @@ export default function GarageImWinkelDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="kontakt" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>

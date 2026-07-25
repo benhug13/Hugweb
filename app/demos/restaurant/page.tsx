@@ -69,7 +69,7 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Menu */}
-        <section id="menu" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10">
+        <section id="menu" className="py-16 md:py-20 border-t border-stone-900/10">
           <div className="w-full max-w-4xl mx-auto px-6">
             <Reveal>
               <div className="text-center">
@@ -131,7 +131,7 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Galerie */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10">
+        <section className="py-16 md:py-20 border-t border-stone-900/10">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
@@ -169,7 +169,7 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Reservierung */}
-        <section id="reservieren" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10 bg-white">
+        <section id="reservieren" className="py-16 md:py-20 border-t border-stone-900/10 bg-white">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-serif italic">Tisch reservieren.</h2>

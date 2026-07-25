@@ -80,7 +80,7 @@ export default function BarberDemo() {
         </section>
 
         {/* Leistungen */}
-        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+        <section id="leistungen" className="py-16 md:py-20 border-t border-white/10">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
@@ -113,7 +113,7 @@ export default function BarberDemo() {
         </section>
 
         {/* Atelier-Galerie */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+        <section className="py-16 md:py-20 border-t border-white/10">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -151,7 +151,7 @@ export default function BarberDemo() {
         </section>
 
         {/* Bewertungen */}
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+        <section className="py-16 md:py-20 border-t border-white/10">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">
@@ -182,7 +182,7 @@ export default function BarberDemo() {
         </section>
 
         {/* Termin */}
-        <section id="termin" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+        <section id="termin" className="py-16 md:py-20 border-t border-white/10">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Termin buchen.</h2>

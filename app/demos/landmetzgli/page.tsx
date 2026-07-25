@@ -156,7 +156,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Firma */}
-        <section id="firma" className="flex min-h-[calc(100svh-2rem)] items-center py-14 md: md:">
+        <section id="firma" className="py-16 md:py-20 md: md:">
           <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
@@ -173,7 +173,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Selbstbedienungsladen — echter Hinweis von landmetzgli.ch */}
-        <section className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-y border-white/10 bg-[#0a0706]">
+        <section className="py-16 md:py-20 border-y border-white/10 bg-[#0a0706]">
           <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -195,7 +195,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Galerie */}
-        <section id="galerie" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="galerie" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
@@ -225,7 +225,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Angebot — Liste links, grosses Bild rechts (sticky) */}
-        <section id="leistungen" className="flex min-h-[calc(100svh-2rem)] items-center py-14 relative border-y border-white/10 bg-[#0a0706] overflow-hidden">
+        <section id="leistungen" className="py-16 md:py-20 relative border-y border-white/10 bg-[#0a0706] overflow-hidden">
           <div className="pointer-events-none absolute -right-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="relative w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
@@ -267,7 +267,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Ablauf */}
-        <section id="ablauf" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+        <section id="ablauf" className="py-16 md:py-20">
           <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Bestellen</div>
@@ -286,7 +286,7 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-t border-white/10 bg-[#0a0706]">
+        <section id="kontakt" className="py-16 md:py-20 border-t border-white/10 bg-[#0a0706]">
           <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>

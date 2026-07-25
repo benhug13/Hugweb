@@ -86,7 +86,7 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md:">
+        <section id="leistungen" className="py-16 md:py-20 md:">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -116,7 +116,7 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="arbeiten" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100 bg-stone-50">
+        <section id="arbeiten" className="py-16 md:py-20 md: border-t border-stone-100 bg-stone-50">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -134,7 +134,7 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="ablauf" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100">
+        <section id="ablauf" className="py-16 md:py-20 md: border-t border-stone-100">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
@@ -161,7 +161,7 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100 bg-stone-50">
+        <section className="py-16 md:py-20 md: border-t border-stone-100 bg-stone-50">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">{[...Array(5)].map((_, i) => (<Star key={i} className="h-5 w-5 fill-[#c44e2c] text-[#c44e2c]" />))}<span className="text-stone-700 ml-2 font-medium">4,9 von 5 · 138 Bewertungen</span></div>
@@ -187,7 +187,7 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100">
+        <section id="kontakt" className="py-16 md:py-20 md: border-t border-stone-100">
           <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>
