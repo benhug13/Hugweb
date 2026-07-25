@@ -73,7 +73,7 @@ export default function FitnessDemo() {
           </div>
         </section>
 
-        <section id="programme" className="py-28">
+        <section id="programme" className="flex min-h-[calc(100svh-7rem)] items-center py-14">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Programme</div>
@@ -98,7 +98,7 @@ export default function FitnessDemo() {
           </div>
         </section>
 
-        <section id="plan" className="py-28 border-t border-white/5">
+        <section id="plan" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Im Studio</div>
@@ -114,7 +114,7 @@ export default function FitnessDemo() {
           </div>
         </section>
 
-        <section id="preise" className="py-28 border-t border-white/5">
+        <section id="preise" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5">
           <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Mitgliedschaft</div>
@@ -151,7 +151,7 @@ export default function FitnessDemo() {
           </div>
         </section>
 
-        <section className="py-28 border-t border-white/5">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5">
           <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-1 mb-8">{[...Array(5)].map((_, i) => (<Star key={i} className="h-5 w-5 fill-[#ff5a3d] text-[#ff5a3d]" />))}</div>
@@ -163,7 +163,7 @@ export default function FitnessDemo() {
           </div>
         </section>
 
-        <section id="kontakt" className="py-28 border-t border-white/5 bg-white/[0.02]">
+        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/5 bg-white/[0.02]">
           <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>
