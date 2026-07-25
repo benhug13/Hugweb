@@ -34,6 +34,8 @@ const IMG_3 = `${CDN}/20260619_095051-1920w.jpg`;
 const IMG_4 = `${CDN}/20260619_095126-1920w.jpg`;
 const IMG_5 = `${CDN}/20260619_095147-1920w.jpg`;
 const IMG_6 = `${CDN}/20260619_095112-1920w.jpg`;
+// bisher ungenutztes Foto ihrer Seite — fuer die Firmen-Sektion
+const IMG_FIRMA = `${CDN}/20200805_094714-77ae95e7-709h.jpg`;
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -155,20 +157,41 @@ export default function LandmetzgliDemo() {
           </div>
         </section>
 
-        {/* Firma */}
-        <section id="firma" className="pt-20 md:pt-24 pb-24 md:pb-28">
-          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
-            <Reveal className="md:col-span-7">
-              <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
-              <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold leading-tight text-white">
-                Das Beste vom Land — seit 30 Jahren.
-              </h2>
+        {/* Firma — mit Bild, sonst wirkt die reine Textsektion leer */}
+        <section id="firma" className="py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-center">
+            <Reveal className="md:col-span-5">
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img src={IMG_FIRMA} alt="Land-Metzgli in Lostorf" className="h-[17rem] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+              </div>
             </Reveal>
-            <Reveal delay={0.1} className="md:col-span-5">
-              <p className="text-lg text-white/60 leading-relaxed">
-                Angefangen hat alles vor 30 Jahren im Keller eines kleinen Bauernhauses. Stets frisch und von hoher Qualität gewannen Fleisch und Würste immer mehr an Bekanntheit — weit über die Kantonsgrenzen hinaus. Heute führen Marianne und Ueli Christen ihre Metzgerei in einem schönen grossen Bauernhaus.
-              </p>
-            </Reveal>
+            <div className="md:col-span-7">
+              <Reveal>
+                <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold leading-tight text-white">
+                  Das Beste vom Land — seit 30 Jahren.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-4 text-white/60 leading-relaxed">
+                  Angefangen hat alles vor 30 Jahren im Keller eines kleinen Bauernhauses. Stets frisch und von hoher Qualität gewannen Fleisch und Würste immer mehr an Bekanntheit — weit über die Kantonsgrenzen hinaus. Heute führen Marianne und Ueli Christen ihre Metzgerei in einem schönen grossen Bauernhaus.
+                </p>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+                  {[
+                    { k: "30 Jahre", v: "Erfahrung" },
+                    { k: "Schweizer Fleisch", v: "praktisch ausschliesslich" },
+                    { k: "Eigene Wursterei", v: "Eigenproduktionen" },
+                  ].map((s) => (
+                    <div key={s.k}>
+                      <div className="font-[family-name:var(--font-display)] text-lg font-semibold" style={{ color: ACCENT }}>{s.k}</div>
+                      <div className="text-[11px] uppercase tracking-wider text-white/45">{s.v}</div>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
           </div>
         </section>
 
