@@ -51,12 +51,12 @@ const leistungen = [
 ];
 
 const galerie = [
-  { img: IMG_1, label: "Frischfleisch", ort: "Schweizer Qualität", span: "md:col-span-4", h: "h-[13rem]" },
-  { img: IMG_2, label: "Aus der Wursterei", ort: "Eigenproduktion", span: "md:col-span-4", h: "h-[13rem]" },
-  { img: IMG_3, label: "Im Selbstbedienungsladen", ort: "Di–So 10–19 Uhr", span: "md:col-span-4", h: "h-[13rem]" },
-  { img: IMG_4, label: "Spezialitäten", ort: "auch Nicht-Alltägliches", span: "md:col-span-4", h: "h-[13rem]" },
-  { img: IMG_5, label: "Bei uns in Lostorf", ort: "im grossen Bauernhaus", span: "md:col-span-4", h: "h-[13rem]" },
-  { img: IMG_6, label: "Party-Service", ort: "Platten & Menüs", span: "md:col-span-4", h: "h-[13rem]" },
+  { img: IMG_1, label: "Frischfleisch", ort: "Schweizer Qualität", span: "md:col-span-5", h: "h-[26rem]" },
+  { img: IMG_2, label: "Aus der Wursterei", ort: "Eigenproduktion", span: "md:col-span-7", h: "h-[26rem]" },
+  { img: IMG_3, label: "Im Selbstbedienungsladen", ort: "Di–So 10–19 Uhr", span: "md:col-span-7", h: "h-80" },
+  { img: IMG_4, label: "Spezialitäten", ort: "auch Nicht-Alltägliches", span: "md:col-span-5", h: "h-80" },
+  { img: IMG_5, label: "Bei uns in Lostorf", ort: "im grossen Bauernhaus", span: "md:col-span-6", h: "h-72" },
+  { img: IMG_6, label: "Party-Service", ort: "Platten & Menüs", span: "md:col-span-6", h: "h-72" },
 ];
 
 const prozess = [
@@ -86,7 +86,7 @@ export default function LandmetzgliDemo() {
       <div className={`${display.variable} ${body.variable} font-[family-name:var(--font-body)] bg-[#100c0b] text-neutral-200`}>
         {/* Header — transparent über Hero */}
         <header className="absolute inset-x-0 top-8 z-40">
-          <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <Wordmark className="text-xl" />
             <nav className="hidden lg:flex items-center gap-9 text-sm font-medium text-white/75">
               {nav.map((n) => (
@@ -103,7 +103,7 @@ export default function LandmetzgliDemo() {
         <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden">
           <img src={IMG_HERO} alt="Land-Metzgli" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#100c0b] via-black/60 to-black/45" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[12rem] bg-gradient-to-t from-[#100c0b] via-[#100c0b]/85 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-[#100c0b] via-[#100c0b]/85 to-transparent" />
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[36rem] w-[36rem] rounded-full opacity-30 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
 
           <div className="relative mx-auto flex min-h-[calc(100svh-2rem)] w-full max-w-6xl flex-col px-6 pt-24 pb-6">
@@ -156,11 +156,11 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Firma */}
-        <section id="firma" className="py-16 md:py-20 md: md:">
-          <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
+        <section id="firma" className="pt-20 md:pt-24 pb-24 md:pb-28">
+          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Die Metzgerei</div>
-              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold leading-tight text-white">
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold leading-tight text-white">
                 Das Beste vom Land — seit 30 Jahren.
               </h2>
             </Reveal>
@@ -173,8 +173,8 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Selbstbedienungsladen — echter Hinweis von landmetzgli.ch */}
-        <section className="py-16 md:py-20 border-y border-white/10 bg-[#0a0706]">
-          <div className="w-full max-w-5xl mx-auto px-6">
+        <section className="border-y border-white/10 bg-[#0a0706] py-14">
+          <div className="max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div>
@@ -195,18 +195,18 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Galerie */}
-        <section id="galerie" className="py-16 md:py-20">
-          <div className="w-full max-w-6xl mx-auto px-6">
+        <section id="galerie" className="py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Einblick</div>
-                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">Aus unserer Metzgerei</h2>
+                  <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Aus unserer Metzgerei</h2>
                 </div>
                 <a href="#kontakt" className="text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>Bestellung aufgeben →</a>
               </div>
             </Reveal>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-4">
               {galerie.map((r, i) => (
                 <Reveal key={r.label} delay={(i % 2) * 0.08} className={r.span}>
                   <div className={`group relative ${r.h} overflow-hidden rounded-2xl border border-white/10`}>
@@ -225,40 +225,40 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Angebot — Liste links, grosses Bild rechts (sticky) */}
-        <section id="leistungen" className="py-16 md:py-20 relative border-y border-white/10 bg-[#0a0706] overflow-hidden">
+        <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#0a0706] overflow-hidden">
           <div className="pointer-events-none absolute -right-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
-          <div className="relative w-full max-w-6xl mx-auto px-6">
+          <div className="relative max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Angebot</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">Alles aus einer Hand.</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Alles aus einer Hand.</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
                 <p className="text-white/60 leading-relaxed">Beim Fleisch geht nichts über Schweizer Qualität. Daneben stehen auch nicht alltägliche Spezialitäten wie Känguru- oder Zebrafleisch im Angebot.</p>
               </Reveal>
             </div>
             {/* Bild + Liste exakt gleich hoch — Bild waechst mit der Liste mit */}
-            <div className="mt-8 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+            <div className="mt-14 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             <div className="divide-y divide-white/10">
               {leistungen.map((s, i) => (
                 <Reveal key={s.title} delay={(i % 4) * 0.05}>
-                  <div className="group flex items-start gap-3.5 py-3.5">
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
-                      <s.icon className="h-4.5 w-4.5" strokeWidth={1.6} style={{ color: ACCENT }} />
+                  <div className="group flex items-start gap-5 py-5">
+                    <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
+                      <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between gap-3">
-                        <div className="font-[family-name:var(--font-display)] text-[15px] font-semibold leading-tight text-white">{s.title}</div>
-                        <span className="text-[11px] tabular-nums text-white/30">0{i + 1}</span>
+                        <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
+                        <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
                       </div>
-                      <p className="mt-0.5 text-[13px] text-white/55 leading-snug">{s.desc}</p>
+                      <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                 </Reveal>
               ))}
             </div>
             <Reveal delay={0.1} className="h-full">
-              <div className="h-full min-h-[16rem] overflow-hidden rounded-2xl border border-white/10">
+              <div className="h-full min-h-[22rem] overflow-hidden rounded-2xl border border-white/10">
                 <img src={IMG_4} alt="Aus der Metzgerei" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
               </div>
             </Reveal>
@@ -267,13 +267,13 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Ablauf */}
-        <section id="ablauf" className="py-16 md:py-20">
-          <div className="w-full max-w-6xl mx-auto px-6">
+        <section id="ablauf" className="py-24 md:py-32">
+          <div className="max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Bestellen</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">So bestellen Sie bei uns.</h2>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">So bestellen Sie bei uns.</h2>
             </Reveal>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-8">
               {prozess.map((p, i) => (
                 <Reveal key={p.n} delay={i * 0.06}>
                   <div className="font-[family-name:var(--font-display)] text-5xl font-semibold" style={{ color: ACCENT }}>{p.n}</div>
@@ -286,12 +286,12 @@ export default function LandmetzgliDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="py-16 md:py-20 border-t border-white/10 bg-[#0a0706]">
-          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="kontakt" className="py-24 md:py-32 border-t border-white/10 bg-[#0a0706]">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Kontakt</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">Bestellen & vorbeikommen.</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Bestellen & vorbeikommen.</h2>
                 <p className="mt-6 text-white/60 leading-relaxed">Gerne nehmen wir Ihre Aufträge auf Vorbestellung entgegen. Bestellungen per E-Mail sind für Donnerstag, Freitag und Samstag möglich, sonst nach Anfrage.</p>
                 <div className="mt-10 space-y-5 text-white/80">
                   <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Landmetzgli Christen GmbH<br />Neue Badstrasse 1, 4654 Lostorf/SO</span></div>
@@ -314,7 +314,7 @@ export default function LandmetzgliDemo() {
 
         {/* Footer */}
         <footer className="border-t border-white/10 bg-[#100c0b]">
-          <div className="w-full max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <Wordmark className="text-lg" />
             <span className="text-sm text-white/40">© {new Date().getFullYear()} Land-Metzgli · Lostorf</span>
             <span className="text-sm text-white/40">Entwurf von <Link href="/" className="underline hover:text-white">Hugweb</Link></span>

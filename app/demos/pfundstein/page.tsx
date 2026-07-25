@@ -98,7 +98,7 @@ export default function PfundsteinDemo() {
       <div className={`${display.variable} ${body.variable} font-[family-name:var(--font-body)] bg-white text-neutral-900`}>
         {/* Header */}
         <header className="sticky top-0 z-40 border-b border-black/10 bg-white/85 backdrop-blur">
-          <div className="w-full max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+          <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <img src={pf("logo.png")} alt="Malergeschäft Pfundstein" className="h-11 w-auto" />
             <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-600">
               {nav.map((n) => (
@@ -159,7 +159,7 @@ export default function PfundsteinDemo() {
 
         {/* Trust-Streifen — reine Fakten aus ihrem Text */}
         <section className="border-b border-black/10 bg-neutral-50">
-          <div className="w-full max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10">
             {[
               { k: "1968", v: "Gegründet" },
               { k: "2.", v: "Generation" },
@@ -175,8 +175,8 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Firma — Text 1:1 */}
-        <section id="firma" className="py-16 md:py-20 md:">
-          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-stretch">
+        <section id="firma" className="py-24 md:py-32">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-stretch">
             <Reveal className="h-full">
               <div className="relative h-full min-h-[340px] overflow-hidden rounded-3xl border border-black/10">
                 <img src={pf("haus.jpg")} alt="Referenzobjekt von Malergeschäft Pfundstein" className="absolute inset-0 h-full w-full object-cover" />
@@ -216,8 +216,8 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Spezialgebiete — schlichte Icon-Reihe wie im Original */}
-        <section id="leistungen" className="py-16 md:py-20 md: border-t border-black/10 bg-neutral-50">
-          <div className="w-full max-w-5xl mx-auto px-6">
+        <section id="leistungen" className="py-24 md:py-32 border-t border-black/10 bg-neutral-50">
+          <div className="max-w-5xl mx-auto px-6">
             <Reveal>
               <h2 className="text-center font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
                 Unsere Spezialgebiete sind:
@@ -237,8 +237,8 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Referenzen — ihre echten Fotos */}
-        <section id="referenzen" className="py-16 md:py-20 md: border-t border-black/10">
-          <div className="w-full max-w-6xl mx-auto px-6">
+        <section id="referenzen" className="py-24 md:py-32 border-t border-black/10">
+          <div className="max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div className="max-w-2xl">
@@ -267,8 +267,8 @@ export default function PfundsteinDemo() {
         </section>
 
         {/* Kontakt — Angaben 1:1 */}
-        <section id="kontakt" className="py-16 md:py-20 md: border-t border-black/10 bg-neutral-50">
-          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="kontakt" className="py-24 md:py-32 border-t border-black/10 bg-neutral-50">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em] text-cyan-700">Kontakt</div>
@@ -315,7 +315,7 @@ export default function PfundsteinDemo() {
 
         {/* Footer */}
         <footer className="border-t border-black/10 bg-white">
-          <div className="w-full max-w-6xl mx-auto px-6 py-16">
+          <div className="max-w-6xl mx-auto px-6 py-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
               <div className="col-span-2 md:col-span-1">
                 <img src={pf("logo.png")} alt="Malergeschäft Pfundstein" className="h-12 w-auto" />
