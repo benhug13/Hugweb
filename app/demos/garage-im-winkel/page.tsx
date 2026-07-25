@@ -33,14 +33,9 @@ const U = "https://garageimwinkel.ch/wp-content/uploads/2022/02";
 const IMG_HERO = `${U}/IMG_6065.png`;
 const IMG_2 = `${U}/IMG_6067.png`;
 const IMG_3 = `${U}/IMG_6069.png`;
-const GAL = [
-  { img: `${U}/1.jpg`, label: "Aus der Werkstatt" },
-  { img: `${U}/2.jpg`, label: "Detailarbeit" },
-  { img: `${U}/3.jpg`, label: "Oldtimer" },
-  { img: `${U}/4.jpg`, label: "Veteranen" },
-  { img: `${U}/5.jpg`, label: "Spezielle Fahrzeuge" },
-  { img: `${U}/6.jpg`, label: "Bei uns in Erlenbach" },
-];
+// Bewusst OHNE erfundene Bildunterschriften: die Fotos stammen aus den
+// Galerien der Kundenseite, was genau drauf ist, ist von hier nicht prüfbar.
+const GAL = [`${U}/1.jpg`, `${U}/2.jpg`, `${U}/3.jpg`, `${U}/4.jpg`, `${U}/5.jpg`, `${U}/6.jpg`];
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -238,14 +233,11 @@ export default function GarageImWinkelDemo() {
               </div>
             </Reveal>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {GAL.map((g, i) => (
-                <Reveal key={g.label} delay={(i % 3) * 0.07}>
+              {GAL.map((img, i) => (
+                <Reveal key={img} delay={(i % 3) * 0.07}>
                   <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
-                    <img src={g.img} alt={g.label} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/5 to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-5">
-                      <div className="font-[family-name:var(--font-display)] text-base font-semibold text-white">{g.label}</div>
-                    </div>
+                    <img src={img} alt="Garage im Winkel AG" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent transition group-hover:from-black/10" />
                   </div>
                 </Reveal>
               ))}
