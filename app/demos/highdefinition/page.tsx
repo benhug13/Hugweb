@@ -380,18 +380,35 @@ export default function HighDefinitionDemo() {
               </div>
             </Reveal>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {dienstleistungen.map((l, i) => (
-                <Reveal key={l.title} delay={(i % 3) * 0.05}>
-                  <div className="group h-full rounded-3xl border border-black/10 bg-white p-8 shadow-sm transition hover:border-red-300 hover:shadow-md">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-600 transition group-hover:bg-red-600 group-hover:text-white">
-                      <l.icon className="h-6 w-6" />
+            {/* Bild + dichte Liste, exakt gleich hoch — ruhiger als neun einzelne Karten */}
+            <div className="mt-14 grid md:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+              <Reveal className="h-full">
+                <div className="h-full min-h-[22rem] overflow-hidden rounded-3xl border border-black/10">
+                  <img
+                    src={hd("Beamerraum3", 1000, 1400)}
+                    alt="Heimkino-Raum von highdefinition"
+                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+              </Reveal>
+              <div className="divide-y divide-black/10">
+                {dienstleistungen.map((l, i) => (
+                  <Reveal key={l.title} delay={(i % 4) * 0.04}>
+                    <div className="group flex items-start gap-5 py-5">
+                      <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition group-hover:bg-red-600 group-hover:text-white">
+                        <l.icon className="h-5 w-5" strokeWidth={1.7} />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between gap-3">
+                          <h3 className="text-lg font-semibold">{l.title}</h3>
+                          <span className="font-[family-name:var(--font-mono)] text-xs tabular-nums text-neutral-400">0{i + 1}</span>
+                        </div>
+                        <p className="mt-1 text-sm text-neutral-600 leading-relaxed">{l.text}</p>
+                      </div>
                     </div>
-                    <h3 className="mt-6 text-lg font-semibold">{l.title}</h3>
-                    <p className="mt-2 text-sm text-neutral-600 leading-relaxed">{l.text}</p>
-                  </div>
-                </Reveal>
-              ))}
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
