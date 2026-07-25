@@ -195,7 +195,7 @@ export default function GarageImWinkelDemo() {
             <div className="mt-14 grid md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal className="h-full">
                 <div className="h-full min-h-[22rem] overflow-hidden rounded-2xl border border-white/10">
-                  <img src={IMG_2} alt="Aus der Werkstatt" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
+                  <img src={IMG_2} alt="Garage im Winkel AG" className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]" />
                 </div>
               </Reveal>
               <div className="divide-y divide-white/10">
@@ -266,7 +266,7 @@ export default function GarageImWinkelDemo() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="overflow-hidden rounded-2xl border border-white/10">
-                <img src={IMG_3} alt="Fahrzeugverkauf" className="h-[24rem] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+                <img src={IMG_3} alt="Garage im Winkel AG" className="h-[24rem] w-full object-cover transition duration-700 hover:scale-[1.03]" />
               </div>
             </Reveal>
           </div>
