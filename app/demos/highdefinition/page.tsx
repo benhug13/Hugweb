@@ -364,26 +364,30 @@ export default function HighDefinitionDemo() {
           </div>
         </section>
 
-        {/* Dienstleistungen */}
-        <section id="dienstleistungen" className="py-24 md:py-32 border-t border-black/10">
-          <div className="max-w-6xl mx-auto px-6">
+        {/* Dienstleistungen — passt komplett auf EINEN Bildschirm (kein Scrollen mitten in der Sektion) */}
+        <section
+          id="dienstleistungen"
+          className="flex min-h-[calc(100svh-2rem)] items-center border-t border-black/10 py-14"
+        >
+          <div className="mx-auto w-full max-w-6xl px-6">
             <Reveal>
-              <div className="max-w-2xl">
-                <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Dienstleistungen</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Wir kümmern uns um alles.
-                </h2>
-                <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-                  Beratung, Installation, Service — bei Ihnen zu Hause oder im
-                  Geschäft.
+              <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+                <div>
+                  <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Dienstleistungen</div>
+                  <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
+                    Wir kümmern uns um alles.
+                  </h2>
+                </div>
+                <p className="max-w-md text-neutral-600 leading-relaxed">
+                  Beratung, Installation, Service — bei Ihnen zu Hause oder im Geschäft.
                 </p>
               </div>
             </Reveal>
 
-            {/* Bild + dichte Liste, exakt gleich hoch — ruhiger als neun einzelne Karten */}
-            <div className="mt-14 grid md:grid-cols-2 gap-10 lg:gap-14 items-stretch">
-              <Reveal className="h-full">
-                <div className="h-full min-h-[22rem] overflow-hidden rounded-3xl border border-black/10">
+            {/* Bild schmal links, Leistungen zweispaltig rechts — zusammen eine Bildschirmhöhe */}
+            <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
+              <Reveal className="hidden lg:block lg:col-span-4">
+                <div className="h-full min-h-[20rem] overflow-hidden rounded-3xl border border-black/10">
                   <img
                     src={hd("Beamerraum3", 1000, 1400)}
                     alt="Heimkino-Raum von highdefinition"
@@ -391,19 +395,20 @@ export default function HighDefinitionDemo() {
                   />
                 </div>
               </Reveal>
-              <div className="divide-y divide-black/10">
+
+              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {dienstleistungen.map((l, i) => (
                   <Reveal key={l.title} delay={(i % 4) * 0.04}>
-                    <div className="group flex items-start gap-5 py-5">
-                      <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition group-hover:bg-red-600 group-hover:text-white">
-                        <l.icon className="h-5 w-5" strokeWidth={1.7} />
+                    <div className="group flex items-start gap-3.5 border-t border-black/10 py-3.5">
+                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-50 text-red-600 transition group-hover:bg-red-600 group-hover:text-white">
+                        <l.icon className="h-4.5 w-4.5" strokeWidth={1.7} />
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center justify-between gap-3">
-                          <h3 className="text-lg font-semibold">{l.title}</h3>
-                          <span className="font-[family-name:var(--font-mono)] text-xs tabular-nums text-neutral-400">0{i + 1}</span>
+                        <div className="flex items-baseline justify-between gap-3">
+                          <h3 className="text-[15px] font-semibold leading-tight">{l.title}</h3>
+                          <span className="font-[family-name:var(--font-mono)] text-[11px] tabular-nums text-neutral-400">0{i + 1}</span>
                         </div>
-                        <p className="mt-1 text-sm text-neutral-600 leading-relaxed">{l.text}</p>
+                        <p className="mt-0.5 text-[13px] text-neutral-600 leading-snug">{l.text}</p>
                       </div>
                     </div>
                   </Reveal>
