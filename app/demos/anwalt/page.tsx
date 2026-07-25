@@ -19,7 +19,7 @@ export default function AnwaltDemo() {
 
       <div className="bg-[#0a1020] text-stone-100">
         <header className="border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="w-full max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-full bg-amber-200 text-[#0a1020] grid place-items-center font-serif text-sm">H</div>
               <span className="font-serif text-lg tracking-wide">Hofmann Rechtsanwälte</span>
@@ -37,7 +37,7 @@ export default function AnwaltDemo() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 opacity-50" style={{ background: "radial-gradient(ellipse at 20% 30%, rgba(251,191,36,0.10), transparent 55%), radial-gradient(ellipse at 90% 80%, rgba(56,189,248,0.08), transparent 50%)" }} />
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
-          <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-32">
+          <div className="relative w-full max-w-7xl mx-auto px-6 pt-28 pb-32">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-8">
                 <Reveal><div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Berlin · seit 1998</div></Reveal>
@@ -74,7 +74,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section id="kanzlei" className="border-y border-white/5 bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="w-full max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { num: "27", unit: "Jahre", label: "Kanzlei in Berlin-Mitte" },
               { num: "1.400+", unit: "Mandate", label: "Jährlich vertreten" },
@@ -95,7 +95,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section id="rechtsgebiete" className="py-28">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div className="lg:col-span-7">
                 <Reveal>
@@ -132,7 +132,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section className="py-28 border-t border-white/5 bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Arbeitsweise</div>
               <h2 className="mt-4 font-serif text-4xl md:text-6xl tracking-tight max-w-3xl">Drei Schritte,<br />keine Überraschungen.</h2>
@@ -156,7 +156,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section className="py-32">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="font-serif text-3xl md:text-5xl leading-[1.2] tracking-tight">
                 <span className="text-amber-200">&ldquo;</span>Hofmann hat unseren Gesellschaftsstreit in vier Monaten gelöst — sauber, schnell, ohne den Geschäftsbetrieb zu belasten. Was uns überzeugt hat: Sie haben jeden Schritt erklärt, bevor sie ihn gegangen sind.<span className="text-amber-200">&rdquo;</span>
@@ -169,7 +169,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section id="team" className="py-28 border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Partner</div>
               <h2 className="mt-4 font-serif text-4xl md:text-6xl tracking-tight">Wer Sie vertritt.</h2>
@@ -199,7 +199,7 @@ export default function AnwaltDemo() {
         </section>
 
         <section id="kontakt" className="py-28 border-t border-white/5 bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>
                 <div className="text-amber-200/80 text-sm tracking-[0.2em] uppercase">Kontakt</div>

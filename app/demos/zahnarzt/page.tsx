@@ -19,14 +19,14 @@ export default function ZahnarztDemo() {
 
       <div className="bg-white text-slate-900">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-20 pb-24">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 relative overflow-hidden">
           <div
             className="absolute inset-0"
             style={{
               background: "radial-gradient(ellipse at 20% 10%, rgba(20,184,166,0.10), transparent 55%), radial-gradient(ellipse at 90% 70%, rgba(56,189,248,0.08), transparent 50%)",
             }}
           />
-          <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="relative w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 pt-8 lg:pt-0">
               <Reveal>
                 <div className="flex items-center gap-2 text-teal-600">
@@ -74,8 +74,8 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Vertrauen */}
-        <section className="py-20 border-t border-slate-100 bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100 bg-slate-50">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { icon: ShieldCheck, title: "Schmerzarme Behandlung", text: "Sanfte Verfahren und moderne Anästhesie für ein entspanntes Gefühl." },
@@ -97,8 +97,8 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Leistungen */}
-        <section id="leistungen" className="py-24 border-t border-slate-100">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm font-medium text-teal-600 uppercase tracking-wider">Behandlungen</div>
@@ -132,8 +132,8 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Praxis-Galerie */}
-        <section className="py-24 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm font-medium text-teal-600 uppercase tracking-wider">Unsere Praxis</div>
@@ -166,8 +166,8 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Bewertungen */}
-        <section className="py-24 border-t border-slate-100 bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100 bg-slate-50">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">
                 {[...Array(5)].map((_, i) => (<Star key={i} className="h-5 w-5 fill-teal-600 text-teal-600" />))}
@@ -193,8 +193,8 @@ export default function ZahnarztDemo() {
         </section>
 
         {/* Termin */}
-        <section id="termin" className="py-24 border-t border-slate-100">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="termin" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-slate-100">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Termin vereinbaren.</h2>
               <p className="mt-6 text-slate-600 leading-relaxed">

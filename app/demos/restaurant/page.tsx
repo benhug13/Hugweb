@@ -36,7 +36,7 @@ export default function RestaurantDemo() {
                 "radial-gradient(ellipse at 20% 20%, rgba(190,30,45,0.15), transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(120,53,15,0.12), transparent 50%)",
             }}
           />
-          <div className="relative max-w-6xl mx-auto px-6 text-center w-full">
+          <div className="relative w-full max-w-6xl mx-auto px-6 text-center w-full">
             <Reveal>
               <div className="inline-flex items-center gap-2 text-rose-800">
                 <Utensils className="h-4 w-4" />
@@ -69,8 +69,8 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Menu */}
-        <section id="menu" className="py-24 border-t border-stone-900/10">
-          <div className="max-w-4xl mx-auto px-6">
+        <section id="menu" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10">
+          <div className="w-full max-w-4xl mx-auto px-6">
             <Reveal>
               <div className="text-center">
                 <div className="text-sm tracking-[0.25em] uppercase text-rose-800">Unsere Karte</div>
@@ -131,8 +131,8 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Galerie */}
-        <section className="py-24 border-t border-stone-900/10">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto">
                 <div className="text-sm tracking-[0.25em] uppercase text-rose-800">Eindrücke</div>
@@ -169,8 +169,8 @@ export default function RestaurantDemo() {
         </section>
 
         {/* Reservierung */}
-        <section id="reservieren" className="py-24 border-t border-stone-900/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="reservieren" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-stone-900/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-serif italic">Tisch reservieren.</h2>
               <p className="mt-6 text-stone-600 leading-relaxed">

@@ -181,7 +181,7 @@ export default function HighDefinitionDemo() {
       <div className={`${display.variable} ${mono.variable} bg-white text-neutral-900`}>
         {/* Navigation — dunkel, damit das echte Logo nativ sitzt */}
         <header className="sticky top-0 z-40 border-b border-white/10 bg-neutral-950/90 backdrop-blur">
-          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+          <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <Logo />
             <nav className="hidden lg:flex items-center gap-6 text-sm text-white/70">
               {nav.map((n) => (
@@ -281,8 +281,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Marken */}
-        <section className="border-b border-black/10 bg-white py-8">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-b border-black/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-neutral-400">
               {marken.slice(0, 12).map((m) => (
                 <span key={m} className="text-base font-semibold tracking-wide">{m}</span>
@@ -293,8 +293,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Sortiment */}
-        <section id="sortiment" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="sortiment" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md:">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Sortiment</div>
@@ -329,8 +329,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Neuheiten */}
-        <section id="neuheiten" className="py-24 md:py-32 border-t border-black/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="neuheiten" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
                 <div className="max-w-2xl">
@@ -419,8 +419,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Codefree */}
-        <section id="codefree" className="py-24 md:py-32 border-t border-black/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="codefree" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <div className="rounded-3xl border border-red-300/60 bg-gradient-to-br from-red-50 to-transparent p-10 md:p-14">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <Reveal>
@@ -466,8 +466,8 @@ export default function HighDefinitionDemo() {
         <ShopDemo />
 
         {/* Abverkauf & Demo-Ware */}
-        <section id="abverkauf" className="py-16 border-t border-black/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="abverkauf" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-black/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl border border-emerald-300/60 bg-gradient-to-r from-emerald-50 to-transparent p-8 md:p-10">
                 <div className="flex items-center gap-4">
@@ -491,8 +491,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Über uns + Team */}
-        <section id="ueber-uns" className="py-24 md:py-32 border-t border-black/10">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="ueber-uns" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
               <Reveal>
                 <div>
@@ -541,8 +541,8 @@ export default function HighDefinitionDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="py-24 md:py-32 border-t border-black/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-black/10 bg-white">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Kontakt</div>
@@ -596,7 +596,7 @@ export default function HighDefinitionDemo() {
         </section>
 
         <footer id="konto" className="border-t border-white/10 bg-neutral-950 text-white/60">
-          <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="w-full max-w-6xl mx-auto px-6 py-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
               {/* Marke + Kontakt */}
               <div className="col-span-2 md:col-span-1">

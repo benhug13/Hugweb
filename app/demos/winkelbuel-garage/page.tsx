@@ -101,7 +101,7 @@ export default function WinkelbuelGarageDemo() {
       <div className={`${display.variable} ${body.variable} font-[family-name:var(--font-body)] bg-[#0a0c10] text-neutral-200`}>
         {/* Header — transparent über Hero */}
         <header className="absolute inset-x-0 top-8 z-40">
-          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+          <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <img src={LOGO} alt="Winkelbüel Garage AG" className="h-9 w-auto brightness-0 invert" />
             <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/75">
               {nav.map((n) => (
@@ -172,11 +172,11 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Fahrzeuge */}
-        <section id="fahrzeuge" className="pt-20 md:pt-24 pb-24 md:pb-28">
-          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
+        <section id="fahrzeuge" className="flex min-h-[calc(100svh-2rem)] items-center py-14 md: md:">
+          <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Fahrzeuge</div>
-              <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold leading-tight text-white">
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold leading-tight text-white">
                 Das passende Auto für jedermann.
               </h2>
             </Reveal>
@@ -200,13 +200,13 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Angebot */}
-        <section id="angebot" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070910] overflow-hidden">
+        <section id="angebot" className="flex min-h-[calc(100svh-2rem)] items-center py-14 relative border-y border-white/10 bg-[#070910] overflow-hidden">
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
-          <div className="relative max-w-6xl mx-auto px-6">
+          <div className="relative w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Service</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Unsere Leistungen im Überblick</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Unsere Leistungen im Überblick</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
                 <p className="text-white/60 leading-relaxed">
@@ -214,19 +214,19 @@ export default function WinkelbuelGarageDemo() {
                 </p>
               </Reveal>
             </div>
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16">
               {angebot.map((s, i) => (
                 <Reveal key={s.title} delay={(i % 4) * 0.05}>
                   <div className="group flex items-start gap-5 border-t border-white/10 py-6">
-                    <div className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
-                      <s.icon className="h-5 w-5" strokeWidth={1.6} style={{ color: ACCENT }} />
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition group-hover:bg-white/[0.07]">
+                      <s.icon className="h-4.5 w-4.5" strokeWidth={1.6} style={{ color: ACCENT }} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between gap-3">
-                        <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-white">{s.title}</div>
-                        <span className="text-xs tabular-nums text-white/30">0{i + 1}</span>
+                        <div className="font-[family-name:var(--font-display)] text-[15px] font-semibold leading-tight text-white">{s.title}</div>
+                        <span className="text-[11px] tabular-nums text-white/30">0{i + 1}</span>
                       </div>
-                      <p className="mt-1 text-sm text-white/55 leading-relaxed">{s.desc}</p>
+                      <p className="mt-0.5 text-[13px] text-white/55 leading-snug">{s.desc}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -236,12 +236,12 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Werkstatt */}
-        <section id="werkstatt" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="werkstatt" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Ihr Fahrzeug</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Rundum-Service zu fairen Ansätzen.</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Rundum-Service zu fairen Ansätzen.</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
                 <p className="text-white/60 leading-relaxed">
@@ -249,7 +249,7 @@ export default function WinkelbuelGarageDemo() {
                 </p>
               </Reveal>
             </div>
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {werkstatt.map((w, i) => (
                 <Reveal key={w.t} delay={(i % 3) * 0.05}>
                   <div className="group flex h-full items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-white/20 hover:bg-white/[0.04]">
@@ -270,8 +270,8 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* E-Mobilität — AVILOO */}
-        <section className="border-y border-white/10 bg-[#070910] py-20">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-center">
+        <section className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-y border-white/10 bg-[#070910]">
+          <div className="w-full max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>E-Mobilität</div>
               <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Voll geladen. Volle Reichweite?</h2>
@@ -293,13 +293,13 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Team — die einzigen echten Fotos der Kundenseite */}
-        <section id="team" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="team" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Team</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Ihre Ansprechpersonen</h2>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Ihre Ansprechpersonen</h2>
             </Reveal>
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
               {TEAM.map((t, i) => (
                 <Reveal key={t.name} delay={i * 0.08}>
                   <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
@@ -318,12 +318,12 @@ export default function WinkelbuelGarageDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="py-24 md:py-32 border-t border-white/10 bg-[#070910]">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="kontakt" className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-t border-white/10 bg-[#070910]">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Kontakt</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-white">Besuchen Sie uns.</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Besuchen Sie uns.</h2>
                 <p className="mt-6 text-white/60 leading-relaxed">Ob Kauf, Service oder MFK — schreiben Sie uns kurz, wir melden uns rasch zurück.</p>
                 <div className="mt-10 space-y-5 text-white/80">
                   <div className="flex items-start gap-4"><MapPin className="mt-0.5 h-5 w-5" style={{ color: ACCENT }} /><span>Winkelbüel Garage AG<br />Sinserstrasse 400, 6330 Cham<br /><span className="text-sm text-white/45">Für die Navigation: Sinserstrasse 400, 6332 Hagendorn</span></span></div>
@@ -350,7 +350,7 @@ export default function WinkelbuelGarageDemo() {
 
         {/* Footer */}
         <footer className="border-t border-white/10 bg-[#0a0c10]">
-          <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="w-full max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <Wordmark className="text-lg" />
             <span className="text-sm text-white/40">© {new Date().getFullYear()} Winkelbüel Garage AG · Sinserstrasse 400, 6330 Cham</span>
             <span className="text-sm text-white/40">Entwurf von <Link href="/" className="underline hover:text-white">Hugweb</Link></span>

@@ -19,7 +19,7 @@ export default function FitnessDemo() {
 
       <div className="bg-[#0b0d10] text-white">
         <header className="border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="w-full max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-full bg-[#ff5a3d] grid place-items-center"><Flame className="h-4 w-4 text-black" /></div>
               <span className="font-semibold tracking-tight text-lg">Pulse Studio</span>
@@ -38,7 +38,7 @@ export default function FitnessDemo() {
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=2000&q=80&auto=format&fit=crop')" }} />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30" />
           <div className="absolute inset-0 opacity-50" style={{ background: "radial-gradient(ellipse at 20% 60%, rgba(255,90,61,0.30), transparent 55%)" }} />
-          <div className="relative max-w-7xl mx-auto px-6 w-full py-24">
+          <div className="relative w-full max-w-7xl mx-auto px-6 w-full py-24">
             <Reveal><div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Berlin · Mitte</div></Reveal>
             <Reveal delay={0.1}>
               <h1 className="mt-6 text-6xl md:text-8xl lg:text-[112px] font-bold tracking-tight leading-[0.92]">Stärker als<br /><span className="text-[#ff5a3d]">gestern.</span></h1>
@@ -56,7 +56,7 @@ export default function FitnessDemo() {
         </section>
 
         <section className="border-y border-white/5 bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="w-full max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { num: "8", label: "Coaches mit Wettkampfhintergrund" },
               { num: "6×", label: "Wöchentliche Programmierung" },
@@ -74,7 +74,7 @@ export default function FitnessDemo() {
         </section>
 
         <section id="programme" className="py-28">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Programme</div>
               <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">Vier Wege, stärker zu werden.</h2>
@@ -99,7 +99,7 @@ export default function FitnessDemo() {
         </section>
 
         <section id="plan" className="py-28 border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Im Studio</div>
               <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">Konzentrierte Arbeit.</h2>
@@ -115,7 +115,7 @@ export default function FitnessDemo() {
         </section>
 
         <section id="preise" className="py-28 border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Mitgliedschaft</div>
               <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight">Kein Jahresvertrag.</h2>
@@ -152,7 +152,7 @@ export default function FitnessDemo() {
         </section>
 
         <section className="py-28 border-t border-white/5">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="w-full max-w-5xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-1 mb-8">{[...Array(5)].map((_, i) => (<Star key={i} className="h-5 w-5 fill-[#ff5a3d] text-[#ff5a3d]" />))}</div>
               <div className="text-3xl md:text-5xl font-semibold leading-[1.2] tracking-tight">
@@ -164,7 +164,7 @@ export default function FitnessDemo() {
         </section>
 
         <section id="kontakt" className="py-28 border-t border-white/5 bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>
                 <div className="text-[#ff5a3d] text-sm tracking-[0.25em] uppercase">Probetraining</div>

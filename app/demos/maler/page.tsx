@@ -19,7 +19,7 @@ export default function MalerDemo() {
 
       <div className="bg-white text-stone-900">
         <header className="border-b border-stone-100 bg-white/80 backdrop-blur sticky top-8 z-40">
-          <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="w-full max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="h-8 w-8 rounded-lg bg-[#c44e2c] grid place-items-center"><Brush className="h-4 w-4 text-white" /></div>
               <span className="font-semibold tracking-tight text-lg">Frischknecht Malerei</span>
@@ -37,7 +37,7 @@ export default function MalerDemo() {
         <section className="relative overflow-hidden min-h-[90vh] flex items-center">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1717281234297-3def5ae3eee1?w=2000&q=80&auto=format&fit=crop')" }} />
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30" />
-          <div className="relative max-w-7xl mx-auto px-6 w-full py-24">
+          <div className="relative w-full max-w-7xl mx-auto px-6 w-full py-24">
             <Reveal>
               <div className="inline-flex items-center gap-2 rounded-full bg-[#c44e2c]/10 text-[#c44e2c] px-4 py-1.5 text-xs font-medium tracking-wider uppercase">
                 <ShieldCheck className="h-3.5 w-3.5" />
@@ -69,7 +69,7 @@ export default function MalerDemo() {
         </section>
 
         <section className="border-y border-stone-100 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="w-full max-w-7xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { num: "60+", label: "Jahre Erfahrung" },
               { num: "2.400", label: "abgeschlossene Aufträge" },
@@ -86,8 +86,8 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="leistungen" className="py-24 md:py-28">
-          <div className="max-w-7xl mx-auto px-6">
+        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md:">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm font-medium text-[#c44e2c] uppercase tracking-wider">Leistungen</div>
@@ -116,8 +116,8 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="arbeiten" className="py-24 md:py-28 border-t border-stone-100 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-6">
+        <section id="arbeiten" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100 bg-stone-50">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm font-medium text-[#c44e2c] uppercase tracking-wider">Unsere Arbeiten</div>
@@ -134,8 +134,8 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="ablauf" className="py-24 md:py-28 border-t border-stone-100">
-          <div className="max-w-7xl mx-auto px-6">
+        <section id="ablauf" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm font-medium text-[#c44e2c] uppercase tracking-wider">So läuft&apos;s ab</div>
@@ -161,8 +161,8 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section className="py-24 md:py-28 border-t border-stone-100 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100 bg-stone-50">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">{[...Array(5)].map((_, i) => (<Star key={i} className="h-5 w-5 fill-[#c44e2c] text-[#c44e2c]" />))}<span className="text-stone-700 ml-2 font-medium">4,9 von 5 · 138 Bewertungen</span></div>
               <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">Was Kunden sagen.</h2>
@@ -187,8 +187,8 @@ export default function MalerDemo() {
           </div>
         </section>
 
-        <section id="kontakt" className="py-24 md:py-28 border-t border-stone-100">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <section id="kontakt" className="flex min-h-[calc(100svh-7rem)] items-center py-14 md: border-t border-stone-100">
+          <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <Reveal>
                 <div className="text-sm font-medium text-[#c44e2c] uppercase tracking-wider">Offerte anfragen</div>

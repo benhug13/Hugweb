@@ -65,7 +65,7 @@ export default function LandmetzgereiWattenwilDemo() {
       <div className={`${display.variable} ${body.variable} font-[family-name:var(--font-body)] bg-[#0b0f0c] text-neutral-200`}>
         {/* Header — transparent über Hero */}
         <header className="absolute inset-x-0 top-8 z-40">
-          <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+          <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
             <Wordmark className="text-lg md:text-xl" />
             <nav className="hidden lg:flex items-center gap-9 text-sm font-medium text-white/75">
               {nav.map((n) => (
@@ -135,11 +135,11 @@ export default function LandmetzgereiWattenwilDemo() {
         </section>
 
         {/* Über uns */}
-        <section id="firma" className="pt-20 md:pt-24 pb-24 md:pb-28">
-          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
+        <section id="firma" className="flex min-h-[calc(100svh-2rem)] items-center py-14 md: md:">
+          <div className="w-full max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-end">
             <Reveal className="md:col-span-7">
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Über uns</div>
-              <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold leading-tight text-white">
+              <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold leading-tight text-white">
                 Metzgerhandwerk aus Wattenwil.
               </h2>
             </Reveal>
@@ -152,13 +152,13 @@ export default function LandmetzgereiWattenwilDemo() {
         </section>
 
         {/* Angebot — die zwei echten Leistungen, gross ausgespielt */}
-        <section id="leistungen" className="relative py-24 md:py-32 border-y border-white/10 bg-[#070a08] overflow-hidden">
+        <section id="leistungen" className="flex min-h-[calc(100svh-2rem)] items-center py-14 relative border-y border-white/10 bg-[#070a08] overflow-hidden">
           <div className="pointer-events-none absolute -right-40 top-0 h-[30rem] w-[30rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
-          <div className="relative max-w-6xl mx-auto px-6">
+          <div className="relative w-full max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <Reveal className="md:col-span-7">
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Das Beste für Sie</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Unser Angebot</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">Unser Angebot</h2>
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
                 <p className="text-white/60 leading-relaxed">
@@ -167,7 +167,7 @@ export default function LandmetzgereiWattenwilDemo() {
               </Reveal>
             </div>
 
-            <div className="mt-14 grid md:grid-cols-2 gap-6 items-stretch">
+            <div className="mt-8 grid md:grid-cols-2 gap-6 items-stretch">
               <Reveal className="h-full">
                 <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-white/20">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
@@ -216,13 +216,13 @@ export default function LandmetzgereiWattenwilDemo() {
         </section>
 
         {/* Ablauf */}
-        <section id="ablauf" className="py-24 md:py-32">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="ablauf" className="flex min-h-[calc(100svh-2rem)] items-center py-14">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Ablauf</div>
-              <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">So läuft eine Lohnschlachtung.</h2>
+              <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">So läuft eine Lohnschlachtung.</h2>
             </Reveal>
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
               {prozess.map((p, i) => (
                 <Reveal key={p.n} delay={i * 0.06}>
                   <div className="font-[family-name:var(--font-display)] text-5xl font-semibold" style={{ color: ACCENT }}>{p.n}</div>
@@ -235,12 +235,12 @@ export default function LandmetzgereiWattenwilDemo() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="py-24 md:py-32 border-t border-white/10 bg-[#070a08]">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="kontakt" className="flex min-h-[calc(100svh-2rem)] items-center py-14 border-t border-white/10 bg-[#070a08]">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Haben Sie Fragen?</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-semibold text-white">Kontakt</h2>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold text-white">Kontakt</h2>
                 <p className="mt-6 text-white/60 leading-relaxed">
                   Fragen zu Lohn- und Notschlachtungen beantworten wir Ihnen am liebsten telefonisch, aber auch per E-Mail oder Kontaktformular.
                 </p>
@@ -271,7 +271,7 @@ export default function LandmetzgereiWattenwilDemo() {
 
         {/* Footer */}
         <footer className="border-t border-white/10 bg-[#0b0f0c]">
-          <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="w-full max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <Wordmark className="text-base md:text-lg" />
             <span className="text-sm text-white/40">© {new Date().getFullYear()} Landmetzgerei Wattenwil</span>
             <span className="text-sm text-white/40">Entwurf von <Link href="/" className="underline hover:text-white">Hugweb</Link></span>

@@ -38,7 +38,7 @@ export default function BarberDemo() {
                 "radial-gradient(ellipse at 30% 20%, rgba(217,119,6,0.40), transparent 55%), radial-gradient(ellipse at 80% 80%, rgba(120,53,15,0.3), transparent 50%)",
             }}
           />
-          <div className="relative max-w-6xl mx-auto px-6 w-full">
+          <div className="relative w-full max-w-6xl mx-auto px-6 w-full">
             <Reveal>
               <div className="flex items-center gap-2 text-amber-500">
                 <Scissors className="h-5 w-5" />
@@ -80,8 +80,8 @@ export default function BarberDemo() {
         </section>
 
         {/* Leistungen */}
-        <section id="leistungen" className="py-24 border-t border-white/10">
-          <div className="max-w-6xl mx-auto px-6">
+        <section id="leistungen" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
                 Leistungen
@@ -113,8 +113,8 @@ export default function BarberDemo() {
         </section>
 
         {/* Atelier-Galerie */}
-        <section className="py-24 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <Reveal>
               <div className="max-w-2xl">
                 <div className="text-sm tracking-[0.25em] uppercase text-amber-500">
@@ -151,8 +151,8 @@ export default function BarberDemo() {
         </section>
 
         {/* Bewertungen */}
-        <section className="py-24 border-t border-white/10">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <Reveal>
               <div className="flex items-center gap-2">
                 {[...Array(5)].map((_, i) => (
@@ -182,8 +182,8 @@ export default function BarberDemo() {
         </section>
 
         {/* Termin */}
-        <section id="termin" className="py-24 border-t border-white/10">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section id="termin" className="flex min-h-[calc(100svh-7rem)] items-center py-14 border-t border-white/10">
+          <div className="w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
             <Reveal>
               <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">Termin buchen.</h2>
               <p className="mt-6 text-white/60 leading-relaxed">
