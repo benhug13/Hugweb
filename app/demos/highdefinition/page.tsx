@@ -290,32 +290,34 @@ export default function HighDefinitionDemo() {
           </div>
         </section>
 
-        {/* Sortiment */}
-        <section id="sortiment" className="py-24 md:py-32">
+        {/* Sortiment — Titel und Text nebeneinander, damit die Karten sofort sichtbar sind */}
+        <section id="sortiment" className="py-14 md:py-16">
           <div className="max-w-6xl mx-auto px-6">
             <Reveal>
-              <div className="max-w-2xl">
-                <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Sortiment</div>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold tracking-tight">
-                  Alles rund um Bild und Ton.
-                </h2>
-                <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
+              <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-3">
+                <div>
+                  <div className="font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-red-600">Sortiment</div>
+                  <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold tracking-tight">
+                    Alles rund um Bild und Ton.
+                  </h2>
+                </div>
+                <p className="max-w-md text-neutral-600 leading-relaxed">
                   Von Fernsehern über Heimkino bis HiFi — persönlich beraten und
                   fachgerecht installiert.
                 </p>
               </div>
             </Reveal>
 
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-4">
               {kategorien.map((k, i) => (
                 <Reveal key={k.title} delay={(i % 3) * 0.06} className={k.span}>
-                  <a href="#kontakt" className="group relative block h-64 md:h-72 overflow-hidden rounded-3xl border border-black/10">
+                  <a href="#kontakt" className="group relative block h-48 md:h-56 overflow-hidden rounded-3xl border border-black/10">
                     <img src={k.img} alt={k.title} className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 p-7">
-                      <h3 className="text-2xl font-semibold text-white">{k.title}</h3>
-                      <p className="mt-2 max-w-xs text-sm text-white/80">{k.text}</p>
-                      <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-white transition group-hover:text-red-400">
+                    <div className="absolute bottom-0 left-0 p-6">
+                      <h3 className="text-xl font-semibold text-white">{k.title}</h3>
+                      <p className="mt-1 max-w-xs text-[13px] leading-snug text-white/80">{k.text}</p>
+                      <span className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-white transition group-hover:text-red-400">
                         Ansehen <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
                       </span>
                     </div>
