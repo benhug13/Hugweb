@@ -21,7 +21,6 @@ import {
   ShoppingCart,
   User,
   Globe,
-  Tag,
   FileText,
   Shield,
   Truck,
@@ -130,7 +129,6 @@ const nav = [
   { label: "Lautsprecher", href: "#sortiment" },
   { label: "Dienstleistungen", href: "#dienstleistungen" },
   { label: "Shop", href: "#shop" },
-  { label: "Abverkauf", href: "#abverkauf" },
 ];
 
 const infoLinks = [
@@ -231,7 +229,7 @@ export default function HighDefinitionDemo() {
             }}
           />
 
-          <div className="relative mx-auto flex min-h-[86vh] w-full max-w-6xl items-center px-6 py-24">
+          <div className="relative mx-auto flex min-h-[calc(100svh-8.25rem)] w-full max-w-6xl items-center px-6 py-10">
             <div className="max-w-2xl">
               <Reveal>
                 <div className="inline-flex items-center gap-2 font-[family-name:var(--font-mono)] text-xs tracking-[0.35em] uppercase text-white/60">
@@ -240,21 +238,21 @@ export default function HighDefinitionDemo() {
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="mt-6 font-[family-name:var(--font-display)] text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95]">
+                <h1 className="mt-4 font-[family-name:var(--font-display)] text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[0.95]">
                   Grosses Kino.
                   <br />
                   <span className="text-red-500">Bei Ihnen zuhause.</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.2}>
-                <p className="mt-8 max-w-xl text-lg text-white/70 leading-relaxed">
+                <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
                   Produkte, Dienstleistungen und Gesamtlösungen rund um Bild, Ton
                   und Informationstechnologie — beraten, installiert und
                   kalibriert von echten Fachleuten in Uster.
                 </p>
               </Reveal>
               <Reveal delay={0.25}>
-                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-[family-name:var(--font-mono)] text-xs text-white/55">
+                <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-[family-name:var(--font-mono)] text-xs text-white/55">
                   {["4K · HDR", "Dolby Atmos", "THX-kalibriert", "8000 ANSI Lumen", "> 200 Marken"].map(
                     (s) => (
                       <span key={s} className="inline-flex items-center gap-2">
@@ -266,7 +264,7 @@ export default function HighDefinitionDemo() {
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <div className="mt-7 flex flex-col sm:flex-row gap-4">
                   <a href="#sortiment" className="group inline-flex items-center justify-center gap-2 rounded-full bg-red-600 text-white px-6 py-3 font-medium hover:bg-red-500 transition">
                     Sortiment entdecken
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition" />
@@ -367,7 +365,7 @@ export default function HighDefinitionDemo() {
         {/* Dienstleistungen — passt komplett auf EINEN Bildschirm (kein Scrollen mitten in der Sektion) */}
         <section
           id="dienstleistungen"
-          className="flex min-h-[calc(100svh-2rem)] items-center border-t border-black/10 py-14"
+          className="flex min-h-[calc(100svh-4rem)] items-center border-t border-black/10 py-12"
         >
           <div className="mx-auto w-full max-w-6xl px-6">
             <Reveal>
@@ -464,31 +462,6 @@ export default function HighDefinitionDemo() {
 
         {/* Online-Shop (Beispiel) */}
         <ShopDemo />
-
-        {/* Abverkauf & Demo-Ware */}
-        <section id="abverkauf" className="py-16 border-t border-black/10 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <Reveal>
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl border border-emerald-300/60 bg-gradient-to-r from-emerald-50 to-transparent p-8 md:p-10">
-                <div className="flex items-center gap-4">
-                  <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                    <Tag className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold">Demo- & Abverkaufsware</h3>
-                    <p className="mt-1 text-neutral-600">
-                      Ausstellungsstücke und Vorführgeräte zu reduzierten Preisen
-                      — solange Vorrat.
-                    </p>
-                  </div>
-                </div>
-                <a href="#kontakt" className="inline-flex shrink-0 items-center gap-2 rounded-full bg-emerald-600 px-6 py-3 font-medium text-white hover:bg-emerald-500 transition">
-                  Angebote ansehen <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            </Reveal>
-          </div>
-        </section>
 
         {/* Über uns + Team */}
         <section id="ueber-uns" className="py-24 md:py-32 border-t border-black/10">
@@ -635,7 +608,6 @@ export default function HighDefinitionDemo() {
                 <ul className="mt-4 space-y-2 text-sm text-white/50">
                   <li><a href="#dienstleistungen" className="hover:text-white transition">Dienstleistungen</a></li>
                   <li><a href="#codefree" className="hover:text-white transition">Codefree</a></li>
-                  <li><a href="#abverkauf" className="hover:text-white transition">Abverkauf & Demo-Ware</a></li>
                   <li><a href="#konto" className="hover:text-white transition">Login / Registrieren</a></li>
                   <li><a href="#kontakt" className="hover:text-white transition">Kontakt</a></li>
                 </ul>
