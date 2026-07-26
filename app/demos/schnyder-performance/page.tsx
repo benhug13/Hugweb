@@ -12,6 +12,7 @@ import {
   Phone,
   MapPin,
   Mail,
+  Clock,
 } from "lucide-react";
 import { Archivo, Inter } from "next/font/google";
 import Reveal from "@/components/Reveal";
@@ -58,6 +59,14 @@ const leistungen = [
   { icon: Car, title: "Fahrzeughandel", desc: "An- und Verkauf von Fahrzeugen." },
   { icon: KeyRound, title: "Fahrzeugvermietung", desc: "Fahrzeuge mieten, wenn Sie eins brauchen." },
   { icon: ShoppingBag, title: "Fahrzeugzubehör", desc: "Handel mit Zubehör rund ums Fahrzeug." },
+];
+
+// Öffnungszeiten: die Firma hat online keine hinterlegt → Beispielwerte,
+// in der Demo klar als Vorschlag markiert.
+const zeiten = [
+  { tag: "Montag – Freitag", zeit: "08:00 – 12:00 · 13:30 – 18:00" },
+  { tag: "Samstag", zeit: "auf Voranmeldung" },
+  { tag: "Sonntag", zeit: "geschlossen" },
 ];
 
 const prozess = [
@@ -277,7 +286,21 @@ export default function SchnyderPerformanceDemo() {
                   <div className="flex items-center gap-4"><Phone className="h-5 w-5" style={{ color: ACCENT }} /><a href="tel:0792650845" className="hover:underline">079 265 08 45</a></div>
                   <div className="flex items-center gap-4"><Mail className="h-5 w-5" style={{ color: ACCENT }} /><span>schnyder.performance@gmail.com</span></div>
                 </div>
-                <p className="mt-6 text-xs text-white/35">Öffnungszeiten hier ergänzen — aktuell sind online keine hinterlegt.</p>
+                <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <div className="flex items-center gap-3">
+                    <Clock className="h-5 w-5" style={{ color: ACCENT }} />
+                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/45">Öffnungszeiten</div>
+                  </div>
+                  <div className="mt-4 divide-y divide-white/10">
+                    {zeiten.map((z) => (
+                      <div key={z.tag} className="flex items-baseline justify-between gap-6 py-2.5">
+                        <span className="text-sm text-white/75">{z.tag}</span>
+                        <span className="text-sm tabular-nums text-white/55">{z.zeit}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-xs text-white/35">Beispielzeiten — bitte durch Ihre tatsächlichen Öffnungszeiten ersetzen.</p>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={0.15}>
