@@ -68,7 +68,7 @@ export default function Home() {
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-white/70 leading-relaxed">
               Wir bauen Webseiten, die Kunden gewinnen — nicht nur gut aussehen.
-              Festpreis ab 99 CHF. Online in 14 Tagen. Kein Baukasten, kein
+              Festpreis ab 198 CHF. Online in 14 Tagen. Kein Baukasten, kein
               Abo-Zwang.
             </p>
           </Reveal>
@@ -165,7 +165,7 @@ export default function Home() {
                 So könnte Ihre Seite aussehen.
               </h2>
               <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-                Sechs Beispiele aus verschiedenen Branchen — voll
+                Sieben Beispiele aus verschiedenen Branchen — voll
                 funktions&shy;fähig, klickbar, in unter 2 Sekunden geladen.
                 Klicken Sie rein.
               </p>
