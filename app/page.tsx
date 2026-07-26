@@ -216,6 +216,13 @@ export default function Home() {
                 desc: "Familienbetrieb mit Offerte-Formular & Galerie.",
                 gradient: "from-[#c44e2c] via-stone-700 to-stone-900",
               },
+              {
+                href: "/demos/schreinerei",
+                label: "Schreinerei",
+                title: "Eichhalde",
+                desc: "Möbel nach Mass, Küchen, Bäder und Böden.",
+                gradient: "from-[#c8874a] via-[#3a2a1c] to-[#0c0a08]",
+              },
             ].map((d, i) => (
               <Reveal key={d.href} delay={i * 0.1}>
                 <Tilt>

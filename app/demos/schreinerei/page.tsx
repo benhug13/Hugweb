@@ -13,8 +13,7 @@ import {
   Sparkles,
   Handshake,
   TreePine,
-  Phone,
-  Printer,
+  Clock,
   MapPin,
   Mail,
 } from "lucide-react";
@@ -25,17 +24,18 @@ const display = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "70
 const body = Inter({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
 export const metadata = {
-  title: "Karl Blattner AG — Handwerkliche Möbel & Innenausbau, Hundwil AR | Entwurf von Hugweb",
+  title: "Schreinerei Eichhalde — Möbel nach Mass & Innenausbau | Vorlage von Hugweb",
   description:
-    "Entwurf einer modernen Website für die Karl Blattner AG, Hundwil: Werkstätte für handwerkliche Möbel, Innenausbau und Bodenbeläge — Einbauküchen, Badezimmer, Parkettböden, Wohnungsumbauten.",
+    "Website-Vorlage für Schreinereien und Innenausbau: handwerkliche Möbel, Einbauküchen, Badezimmer, Parkettböden und Wohnungsumbauten. Beispielseite von Hugweb.",
 };
 
 // Warmes Nussbaum/Kupfer statt des Föhn-Golds — bewusst ein anderer Charakter.
 const KUPFER = "#c8874a";
 const TINTE = "#12100d";
 
-// Platzhalter-Bilder (Unsplash / StockSnap / rawpixel, frei nutzbar).
-// Beim echten Auftrag durch eigene Fotos der Werkstatt und Objekte ersetzen.
+// Beispielseite mit erfundener Firma — Vorlage fuer Schreinereien / Innenausbau.
+// Platzhalter-Bilder (Unsplash / StockSnap, frei nutzbar); beim echten Auftrag
+// durch eigene Fotos der Werkstatt und der ausgefuehrten Objekte ersetzen.
 const UN = (id: string, w = 1200) => `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
 const SS = (id: string) => `https://cdn.stocksnap.io/img-thumbs/960w/${id}.jpg`;
 
@@ -60,12 +60,12 @@ function Wordmark({ className = "", light = false }: { className?: string; light
         light ? "text-[#12100d]" : "text-white"
       } ${className}`}
     >
-      KARL BLATTNER <span style={{ color: KUPFER }}>AG</span>
+      SCHREINEREI <span style={{ color: KUPFER }}>EICHHALDE</span>
     </span>
   );
 }
 
-// Die acht Dienstleistungen — exakt so, wie die Firma sie selbst aufzählt.
+// Die typischen acht Leistungen einer Schreinerei mit Bodenbelaegen.
 const leistungen = [
   {
     icon: Armchair,
@@ -150,7 +150,7 @@ const galerie = [
 const ablauf = [
   { n: "01", t: "Beratung bei Ihnen", d: "Wir kommen vorbei, schauen die Räume an und besprechen, was Sie sich vorstellen." },
   { n: "02", t: "Aufmass & Offerte", d: "Präzises Aufmass, klare Offerte — Sie wissen vorher, was es kostet." },
-  { n: "03", t: "Fertigung in der Werkstatt", d: "Gefertigt wird bei uns in Hundwil, von Hand und mit den richtigen Maschinen." },
+  { n: "03", t: "Fertigung in der Werkstatt", d: "Gefertigt wird bei uns im Haus, von Hand und mit den richtigen Maschinen." },
   { n: "04", t: "Montage & Übergabe", d: "Wir bauen ein, räumen auf und übergeben fertig — so, wie es abgemacht war." },
 ];
 
@@ -162,7 +162,7 @@ const nav = [
   { label: "Kontakt", href: "#kontakt" },
 ];
 
-export default function BlattnerDemo() {
+export default function SchreinereiDemo() {
   return (
     <>
       <div className="bg-neutral-900 text-white text-xs py-2 text-center">
@@ -211,7 +211,7 @@ export default function BlattnerDemo() {
             <div className="flex flex-1 flex-col justify-center">
               <Reveal>
                 <div className="text-xs font-semibold uppercase tracking-[0.35em]" style={{ color: KUPFER }}>
-                  Hundwil AR · Appenzellerland
+                  Möbel · Innenausbau · Böden
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
@@ -226,7 +226,7 @@ export default function BlattnerDemo() {
               <Reveal delay={0.2}>
                 <p className="mt-5 max-w-xl text-base lg:text-lg text-white/70 leading-relaxed">
                   Werkstätte für handwerkliche Möbel, Innenausbau und Bodenbeläge. Von der Beratung über die Fertigung
-                  bis zur Montage — alles aus einer Hand, aus unserer Werkstatt in Hundwil.
+                  bis zur Montage — alles aus einer Hand, aus unserer eigenen Werkstatt.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -253,8 +253,8 @@ export default function BlattnerDemo() {
                 <div className="grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
                   {[
                     { k: "8", v: "Leistungen aus einer Hand" },
-                    { k: "Eigene", v: "Werkstatt in Hundwil" },
-                    { k: "Möbelzentrum", v: "Partner des Handwerks" },
+                    { k: "Eigene", v: "Werkstatt im Haus" },
+                    { k: "Nach Mass", v: "statt ab Stange" },
                     { k: "Vor Ort", v: "Beratung bei Ihnen zu Hause" },
                   ].map((s) => (
                     <div key={s.v} className="px-5 py-4 md:py-5 text-center">
@@ -315,7 +315,7 @@ export default function BlattnerDemo() {
               ))}
             </div>
 
-            {/* Partner-Hinweis */}
+            {/* Hinweis: alles aus einer Hand */}
             <Reveal delay={0.1}>
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5 rounded-2xl border border-[#12100d]/10 bg-white p-7">
                 <div
@@ -326,11 +326,11 @@ export default function BlattnerDemo() {
                 </div>
                 <div>
                   <div className="font-[family-name:var(--font-display)] text-lg font-semibold text-[#12100d]">
-                    Partner des Möbelzentrums des Handwerks
+                    Eine Ansprechperson — vom ersten Termin bis zur Übergabe
                   </div>
                   <p className="mt-1 text-sm text-[#12100d]/60 leading-relaxed">
-                    Dadurch steht Ihnen bei uns das volle Sortiment und alle Dienstleistungen des Möbelzentrums offen —
-                    mit der Beratung und dem Einbau von jemandem, der Sie kennt.
+                    Sie müssen nicht zwischen Schreiner, Küchenbauer und Bodenleger koordinieren. Wir planen, fertigen und
+                    montieren selbst — und wenn etwas nicht passt, sind wir es auch, die es ändern.
                   </p>
                 </div>
               </div>
@@ -356,8 +356,8 @@ export default function BlattnerDemo() {
               </Reveal>
               <Reveal delay={0.1} className="md:col-span-5">
                 <p className="text-white/60 leading-relaxed">
-                  Wir sind eine Werkstätte, kein Möbelhaus. Was Sie bei uns bestellen, wird in Hundwil gefertigt — und
-                  wenn ein Mass nicht stimmt, ändern wir es, statt es zu bestellen.
+                  Wir sind eine Werkstätte, kein Möbelhaus. Was Sie bei uns bestellen, wird bei uns gefertigt — und wenn
+                  ein Mass nicht stimmt, ändern wir es, statt es neu zu bestellen.
                 </p>
               </Reveal>
             </div>
@@ -475,33 +475,29 @@ export default function BlattnerDemo() {
                   <div className="flex items-start gap-4">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0" style={{ color: KUPFER }} />
                     <span>
-                      Karl Blattner AG
+                      Schreinerei Eichhalde
                       <br />
-                      Äckerli 48, 9064 Hundwil
+                      Eichhaldenstrasse 12, 9000 St. Gallen
                     </span>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Phone className="h-5 w-5 shrink-0" style={{ color: KUPFER }} />
-                    <a href="tel:+41713671218" className="hover:underline">
-                      071 367 12 18
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <Printer className="h-5 w-5 shrink-0" style={{ color: KUPFER }} />
-                    <span>071 367 22 09 (Fax)</span>
-                  </div>
-                  <div className="flex items-center gap-4">
                     <Mail className="h-5 w-5 shrink-0" style={{ color: KUPFER }} />
-                    <a href="mailto:hblattner@swissonline.ch" className="hover:underline">
-                      hblattner@swissonline.ch
-                    </a>
+                    <span>info@schreinerei-eichhalde.ch</span>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Clock className="mt-0.5 h-5 w-5 shrink-0" style={{ color: KUPFER }} />
+                    <span>
+                      Werkstatt Mo–Fr 7.00–17.00
+                      <br />
+                      <span className="text-sm text-white/45">Showroom nach Vereinbarung</span>
+                    </span>
                   </div>
                   <div className="flex items-start gap-4">
                     <Ruler className="mt-0.5 h-5 w-5 shrink-0" style={{ color: KUPFER }} />
                     <span>
                       Aufmass und Beratung bei Ihnen vor Ort
                       <br />
-                      <span className="text-sm text-white/45">im ganzen Appenzellerland und Umgebung</span>
+                      <span className="text-sm text-white/45">in der ganzen Region</span>
                     </span>
                   </div>
                 </div>
@@ -551,7 +547,7 @@ export default function BlattnerDemo() {
           <div className="max-w-6xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <Wordmark className="text-lg" />
             <span className="text-sm text-white/40">
-              © {new Date().getFullYear()} Karl Blattner AG · Äckerli 48, 9064 Hundwil
+              © {new Date().getFullYear()} Schreinerei Eichhalde · Beispielseite von Hugweb
             </span>
             <span className="text-sm text-white/40">
               Entwurf von{" "}
