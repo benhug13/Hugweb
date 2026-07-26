@@ -25,11 +25,22 @@ export const metadata = {
     "Entwurf einer Website für die Schnyder performance GmbH in Neuenkirch: Auto- und Motorradwerkstatt, Fahrzeugreparaturen, Handel und Vermietung von Fahrzeugen und Zubehör.",
 };
 
-const ACCENT = "#ff5c1a";
-// Diese Firma hat KEINE Website und keine öffentlichen Fotos.
-// Darum bewusst rein grafisch gebaut — kein Stock, keine erfundenen Bilder.
-// Alle Angaben stammen aus dem Handelsregister (CHE-362.866.607), der
-// Gemeinde Neuenkirch und dem search.ch-Eintrag.
+const ACCENT = "#22d3ee";
+// Angaben aus Handelsregister (CHE-362.866.607), Gemeinde Neuenkirch, search.ch.
+// Die Firma hat keine Website und keine eigenen Fotos → Platzhalter-Bilder.
+// Bewusst aus belegten Wikimedia-Kategorien ("Automobile repair shops",
+// "Quality images of motorcycles"), damit das Motiv garantiert passt.
+const WM = "https://upload.wikimedia.org/wikipedia/commons/thumb";
+const IMG_HERO = `${WM}/2/29/AUTO_SOFT_SERVICE_TITAN.jpg/1920px-AUTO_SOFT_SERVICE_TITAN.jpg`;
+const IMG_MOTOR = `${WM}/6/68/2024-11-01_5000_%C3%84ppelvikens_bil_motor.jpg/1920px-2024-11-01_5000_%C3%84ppelvikens_bil_motor.jpg`;
+const GAL = [
+  `${WM}/b/b8/Car_repair_garage_in_Brastad.jpg/1920px-Car_repair_garage_in_Brastad.jpg`,
+  `${WM}/0/08/2005_Yamaha_FZ6.jpg/1920px-2005_Yamaha_FZ6.jpg`,
+  `${WM}/6/6e/BKJ_Autoservice.jpg/1920px-BKJ_Autoservice.jpg`,
+  `${WM}/4/44/2014_Yamaha_XV_535_Virago.JPG/1920px-2014_Yamaha_XV_535_Virago.JPG`,
+  `${WM}/9/9c/Bj%C3%B8rgum_Mek._Verksted_%281%29.JPG/1920px-Bj%C3%B8rgum_Mek._Verksted_%281%29.JPG`,
+  `${WM}/c/c9/Atoy_Viikki_2026.jpg/1920px-Atoy_Viikki_2026.jpg`,
+];
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -91,8 +102,9 @@ export default function SchnyderPerformanceDemo() {
 
         {/* Hero — ohne Foto (Firma hat keine Website und keine öffentlichen Bilder) */}
         <section className="relative isolate min-h-[calc(100svh-2rem)] overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(115% 85% at 75% 5%, #221410 0%, #0b0b0c 55%, #070708 100%)" }} />
-          <div className="pointer-events-none absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)", backgroundSize: "72px 72px" }} />
+          <img src={IMG_HERO} alt="Werkstatt" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0c] via-black/70 to-black/55" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-[#0b0b0c] via-[#0b0b0c]/85 to-transparent" />
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full opacity-25 blur-3xl animate-pulse [animation-duration:6s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
           <div className="pointer-events-none absolute -left-52 bottom-0 h-[30rem] w-[30rem] rounded-full opacity-15 blur-3xl animate-pulse [animation-duration:9s]" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 70%)` }} />
 
@@ -158,14 +170,14 @@ export default function SchnyderPerformanceDemo() {
               </p>
             </Reveal>
             <Reveal delay={0.1} className="md:col-span-5">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img src={IMG_MOTOR} alt="Arbeit am Motor" className="h-[16rem] w-full object-cover transition duration-700 hover:scale-[1.03]" />
+              </div>
+              <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                 <div className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Direkt erreichbar</div>
-                <a href="tel:0792650845" className="mt-3 block font-[family-name:var(--font-display)] text-3xl font-extrabold text-white transition hover:opacity-80">
+                <a href="tel:0792650845" className="mt-2 block font-[family-name:var(--font-display)] text-2xl font-extrabold text-white transition hover:opacity-80">
                   079 265 08 45
                 </a>
-                <p className="mt-3 text-sm text-white/55 leading-relaxed">
-                  Rufen Sie an — Sie sprechen direkt mit der Werkstatt, nicht mit einem Callcenter.
-                </p>
               </div>
             </Reveal>
           </div>
@@ -207,6 +219,32 @@ export default function SchnyderPerformanceDemo() {
           </div>
         </section>
 
+        {/* Galerie — Platzhalter-Bilder, im finalen Projekt eigene Fotos */}
+        <section className="py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-6">
+            <Reveal>
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: ACCENT }}>Einblick</div>
+                  <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl md:text-4xl font-bold text-white">Werkstatt & Fahrzeuge</h2>
+                </div>
+                <a href="#kontakt" className="text-sm font-semibold hover:opacity-80 transition" style={{ color: ACCENT }}>Termin vereinbaren →</a>
+              </div>
+            </Reveal>
+            <div className="mt-8 grid grid-cols-2 lg:grid-cols-3 gap-3">
+              {GAL.map((img, i) => (
+                <Reveal key={img} delay={(i % 3) * 0.06}>
+                  <div className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10">
+                    <img src={img} alt="Werkstatt und Fahrzeuge" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent transition group-hover:from-black/20" />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-white/35">Platzhalter-Bilder (Wikimedia Commons) — im fertigen Projekt kommen Ihre eigenen Fotos rein.</p>
+          </div>
+        </section>
+
         {/* Ablauf */}
         <section id="ablauf" className="py-14 md:py-16">
           <div className="max-w-6xl mx-auto px-6">
@@ -244,9 +282,9 @@ export default function SchnyderPerformanceDemo() {
             </Reveal>
             <Reveal delay={0.15}>
               <form className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 space-y-4">
-                <div><label className="mb-2 block text-sm text-white/50">Name</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#ff5c1a] focus:outline-none" /></div>
-                <div><label className="mb-2 block text-sm text-white/50">Telefon</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#ff5c1a] focus:outline-none" /></div>
-                <div><label className="mb-2 block text-sm text-white/50">Fahrzeug & Anliegen</label><textarea rows={4} className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#ff5c1a] focus:outline-none" /></div>
+                <div><label className="mb-2 block text-sm text-white/50">Name</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#22d3ee] focus:outline-none" /></div>
+                <div><label className="mb-2 block text-sm text-white/50">Telefon</label><input className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#22d3ee] focus:outline-none" /></div>
+                <div><label className="mb-2 block text-sm text-white/50">Fahrzeug & Anliegen</label><textarea rows={4} className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white transition focus:border-[#22d3ee] focus:outline-none" /></div>
                 <button type="button" className="w-full rounded-full px-6 py-3 font-semibold text-black transition hover:opacity-90" style={{ backgroundColor: ACCENT }}>Anfrage senden</button>
               </form>
             </Reveal>
