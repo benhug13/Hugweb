@@ -122,7 +122,6 @@ export default function LandmetzgereiWattenwilDemo() {
           <img src={IMG_HERO} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(7,10,8,0.95) 0%, rgba(7,10,8,0.82) 45%, rgba(7,10,8,0.55) 100%)" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, #0b0f0c 4%, transparent 45%)" }} />
-          <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "repeating-linear-gradient(115deg, #fff 0 1px, transparent 1px 22px)" }} />
           <div className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full opacity-20 blur-3xl" style={{ background: `radial-gradient(circle, ${ACCENT}, transparent 65%)` }} />
 
           <div className="relative mx-auto flex min-h-[calc(100svh-2rem)] w-full max-w-6xl flex-col px-6 pt-24 pb-6">
