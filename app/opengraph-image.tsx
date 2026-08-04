@@ -85,7 +85,7 @@ export default async function OpengraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Festpreis ab 198 CHF · Online in 14 Tagen · Kein Baukasten.
+            Festpreis ab 599 CHF · Online in 14 Tagen · Kein Baukasten.
           </div>
         </div>
 

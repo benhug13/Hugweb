@@ -68,7 +68,7 @@ export default function Home() {
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-white/70 leading-relaxed">
               Wir bauen Webseiten, die Kunden gewinnen — nicht nur gut aussehen.
-              Festpreis ab 198 CHF. Online in 14 Tagen. Kein Baukasten, kein
+              Festpreis ab 599 CHF. Online in 14 Tagen. Kein Baukasten, kein
               Abo-Zwang.
             </p>
           </Reveal>
@@ -745,8 +745,8 @@ export default function Home() {
             {[
               {
                 name: "Starter",
-                price: "198",
-                oldPrice: "396",
+                price: "599",
+                oldPrice: "1198",
                 desc: "Einseitige Visitenkarten-Webseite",
                 features: [
                   "Bis zu 5 Sektionen",
@@ -758,8 +758,8 @@ export default function Home() {
               },
               {
                 name: "Business",
-                price: "298",
-                oldPrice: "596",
+                price: "999",
+                oldPrice: "1998",
                 desc: "Die beliebteste Option",
                 highlight: true,
                 features: [
@@ -771,12 +771,12 @@ export default function Home() {
               },
               {
                 name: "Premium",
-                price: "398",
-                oldPrice: "796",
+                price: "1499",
+                oldPrice: "2998",
                 desc: "Individuelle Sonderlösung",
                 features: [
                   "Unbegrenzte Unterseiten",
-                  "Online-Buchung / Shop",
+                  "Online-Buchung / Shop (auf Anfrage)",
                   "CMS für Eigenpflege",
                   "Premium-Animationen",
                 ],

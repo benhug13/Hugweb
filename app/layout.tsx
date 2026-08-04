@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hugweb.cloud9.ch"),
   title: "Hugweb — Moderne Webseiten für Ihr Unternehmen",
   description:
-    "Moderne, schnelle Webseiten für Schweizer KMU — Restaurants, Handwerker, Coiffeure und mehr. Festpreis ab 198 CHF. Online in 14 Tagen.",
+    "Moderne, schnelle Webseiten für Schweizer KMU — Restaurants, Handwerker, Coiffeure und mehr. Festpreis ab 599 CHF. Online in 14 Tagen.",
   openGraph: {
     title: "Hugweb — Webseiten, die verkaufen",
     description:
-      "Festpreis ab 198 CHF · Online in 14 Tagen · Kein Baukasten, kein Abo-Zwang.",
+      "Festpreis ab 599 CHF · Online in 14 Tagen · Kein Baukasten, kein Abo-Zwang.",
     url: "https://hugweb.cloud9.ch",
     siteName: "Hugweb",
     locale: "de_CH",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hugweb — Webseiten, die verkaufen",
     description:
-      "Festpreis ab 198 CHF · Online in 14 Tagen · Kein Baukasten.",
+      "Festpreis ab 599 CHF · Online in 14 Tagen · Kein Baukasten.",
   },
 };
 
