@@ -35,11 +35,9 @@ const TINTE = "#0e1013";
 const BETON = "#edeae5";
 const BAU_DUNKEL = "#8a6200";
 
-// ⚠️ BEN: Die E-Mail-Adresse, die du am Telefon bekommen hast, hier eintragen —
-// dann erscheint sie automatisch im Kontaktblock. Leer lassen = Zeile wird
-// ausgeblendet. NIEMALS eine Adresse erfinden: eine falsche Mail auf seiner
-// eigenen Website ist schlimmer als gar keine.
-const EMAIL = "";
+// Aus dem öffentlichen Telefonbuch-Eintrag (tel.search.ch, vCard vom 17.09.) —
+// nicht erfunden und nicht geraten. Leer lassen blendet die Zeile aus.
+const EMAIL = "heinz.dober@bluewin.ch";
 
 const TEL_ANZEIGE = "079 773 22 16";
 const TEL_LINK = "tel:0797732216";
