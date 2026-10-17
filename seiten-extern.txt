@@ -10,6 +10,7 @@
 # Nach dem Aendern: committen + "git push origin main". Fertig.
 
 Hugweb (Vercel-Zweitweg)|https://nordweb-drab.vercel.app
+Hug Technologies|https://hugtechnologies.cloud9.ch
 
 # Beispiel fuer einen echten Kunden — Raute entfernen, sobald die Seite live ist:
 # Malergeschaeft Pfundstein|https://pfundstein.ch
